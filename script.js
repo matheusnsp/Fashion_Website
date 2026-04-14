@@ -16,6 +16,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Newsletter (Brevo + Netlify Function) ---
+const newsletterForm = document.getElementById("newsletter-form");
+
+if (newsletterForm) {
+    const inputEmail = newsletterForm.querySelector("input[type='email']");
+    const button = newsletterForm.querySelector("button");
+
+    newsletterForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = inputEmail.value.trim();
+
+        if (!email) return;
+
+        // Estado loading (UX premium)
+        const originalText = button.innerHTML;
+        button.innerHTML = "ENVIANDO...";
+        button.disabled = true;
+
+        try {
+            const res = await fetch("/.netlify/functions/subscribe", {
+                method: "POST",
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                // Feedback elegante (sem alert feio)
+                button.innerHTML = "INSCRITA ✓";
+                inputEmail.value = "";
+
+                gsap.fromTo(button, 
+                    { scale: 0.95 }, 
+                    { scale: 1, duration: 0.4, ease: "power2.out" }
+                );
+
+            } else {
+                throw new Error();
+            }
+
+        } catch (err) {
+            button.innerHTML = "ERRO — TENTE NOVAMENTE";
+
+            gsap.to(button, { 
+                x: 8, 
+                repeat: 3, 
+                yoyo: true, 
+                duration: 0.05 
+            });
+        }
+
+        // Reset depois de 3s
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }, 3000);
+    });
+}
+
+
     // --- Lógica do Diagnóstico (Quiz) ---
     const steps = document.querySelectorAll('.form-step');
     const btnNext = document.querySelector('.btn-next');
