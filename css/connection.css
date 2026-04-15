@@ -1,0 +1,56 @@
+
+/* --- CONNECTION SECTION (ALINHADA COM O DESIGN) --- */
+.connection-section {
+    padding: 140px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+}
+
+.connection-container {
+    max-width: 80%;
+    text-align: center;
+}
+
+/* LINHA DECORATIVA (igual linguagem do site) */
+.connection-container::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--accent-gold);
+    margin: 0 auto 35px auto;
+    opacity: 0.5;
+}
+
+/* TÍTULO */
+.connection-container h2 {
+    font-family: var(--font-title);
+    font-size: clamp(3rem, 6vw, 5.5rem); /* Aumentei levemente o limite máximo */
+    line-height: 1.1; /* TAN Garland precisa de um pouco mais de respiro vertical */
+    letter-spacing: 0.02em; /* Fontes display como a Garland funcionam melhor com tracking positivo ou neutro */
+    font-weight: normal; /* Geralmente essas fontes não precisam de negrito extra */
+    position: relative;
+    display: inline-block;
+    padding: 0 40px;
+    text-transform: none; /* Mantém a elegância das curvas da fonte */
+}
+
+/* PARÁGRAFOS */
+.connection-container p {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    line-height: 1.9;
+    /* letter-spacing: 0.04em; */
+    color: var(--text-muted);
+    margin-bottom: 16px;
+
+}
+
+/* ÚLTIMA FRASE MAIS FORTE */
+.connection-container p:last-child {
+    color: var(--text-primary);
+}

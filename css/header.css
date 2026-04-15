@@ -1,0 +1,106 @@
+/* --- Header & Navigation --- */
+.main-header {
+    position: fixed;
+    top: 5px; /* afasta do topo pra dar efeito flutuante */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    background: transparent; /* sem fundo aqui */   
+}
+
+.nav-menu {
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 30px;
+    border-radius: 999px; /* formato cápsula */
+    background: rgba(18, 17, 16, 0.35);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(197, 164, 126, 0.2);
+
+}
+
+.nav-link {
+    font-family: var(--font-serif); /* Cormorant Garamond */
+    color: var(--text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    transition: var(--transition-fluid);
+    position: relative;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--accent-gold);
+}
+
+/* Efeito de linha embaixo no hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Estilo para o item em desenvolvimento */
+.nav-link.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    font-style: italic;
+}
+
+.nav-link.disabled small {
+    font-size: 0.6rem;
+    display: block;
+    letter-spacing: 0;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .nav-link {
+        font-size: 0.7rem;
+    }
+}
+
+
+
+/* .main-header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; 
+    background: linear-gradient(to bottom, rgba(18,17,16,0.9), transparent);
+    pointer-events: auto; 
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    pointer-events: all;
+} */

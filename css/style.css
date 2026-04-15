@@ -29,8 +29,8 @@
 :root {
     --primary-dark: #121110;
     --text-primary: #F5F2ED;
-    --accent-gold: #cdc3b8; 
-    /* --accent-gold: #C5A47E;  */
+    /* --accent-gold: #cdc3b8;  */
+    --accent-gold: #C5934C; 
     
     /* Fontes */
     --font-topic: 'Tan Vivre Libre', serif;
@@ -72,320 +72,12 @@ body {
 
 
 
-/* --- Header & Navigation --- */
-/* .main-header {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 5%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center; 
-    background: linear-gradient(to bottom, rgba(18,17,16,0.9), transparent);
-    pointer-events: auto; 
-}
-
-.nav-menu {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    pointer-events: all;
-} */
-
-.main-header {
-    position: fixed;
-    top: 5px; /* afasta do topo pra dar efeito flutuante */
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    background: transparent; /* sem fundo aqui */   
-}
-
-.nav-menu {
-    pointer-events: all;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 30px;
-    border-radius: 999px; /* formato cápsula */
-    background: rgba(18, 17, 16, 0.35);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.nav-link {
-    font-family: var(--font-serif); /* Cormorant Garamond */
-    color: var(--text-primary);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    opacity: 0.7;
-    transition: var(--transition-fluid);
-    position: relative;
-}
-
-.nav-link:hover {
-    opacity: 1;
-    color: var(--accent-gold);
-}
-
-/* Efeito de linha embaixo no hover */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--accent-gold);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Estilo para o item em desenvolvimento */
-.nav-link.disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    font-style: italic;
-}
-
-.nav-link.disabled small {
-    font-size: 0.6rem;
-    display: block;
-    letter-spacing: 0;
-}
-
-/* Responsividade Mobile */
-@media (max-width: 768px) {
-    .nav-menu {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-    .nav-link {
-        font-size: 0.7rem;
-    }
-}
-
-
-
-
-
-/* --- Layout Base --- */
-.section {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-/* --- Seção HERO Imersiva --- */
-.hero-bg-wrapper {
-    position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    z-index: -1;
-    background-color: #000; /* Fundo preto sólido que aparecerá sob o vídeo */
-}
-
-.hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.4; /* Reduzi um pouco mais a opacidade */
-    filter: sepia(20%) contrast(90%); /* Adiciona um tom levemente quente ao vídeo */
-}
-
-.overlay-vignette {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    /* Mude o gradiente para usar a sua nova cor primária escura */
-    background: radial-gradient(circle, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 100%);
-    z-index: 2;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    width: 90%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-
-/* Tipografia Brutalista/Chique */
-.brand-header .location {
-    font-size: 0.9rem;
-    letter-spacing: 5px;
-    font-weight: 100;
-}
-
-.brand-title {
-    font-family: var(--font-signature);
-    font-size: var(--fs-brand);
-    font-weight: 300;
-    line-height: 0.85;
-    margin-top: 1rem;
-}
-
-.last-name {
-    font-weight: 400; /* Contraste de peso na mesma palavra */
-}
-
-.hero-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.footer-brand,
-.footer-brand:visited,
-.footer-brand:hover,
-.footer-brand:active {
-    text-decoration: none;
-    color: inherit;
-}
-
-.hero-tagline {
-    font-size: 1rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    max-width: 40%;
-}
-
-
-
-/* Faz o hero ficar "preso" enquanto você scrolla os primeiros 200vh */
-.hero-sticky-container {
-    position: relative;
-    background-color: var(--primary-dark);
-}
-
-
-
-/* Esta é a seção que controla o espaço na tela */
-.about-section {
-    width: 100%;
-    height: 100vh; /* Agora a seção ocupa a tela toda */
-    display: flex;
-    align-items: center; /* Centraliza o bloco branco verticalmente */
-    justify-content: flex-start; /* Mantém o alinhamento à esquerda se desejar */
-    background-color: transparent; /* A seção em si não tem cor */
-    margin: 0; 
-    padding: 0;
-    z-index: 10;
-    position: relative;
-}
-
-/* Este é o seu bloco branco (o "sticker") */
-.about-container {
-    background-color: var(--bg-biografia); /* A cor vai aqui! */
-    color: var(--text-bio);
-    
-    /* Tamanho do bloco branco */
-    width: 85%;
-    max-width: 1200px;
-    padding: 80px 60px; /* Espaço interno do texto */
-    
-    /* Efeito de Sticker / Bordas */
-    border-top-right-radius: 100px; 
-    border-bottom-right-radius: 100px;
-    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2);
-    
-    /* Layout interno */
-    display: flex;
-    flex-direction: row-reverse; 
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.about-content {
-    /* Agrupa o Subtítulo e o Título e os alinha à DIREITA */
-    flex-direction: column;
-    align-items: flex-end; 
-}
-
-.about-title{
-    font-family: var(--font-signature);
-    font-size: 4rem;
-    font-weight: 300; /* Peso leve para POGGIAN */
-    color:#000;
-
-    /* font-size: clamp(2.5rem, 6vw, 10rem);
-    font-weight: 500;
-    line-height: 0.85;
-    margin: 1.5rem 0; */
-}
-
-
-
-.about-subtitle {
-    font-family: var(--font-topic);
-    font-size: 2.3rem;
-    color: var(--accent-gold);
-    text-transform: uppercase;
-}
-
-.about-text {
-    max-width: 520px;
-    margin-right: auto;
-
-    font-size: 1rem;
-    line-height: 1.9;
-    letter-spacing: 0.02em;
-
-    color: var(--text-bio);
-}
-
-.about-text p {
-    margin-bottom: 1.4rem;
-
-}
-
-#cabecalho{
-    font-size: 1rem;
-}
-
-/* .about-text p:first-child {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    color: #888;
-} */
-
-.about-text p:last-child {
-    margin-bottom: 0;
-}
-
-
-
-
-
 .services-section { padding: 100px 5%; }
 .section-header { text-align: center; margin-bottom: 40px; }
 .serv-title {
     font-family: var(--font-topic);
     font-size: 2.3rem;
-    color: var(--accent-gold);
+    color: var(--bg-biografia);
     text-transform: uppercase;
 }
 .serv-subtitle,
@@ -406,8 +98,26 @@ body {
     border-bottom: 1px solid rgba(197, 164, 126, 0.2);
 }
 
-.service-item p { color: var(--text-muted); max-width: 60%; font-size: 0.95rem; }
-.service-price { font-family: var(--font-sans); color: var(--accent-gold); font-weight: 600; font-size: 1.2rem; }
+.service-item .service-info p { color: var(--text-muted); max-width: 60%; font-size: 1.2rem; }
+
+.orcamento a{
+    display: inline-block;
+    padding: 20px 40px;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    text-decoration: none;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.orcamento a:hover{
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
 
 /* Consultoria Section */
 .consultoria-main {
@@ -467,17 +177,11 @@ body {
     display: block; 
 }
 
-/* Ajuste do traço decorativo para ficar acima ou sumir, 
-   já que centralizado o traço na lateral esquerda fica estranho */
-
-.price-tag { 
-    display: block; 
-    margin-top: 25px; 
-    font-size: 1.2rem; 
-    font-weight: 600; 
-    color: var(--text-primary);
-    letter-spacing: 1px;
+.consultoria-main .orcamento {
+    text-align: center;
+    margin-top: 40px; /* Adiciona um espaço entre o grid e o botão */
 }
+
 @media (max-width: 768px) {
     .consultoria-grid { grid-template-columns: 1fr; }
     .service-item { flex-direction: column; text-align: center; }
@@ -868,81 +572,6 @@ body {
 
 
 
-/* Ajuste no container principal do Hero para dividir em 2 */
-.hero-content {
-    display: flex;
-    flex-direction: row; /* Coloca texto e foto lado a lado */
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1600px;
-    z-index: 3;
-}
-
-.hero-text-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top:10vh;
-    height: 80vh; /* Mantém o alinhamento vertical */
-}
-
-/* Estilização da nova descrição abaixo do nome */
-.personal-description {
-    margin-top: 2rem;
-    border-left: 1px solid var(--accent-gold);
-    padding-left: 20px;
-    letter-spacing: 4px; /* Mais ar nas descrições */
-    text-transform: uppercase;
-}
-
-.role-title {
-    font-size: 1.2rem;
-    letter-spacing: 4px;
-    font-weight: 300;
-    color: var(--text-primary);
-}
-
-.role-subtitle {
-    font-size: 1rem;
-    letter-spacing: 6px;
-    color: var(--accent-gold);
-    margin-top: 5px;
-}
-
-
-.hero-image-side {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end; /* Isso empurra a foto para o chão */
-    height: 100vh; /* Força a altura total da tela */
-    position: relative;
-}
-
-.profile-photo {
-    height: 100vh; 
-    width: auto;
-    object-fit: contain;
-    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-}
-
-/* Ajuste para Mobile: Foto some ou fica pequena para não poluir */
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-image-side {
-        display: none; /* Esconde a foto no celular para focar no texto */
-    }
-    .personal-description {
-        border-left: none;
-        padding-left: 0;
-    }
-}
 
 
 
@@ -975,140 +604,6 @@ body {
 
 
 
-
-
-
-/* --- Seção LINKS: Art Gallery Nav --- */
-.links-section {
-    background-color: var(--primary-dark);
-}
-
-.section-background {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d'); /* Imagem de fundo padrão */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.05; /* Muito sutil */
-    transition: var(--transition-fluid);
-    z-index: 1;
-}
-
-.links-container {
-    position: relative;
-    z-index: 2;
-    width: 90%;
-    max-width: 1400px;
-}
-
-.section-title {
-    font-size: 0.8rem;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    font-weight: 100;
-    margin-bottom: 4rem;
-}
-
-.fashion-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.nav-item {
-    display: flex;
-    align-items: flex-start;
-    text-decoration: none;
-    color: var(--text-primary);
-    border-top: 1px solid rgba(253,253,253,0.1);
-    padding: 2rem 0;
-    transition: var(--transition-fluid);
-    overflow: hidden;
-}
-
-.nav-item:hover {
-    padding-left: 20px; /* Expansão suave */
-}
-
-.nav-num {
-    font-family: var(--font-serif);
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    margin-right: 2rem;
-    margin-top: 5px;
-}
-
-.nav-text-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-label {
-    font-family: var(--font-serif);
-    font-size: var(--fs-nav);
-    text-transform: uppercase;
-    font-weight: 400;
-    line-height: 1;
-}
-
-.nav-desc {
-    font-size: 0.8rem;
-    font-weight: 100;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-
-/* Destaque sutil para o link mais importante */
-.nav-item.highlight {
-    background: linear-gradient(90deg, rgba(215,195,160,0.03) 0%, rgba(5,5,5,0) 100%);
-}
-
-/* Container do Vídeo */
-.hero-video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(30px) brightness(0.4); /* Desfoque pesado para profundidade */
-    transform: scale(1.1);
-}
-
-.video-portrait-frame {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 85vh; /* Altura imponente */
-    aspect-ratio: 9 / 16; /* Força o formato celular */
-    z-index: 2;
-    border: 0.5px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 80px rgba(0,0,0,0.8);
-    overflow: hidden;
-}
-
-.hero-video-fg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.video-overlay-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, rgba(5,5,5,0.8), transparent);
-}
-
-.overlay-vignette {
-    background: radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(5,5,5,0.9) 100%);
-    z-index: 3;
-}
 
 
 

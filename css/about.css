@@ -1,0 +1,94 @@
+
+/* Esta é a seção que controla o espaço na tela */
+.about-section {
+    width: 100%;
+    height: 100vh; /* Agora a seção ocupa a tela toda */
+    display: flex;
+    align-items: center; /* Centraliza o bloco branco verticalmente */
+    justify-content: flex-start; /* Mantém o alinhamento à esquerda se desejar */
+    background-color: transparent; /* A seção em si não tem cor */
+    margin: 0; 
+    padding: 0;
+    z-index: 10;
+    position: relative;
+}
+
+/* Este é o seu bloco branco (o "sticker") */
+.about-container {
+    background-color: var(--bg-biografia); /* A cor vai aqui! */
+    color: var(--text-bio);
+    
+    /* Tamanho do bloco branco */
+    width: 85%;
+    max-width: 1200px;
+    padding: 80px 60px; /* Espaço interno do texto */
+    
+    /* Efeito de Sticker / Bordas */
+    border-top-right-radius: 100px; 
+    border-bottom-right-radius: 100px;
+    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2);
+    
+    /* Layout interno */
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.about-content {
+    /* Agrupa o Subtítulo e o Título e os alinha à DIREITA */
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.about-title{
+    font-family: var(--font-signature);
+    font-size: 4rem;
+    font-weight: 300; /* Peso leve para POGGIAN */
+    color:#000;
+
+    /* font-size: clamp(2.5rem, 6vw, 10rem);
+    font-weight: 500;
+    line-height: 0.85;
+    margin: 1.5rem 0; */
+}
+
+
+
+.about-subtitle {
+    font-family: var(--font-topic);
+    font-size: 2.3rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+}
+
+.about-text {
+    max-width: 520px;
+    margin-right: auto;
+    font-size: 1rem;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    color: var(--text-bio);
+}
+
+.about-text p {
+    margin-bottom: 1.4rem;
+
+}
+
+#cabecalho{
+    font-size: 1rem;
+}
+
+/* .about-text p:first-child {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: #888;
+} */
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+

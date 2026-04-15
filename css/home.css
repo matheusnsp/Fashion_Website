@@ -1,0 +1,175 @@
+/* --- Layout Base --- */
+.section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Seção Home Imersiva --- */
+.bg-wrapper {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    z-index: -1;
+    background-color: #000; /* Fundo preto sólido que aparecerá sob o vídeo */
+}
+
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Aumentei a opacidade para o dourado aparecer mais */
+    
+    /*
+       contrast: faz o dourado saltar do fundo preto
+       saturate: intensifica o ouro
+       hue-rotate: move levemente as cores para o espectro do laranja/dourado
+    */
+    filter: contrast(130%) saturate(180%) hue-rotate(-5deg);
+}
+
+.overlay-vignette {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Mude o gradiente para usar a sua nova cor primária escura */
+    background: radial-gradient(circle, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 100%);
+    z-index: 2;
+}
+
+.home-content {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+/* Tipografia Brutalista/Chique */
+.brand-header .location {
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    font-weight: 100;
+}
+
+.brand-title {
+    font-family: var(--font-signature);
+    font-size: var(--fs-brand);
+    font-weight: 300;
+    line-height: 0.85;
+    margin-top: 1rem;
+}
+
+.last-name {
+    font-weight: 400; /* Contraste de peso na mesma palavra */
+}
+
+.home-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-brand,
+.footer-brand:visited,
+.footer-brand:hover,
+.footer-brand:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-tagline {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    max-width: 40%;
+}
+
+
+
+/* Ajuste no container principal do Hero para dividir em 2 */
+.home-content {
+    display: flex;
+    flex-direction: row; /* Coloca texto e foto lado a lado */
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1600px;
+    z-index: 3;
+}
+
+.home-text-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top:10vh;
+    height: 80vh; /* Mantém o alinhamento vertical */
+}
+
+/* Estilização da nova descrição abaixo do nome */
+.personal-description {
+    margin-top: 2rem;
+    border-left: 1px solid var(--accent-gold);
+    padding-left: 20px;
+    letter-spacing: 4px; /* Mais ar nas descrições */
+    text-transform: uppercase;
+}
+
+.role-title {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.role-subtitle {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--accent-gold);
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+.home-image-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; /* Isso empurra a foto para o chão */
+    height: 100vh; /* Força a altura total da tela */
+    position: relative;
+}
+
+.profile-photo {
+    height: 100vh; 
+    width: auto;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+}
+
+/* Ajuste para Mobile: Foto some ou fica pequena para não poluir */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-image-side {
+        display: none; /* Esconde a foto no celular para focar no texto */
+    }
+    .personal-description {
+        border-left: none;
+        padding-left: 0;
+    }
+}
