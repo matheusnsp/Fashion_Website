@@ -1,26 +1,39 @@
 @font-face {
     font-family: 'Tan Vivre Libre';
-    src: url('./fonts/TAN-VIVRE-LIBRE.otf') format('opentype');
+    src: url('./fonts/TAN-VIVRE-LIBRE.woff') format('woff');
+    src: url('./fonts/TAN-VIVRE-LIBRE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'Tan Garland';
-    src: url('./fonts/TAN-Garland.otf') format('opentype');
+    src: url('./fonts/TAN-Garland.woff') format('woff');
+    src: url('./fonts/TAN-Garland.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
 }
 @font-face {
     font-family: 'Gistesy';
-    src: url('./fonts/Gistesy.otf') format('opentype');
+    src: url('./fonts/Gistesy.woff') format('woff');
+    src: url('./fonts/Gistesy.woff2') format('woff2');
+
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Gentlemens Script';
-    src: url('./fonts/Gentlemens\ Script.otf') format('opentype');
+    src: url('./fonts/Gentlemens\ Script.woff') format('woff');
+    src: url('./fonts/Gentlemens\ Script.woff2') format('woff2');
+
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Ahiti';
-    src: url('./fonts/Athiti.otf') format('opentype');
+    src: url('./fonts/Athiti.woff') format('woff');
+    src: url('./fonts/Athiti.woff2') format('woff2');
+
     font-weight: normal;
     font-style: normal;
 }
