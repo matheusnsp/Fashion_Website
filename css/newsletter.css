@@ -1,0 +1,198 @@
+
+/* --- Seção Newsletter (Estilo Integrado) --- */
+.newsletter-section {
+    background: transparent;
+    padding: 8%; /* Aumentei o respiro vertical */
+    position: relative;
+    z-index: 5;
+}
+
+.newsletter-content{
+    width: 100%;
+}
+
+.newsletter-container {
+    background: rgba(255, 255, 255, 0.05); 
+    border: 0.5px solid var(--accent-gold);
+    backdrop-filter: blur(10px);
+    border-radius: 2px;
+
+    -webkit-backdrop-filter: blur(20px);
+    padding: 80px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.newsletter-subtitle {
+    color: var(--accent-gold); /* Detalhe em dourado */
+    font-family: var(--font-sans);
+    letter-spacing: 6px; /* Letra mais espaçada como ela sugeriu */
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.newsletter-title {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.newsletter-description {
+    color: whitesmoke; /* Cinza suave para não pesar */
+    font-family: var(--font-sans);
+    font-size: 1.7rem;
+    max-width: 450px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Formulário e Inputs */
+.newsletter-form {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    border-bottom: 1px solid rgba(215, 195, 160, 0.3); /* Linha em dourado sutil */
+    /* padding-bottom: 5px; */
+    transition: all 0.4s ease;
+}
+
+.input-group:focus-within {
+    border-bottom: 1px solid var(--accent-gold);
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    flex: 1;
+    padding: 10px 0;
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--text-primary); /* Texto que o usuário digita em branco */
+    outline: none;
+}
+
+/* Estilizando o Placeholder */
+.newsletter-form input::placeholder {
+    color: rgba(215, 195, 160, 0.4); /* Placeholder em dourado apagadinho */
+}
+
+.btn-newsletter {
+    background: transparent;
+    border: none;
+    color: var(--accent-gold); /* Botão em dourado */
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+
+    
+}
+
+.btn-newsletter:hover {
+    color: white;
+    transform: translateX(5px); /* Efeito de movimento na seta */
+}
+
+
+/* --- Seção Conecte-se (Redes Sociais) --- */
+.social-connect-section {
+    background: transparent;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.social-connect-container {
+    text-align: center;
+}
+
+.social-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.social-icons-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.social-link-item {
+    font-size: 3rem; /* Tamanho do ícone */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    text-decoration: none;
+}
+
+/* Cores Oficiais dos Ícones */
+.social-link-item.instagram {
+    color: #E1306C;
+}
+
+.social-link-item.youtube {
+    color: #FF0000;
+}
+
+.social-link-item.facebook {
+    color: #1877F2;
+}
+
+.social-link-item.whatsapp {
+    color: #25D366;
+}
+
+/* Efeito ao passar o mouse */
+.social-link-item:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .social-icons-wrapper {
+        gap: 30px;
+    }
+    .social-link-item {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .newsletter-container {
+        grid-template-columns: 1fr;
+        padding: 60px 40px;
+        gap: 50px;
+        text-align: center;
+    }
+    .newsletter-description {
+        margin: 0 auto;
+    }
+    .input-group {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

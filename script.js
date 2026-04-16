@@ -181,51 +181,58 @@ if (newsletterForm) {
         const formWindow = document.querySelector('.form-window');
         
         const resultadoHTML = `
-            <div id="capture-area" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); padding: 30px; border-radius: 4px; color: #fff;">
-                <span class="step-indicator">DIAGNÓSTICO CONCLUÍDO</span>
+            <div id="capture-area" style="background: transparent; padding: 20px; color: var(--text-primary);">
+                <span class="step-indicator" style="display: block; margin-bottom: 20px;">DIAGNÓSTICO CONCLUÍDO</span>
                 
-                <div class="main-style-card" style="background: rgba(255,255,255,0.05); padding: 25px; border-left: 3px solid var(--accent-gold); margin-bottom: 25px;">
-                    <p style="font-size: 0.7rem; letter-spacing: 2px; color: var(--accent-gold); margin-bottom: 5px;">SEU DNA VISUAL</p>
+                <div class="main-style-card" style="border: 1px solid  #C5934C; padding: 30px; margin-bottom: 30px; background: rgba(255, 255, 255, 0.03); position: relative;">
+                    <p style="font-family: var(--font-sans); font-size: 1rem; letter-spacing: 4px; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 15px;">Seu DNA Visual</p>
                     <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                        <h4 style="font-family: var(--font-serif); font-size: 2.2rem; text-transform: uppercase; margin: 0;">${dna.style}</h4>
-                        <span style="font-size: 1.2rem; color: var(--accent-gold);">${dna.percent}%</span>
+                        <h4 style="font-family: var(--font-serif); font-size: 3rem; text-transform: uppercase; margin: 0; line-height: 1; letter-spacing: 2px;">${dna.style}</h4>
+                        <span style="font-family: var(--font-title); font-size: 1.5rem; color: var(--accent-gold);">${dna.percent}%</span>
                     </div>
                 </div>
     
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px;">
-                    ${sec1 ? `<div style="border: 1px solid rgba(255,255,255,0.1); padding: 15px; background: rgba(0,0,0,0.2);">
-                        <p style="font-size: 0.6rem; color: var(--accent-gold); margin-bottom: 5px;">SECUNDÁRIO I</p>
-                        <p style="margin: 0; font-size: 0.9rem; text-transform: uppercase;">${sec1.style} (${sec1.percent}%)</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px;">
+                    ${sec1 ? `
+                    <div style="border: 1px solid #C5934C; padding: 20px; background: rgba(255,255,255,0.02);">
+                        <p style="font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 2px; color: var(--accent-gold); margin-bottom: 8px; text-transform: uppercase;">Secundário I</p>
+                        <p style="margin: 0; font-family: var(--font-serif); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">${sec1.style}</p>
                     </div>` : ''}
-                    ${sec2 ? `<div style="border: 1px solid rgba(255,255,255,0.1); padding: 15px; background: rgba(0,0,0,0.2);">
-                        <p style="font-size: 0.6rem; color: var(--accent-gold); margin-bottom: 5px;">SECUNDÁRIO II</p>
-                        <p style="margin: 0; font-size: 0.9rem; text-transform: uppercase;">${sec2.style} (${sec2.percent}%)</p>
+                    
+                    ${sec2 ? `
+                    <div style="border: 1px solid  #C5934C; padding: 20px; background: rgba(255,255,255,0.02);">
+                        <p style="font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 2px; color: var(--accent-gold); margin-bottom: 8px; text-transform: uppercase;">Secundário II</p>
+                        <p style="margin: 0; font-family: var(--font-serif); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">${sec2.style}</p>
                     </div>` : ''}
                 </div>
     
-                <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 12px; padding: 0 5px;">
                     ${todos.map(item => `
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 0.7rem; width: 85px; text-transform: uppercase; opacity: 0.6;">${item.style}</span>
-                            <div style="flex-grow: 1; height: 2px; background: rgba(255,255,255,0.1);">
-                                <div style="width: ${item.percent}%; height: 100%; background: ${item.style === dna.style ? 'var(--accent-gold)' : 'white'}; opacity: 0.5;"></div>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <span style="font-family: var(--font-sans); font-size: 0.65rem; width: 90px; text-transform: uppercase; opacity: 0.5; letter-spacing: 1px;">${item.style}</span>
+                            <div style="flex-grow: 1; height: 1px; background: rgba(255,255,255,0.1); position: relative;">
+                                <div style="width: ${item.percent}%; height: 1px; background: ${item.style === dna.style ? 'var(--accent-gold)' : 'white'}; opacity: ${item.style === dna.style ? '1' : '0.4'}; transition: width 1s ease-out;"></div>
                             </div>
-                            <span style="font-size: 0.7rem; width: 30px; text-align: right;">${item.percent}%</span>
+                            <span style="font-family: var(--font-sans); font-size: 0.65rem; width: 35px; text-align: right; color: ${item.style === dna.style ? 'var(--accent-gold)' : 'inherit'};">${item.percent}%</span>
                         </div>
                     `).join('')}
                 </div>
             </div>
     
-            <div class="result-actions-container" style="display: flex; gap: 10px; margin-top: 20px;">
-                <button onclick="window.location.reload()" class="btn-next" style="flex: 1;">REFAZER DIAGNÓSTICO —</button>
-                <button onclick="window.baixarDossie()" class="btn-download-icon" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; cursor: pointer;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <div class="result-actions-container">
+                <button onclick="window.location.reload()" class="btn-next btn-refazer-flex">Refazer Diagnóstico —</button>
+                <button onclick="window.baixarDossie()" class="btn-download-icon" title="Baixar meu DNA Visual">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
                 </button>
             </div>
         `;
     
         formWindow.innerHTML = resultadoHTML;
-        gsap.from(".form-window > *", { opacity: 0, y: 20, stagger: 0.1, duration: 0.8 });
+        gsap.from(".form-window > *", { opacity: 0, y: 20, stagger: 0.1, duration: 0.8, ease: "power4.out" });
     }
     
     // Função global para o html2canvas

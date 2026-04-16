@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Tan Vivre Libre';
-    src: url('./fonts/TAN-VIVRE-LIBRE.woff2') format('woff2'),
-         url('./fonts/TAN-VIVRE-LIBRE.woff') format('woff');
+    src: url('/fonts/TAN-VIVRE-LIBRE.woff2') format('woff2'),
+         url('/fonts/TAN-VIVRE-LIBRE.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -13,7 +13,6 @@
          url('./fonts/TAN-Garland.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -22,7 +21,6 @@
          url('./fonts/Gistesy.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -31,7 +29,6 @@
          url('./fonts/Gentlemens-Script.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
@@ -40,7 +37,6 @@
          url('./fonts/Athiti.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 /* --- Reset & Variáveis de Luxo --- */
@@ -52,10 +48,11 @@
     /* Fontes */
     --font-topic: 'Tan Vivre Libre', serif;
     --font-title: 'Tan Garland', serif;
-    --font-subtitle: 'Gentlemens Script', cursive;
+    /* --font-subtitle: 'Gentlemens Script', cursive; */
     --font-signature: 'Gistesy', cursive;
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Poppins', serif;
+    
     
     /* Tipografia Responsiva Dinâmica */
     --fs-brand: clamp(2.5rem, 8vw, 10rem); /* Título Principal Gigante */
@@ -89,631 +86,22 @@ body {
 
 
 
-.services-section { padding: 100px 5%; }
 
-.section-header { text-align: center; margin-bottom: 60px; }
 
-.serv-title {
-    font-family: var(--font-topic);
-    font-size: 2.3rem;
-    color: var(--bg-biografia);
-    text-transform: uppercase;
-}
 
-.serv-subtitle {
-    font-family: var(--font-subtitle);
-    font-size: 2.5rem;
-    font-weight: 100;
-    color: var(--accent-gold);
-}
 
-/* --- Layout de Grid Editorial --- */
-.service-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 0;
-    border-bottom: 1px solid rgba(197, 164, 126, 0.2);
-    gap: 60px; /* Espaço entre texto e fotos */
-    width: 100%; /* Ocupa a largura total para permitir o alinhamento lado a lado */
-}
 
-/* Bloco de Texto */
-.service-info {
-    flex: 1;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  
-}
 
-.service-item h3 {
-    font-family: var(--font-subtitle);
-    font-size: 3.5rem; /* Aumentei um pouco para destacar */
-    color: var(--accent-gold);
-    margin-bottom: 20px;
-}
 
-.service-info p { 
-    font-family: var(--font-sans);
-    font-size: 1.3rem; /* Ajustado para melhor leitura */
-    line-height: 1.6;
-    font-weight: 300;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
 
-/* --- O Orçamento (Alinhado à esquerda dentro do bloco de texto) --- */
-.service-info .orcamento {
-    display: flex;
-    justify-content: center; /* Centraliza o botão horizontalmente */
-    width: 100%;
-    margin-top: 40px; /* Espaço entre o parágrafo e o botão */
-}
 
-/* Ajuste no botão para garantir que ele não estique */
-.orcamento a {
-    display: inline-block;
-    width: fit-content; /* Garante que o botão tenha apenas o tamanho do texto interno */
-    padding: 20px 40px;
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
-    text-decoration: none;
-    letter-spacing: 3px;
-    transition: all 0.4s ease;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
 
-.orcamento a:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
-}
 
-/* --- Galeria de Fotos (Lado Direito) --- */
-.service-gallery {
-    flex: 1.2; /* Dá um pouco mais de destaque para as fotos */
-    max-width: 650px;
-}
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas em cima */
-    grid-template-rows: 250px 300px; /* Alturas das linhas */
-    gap: 15px;
-}
 
-.gallery-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 1px solid rgba(197, 164, 126, 0.3); /* Moldura sutil individual */
-}
 
-.img-sp3 {
-    grid-column: span 2; /* Foto de baixo ocupa as duas colunas */
-}
 
-/* --- Responsivo para Celular --- */
-@media (max-width: 1024px) {
-    .service-item {
-        flex-direction: column; /* Empilha no mobile */
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .service-info .orcamento {
-        justify-content: center; /* Centraliza o botão no celular */
-    }
 
-    .gallery-grid {
-        grid-template-rows: 200px 250px;}
-    }
-
-
-
-
-    /* Ajuste para as listas dentro dos service-items */
-.consultoria-lista {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 30px 0;
-    text-align: center; /* Centraliza os tópicos para combinar com o botão */
-}
-
-.consultoria-lista li {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-
-/* Moldura para imagem única (Seguindo o padrão das galerias) */
-.service-single-img {
-    flex: 1;
-    max-width: 550px;
-
-    border: 1px solid var(--accent-gold);
-    border: 1px solid rgba(197, 164, 126, 0.3); /* Moldura sutil individual */
-}
-
-.service-single-img img {
-    width: 100%;
-    height: 600px; /* Altura imponente para consultoria */
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.8); /* Mantendo o tom mais escuro que você pediu */
-}
-
-/* Garante a centralização do botão em todos os service-infos */
-.service-info .orcamento {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-/* Responsividade */
-@media (max-width: 1024px) {
-    .service-single-img {
-        max-width: 100%;
-        margin-top: 30px;
-    }
-    
-    .service-single-img img {
-        height: 400px;
-    }
-}
-
-
-/* Consultoria Section */
-.consultoria-main {
-    margin-top: 80px;
-
-    padding: 60px;
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(197, 164, 126, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 2px;
-
-    -webkit-backdrop-filter: blur(20px);
-    
-    gap: 100px;
-    align-items: center;
-}
-.consultoria-header { text-align: center; margin-bottom: 50px; }
-.method-tag { color: var(--accent-gold); font-size: 0.7rem; font-weight: bold; border: 1px solid; display: inline-block; padding: 4px 12px; margin: 15px 0; }
-
-
-
-.consultoria-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 40px; 
-    justify-content: center; /* Centraliza os itens no grid */
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.consultoria-card {
-    text-align: center; /* Centraliza o texto do card */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Garante que os elementos flex fiquem no centro */
-}
-
-.consultoria-card h4 { 
-    font-family: var(--font-serif); 
-    font-size: 1.5rem; 
-    color: var(--accent-gold); 
-    margin-bottom: 20px;
-}
-
-.consultoria-card ul { 
-    list-style: none; 
-    padding: 0; 
-    text-align: center; /* Centraliza o texto da lista */
-}
-
-.consultoria-card li { 
-    color: var(--text-muted); 
-    margin-bottom: 10px; 
-    font-size: 0.9rem; 
-    position: relative;
-    /* Removemos o padding-left fixo para centralizar melhor */
-    display: block; 
-}
-
-.consultoria-main .orcamento {
-    text-align: center;
-    margin-top: 40px; /* Adiciona um espaço entre o grid e o botão */
-}
-
-@media (max-width: 768px) {
-    .consultoria-grid { grid-template-columns: 1fr; }
-    .service-item { flex-direction: column; text-align: center; }
-    .service-item p { max-width: 100%; margin-bottom: 15px; }
-}
-
-
-
-
-
-
-
-/* --- SEÇÃO PRINCIPAL --- */
-.quiz-section {
-    padding: 100px 5% 10px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.quiz-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    min-height: 700px; /* Garante que o container não encolha */
-}
-
-/* --- LADO ESQUERDO: TEXTO --- */
-.quiz-content {
-    flex: 1;
-    max-width: 500px;
-    align-self: flex-start; 
-    margin-top: 50px;
-}
-
-.quiz-subtitle {
-    letter-spacing: 5px;
-    font-size: 1rem;
-    color: var(--accent-gold);
-    display: block;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.quiz-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 10rem);
-    font-weight: 500;
-    line-height: 0.85;
-    margin: 1.5rem 0;
-    text-transform: uppercase;
-}
-
-.quiz-description {
-    font-family: var(--font-sans);
-    font-size: 1.7rem;
-    line-height: 1.8;
-    max-width: 450px;
-    margin-bottom: 40px;
-    font-weight: 300;
-    color: var(--text-muted);
-}
-
-.btn-quiz {
-    display: inline-block;
-    padding: 20px 40px;
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
-    text-decoration: none;
-    letter-spacing: 3px;
-    transition: all 0.4s ease;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.btn-quiz:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
-}
-
-/* --- LADO DIREITO: FORMULÁRIO --- */
-.quiz-aside-form {
-    flex: 1;
-    max-width: 600px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateX(30px);
-    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-    display: block; 
-}
-
-.quiz-aside-form.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-
-.form-window {
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(197, 164, 126, 0.2);
-    padding: 45px;
-    backdrop-filter: blur(10px);
-    border-radius: 2px;
-    
-    /* ESTRUTURA FIXA */
-    width: 100%;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Alinha o conteúdo no topo */
-}
-
-/* O formulário precisa ocupar o espaço total para empurrar o rodapé */
-#style-form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Controle das Etapas */
-.form-step {
-    display: none;
-    flex-direction: column;
-
-}
-
-.form-step.active {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    /* Adicionamos uma transição suave para evitar o "salto" brusco */
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.step-indicator {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--accent-gold);
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-.form-window h3 {
-    font-family: var(--font-serif);
-    color: #fff;
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    line-height: 1.3;
-}
-
-.step-instruction {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 25px;
-}
-
-/* --- GRID DE CHECKBOXES --- */
-.options-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
-    min-height: 280px; /* Garante que o espaço das opções seja sempre igual */
-    align-content: start;
-}
-
-.option-card {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #fff;
-    font-size: 0.85rem;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.option-card:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.option-card:has(input:checked) {
-    border-color: var(--accent-gold);
-    background: rgba(197, 164, 126, 0.1);
-}
-
-.option-card input[type="checkbox"] {
-    accent-color: var(--accent-gold);
-}
-
-/* --- BOTÃO PRÓXIMO (FIXADO NO FUNDO) --- */
-.form-footer {
-    margin-top: auto; /* Empurra o botão para a extremidade inferior */
-    padding-top: 10px;
-}
-
-.btn-next {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 18px 30px;
-    width: 100%;
-    cursor: pointer;
-    letter-spacing: 2px;
-    transition: 0.4s;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.btn-next:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* --- RESULTADO (DOSSIÊ) --- */
-.quiz-result-view {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Ocupa todo o bloco fixo */
-}
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 1024px) {
-    .quiz-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 50px;
-    }
-    .quiz-content { max-width: 100%; }
-    .quiz-description { margin: 0 auto 40px; }
-}
-
-@media (max-width: 600px) {
-    .options-grid { grid-template-columns: 1fr; }
-    .form-window { padding: 30px 20px; min-height: 850px; }
-}
-
-
-
-
-
-
-
-
-
-
-/* --- Seção Newsletter (Estilo Integrado) --- */
-.newsletter-section {
-    background: transparent;
-    padding: 120px 8%; /* Aumentei o respiro vertical */
-    position: relative;
-    z-index: 5;
-    height: 100vh;
-}
-
-.newsletter-container {
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(197, 164, 126, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 2px;
-
-    -webkit-backdrop-filter: blur(20px);
-    padding: 80px 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
-}
-
-.newsletter-subtitle {
-    color: var(--accent-gold); /* Detalhe em dourado */
-    font-family: var(--font-sans);
-    letter-spacing: 6px; /* Letra mais espaçada como ela sugeriu */
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.newsletter-title {
-    color: var(--text-primary); /* Volta para o branco pérola */
-    font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 5vw, 3rem);
-    line-height: 1;
-    margin-bottom: 25px;
-}
-
-.newsletter-description {
-    color: rgba(255, 255, 255, 0.5); /* Cinza suave para não pesar */
-    font-size: 1rem;
-    max-width: 450px;
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-/* Formulário e Inputs */
-.newsletter-form {
-    width: 100%;
-}
-
-.input-group {
-    display: flex;
-    border-bottom: 1px solid rgba(215, 195, 160, 0.3); /* Linha em dourado sutil */
-    /* padding-bottom: 5px; */
-    transition: all 0.4s ease;
-}
-
-.input-group:focus-within {
-    border-bottom: 1px solid var(--accent-gold);
-}
-
-.newsletter-form input {
-    background: transparent;
-    border: none;
-    flex: 1;
-    padding: 10px 0;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    color: var(--text-primary); /* Texto que o usuário digita em branco */
-    outline: none;
-}
-
-/* Estilizando o Placeholder */
-.newsletter-form input::placeholder {
-    color: rgba(215, 195, 160, 0.4); /* Placeholder em dourado apagadinho */
-}
-
-.btn-newsletter {
-    background: transparent;
-    border: none;
-    color: var(--accent-gold); /* Botão em dourado */
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
-    font-weight: 600;
-}
-
-.btn-newsletter:hover {
-    color: white;
-    transform: translateX(5px); /* Efeito de movimento na seta */
-}
-
-/* Responsivo */
-@media (max-width: 1024px) {
-    .newsletter-container {
-        grid-template-columns: 1fr;
-        padding: 60px 40px;
-        gap: 50px;
-        text-align: center;
-    }
-    .newsletter-description {
-        margin: 0 auto;
-    }
-    .input-group {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
 
 
 .site-footer {
@@ -721,15 +109,14 @@ body {
     color: var(--text-primary);
     padding: 20px 5%; /* Mais espaço vertical */
     border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil */
+    display: flex;
+    justify-content: center; /* Empurra os dois blocos para as pontas */
+    align-items: center; /* Alinha tudo verticalmente pelo centro */
 }
 
 .footer-container {
     max-width: 1400px; /* Maior largura total */
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between; /* Empurra os dois blocos para as pontas */
-    align-items: center; /* Alinha tudo verticalmente pelo centro */
-    gap: 100px;
 }
 
 /* Lado Esquerdo: Identidade */
@@ -742,6 +129,7 @@ body {
     font-family: var(--font-signature);
     font-size: 4rem;
     font-weight: 300; /* Peso leve para POGGIAN */
+    text-align: center;
 }
 
 
@@ -756,65 +144,6 @@ body {
 .footer-details .divider {
     color: var(--accent-gold); /* Dourado na barra divisória */
     opacity: 0.7;
-}
-
-/* Lado Direito: Conexão */
-.footer-social-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza a label e o grupo de links */
-    text-align: center;
-}
-
-.footer-label {
-    font-size: 0.7rem;
-    color: var(--accent-gold);
-    letter-spacing: 6px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    /* Remove o espaço extra da última letra para centralizar no pixel */
-    margin-right: -6px; 
-}
-
-.footer-social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espaçamento entre os "blocos" de cada rede */
-}
-
-/* Efeito idêntico ao Header */
-.social-link {
-    text-decoration: none;
-    color: var(--text-primary);
-    font-size: 0.8rem;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    display: inline-block;
-    width: 150px;
-    text-align: center;
-    transition: var(--transition-fluid);
-    position: relative;
-    padding-bottom: 8px; /* Espaço para a linha */
-}
-
-.social-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0; /* Começa da esquerda igual ao header */
-    background-color: var(--accent-gold);
-    transition: width 0.3s ease;
-}
-
-.social-link:hover::after {
-    width: 100%; /* Preenche tudo */
-}
-
-.social-link:hover {
-    color: var(--accent-gold);
 }
 
 /* Responsividade para Mobile */

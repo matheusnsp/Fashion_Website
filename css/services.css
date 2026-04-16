@@ -1,0 +1,151 @@
+.services-section { padding: 100px 5%; }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+
+.service-title {
+    font-family: var(--font-sans);
+    font-size: 4rem;
+    color: var(--bg-biografia);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.service-subtitle {
+    font-family: var(--font-topic);
+    font-size: 3rem;
+    color: var(--accent-gold);
+}
+
+/* --- Layout de Grid Editorial --- */
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(197, 164, 126, 0.2);
+    gap: 60px; /* Espaço entre texto e fotos */
+    width: 100%; /* Ocupa a largura total para permitir o alinhamento lado a lado */
+}
+
+/* Bloco de Texto */
+.service-info {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+
+.service-info h3 {
+    font-family: var(--font-topic);
+    font-size: 4rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+
+.service-info p { 
+    font-family: var(--font-serif);
+    font-size: 2rem; /* Ajustado para melhor leitura */
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+/* --- O Orçamento (Alinhado à esquerda dentro do bloco de texto) --- */
+.service-info .orcamento {
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    width: 100%;
+    margin-top: 40px; /* Espaço entre o parágrafo e o botão */
+}
+
+/* Ajuste no botão para garantir que ele não estique */
+.orcamento a {
+    display: inline-block;
+    width: fit-content; /* Garante que o botão tenha apenas o tamanho do texto interno */
+    padding: 20px 40px;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    text-decoration: none;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.orcamento a:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+
+
+    /* Ajuste para as listas dentro dos service-items */
+.consultoria-lista {
+    list-style:inside;
+    padding: 0;
+
+}
+
+.consultoria-lista li {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-muted);
+
+    letter-spacing: 1px;
+
+}
+
+
+
+/* Moldura para imagem única (Seguindo o padrão das galerias) */
+.service-single-img {
+    flex: 1;
+    /* max-width: 550px; */
+
+}
+.service-single-img img {
+    width: 70%;
+    height: auto; 
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* Isso centraliza horizontalmente elementos em bloco */
+    filter: brightness(0.8);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .consultoria-grid { grid-template-columns: 1fr; }
+    .service-item { flex-direction: column; text-align: center; }
+    .service-item p { max-width: 100%; margin-bottom: 15px; }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .service-single-img {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+    
+    .service-single-img img {
+        height: 400px;
+    }
+    .service-item {
+        flex-direction: column; /* Empilha no mobile */
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .service-info .orcamento {
+        justify-content: center; /* Centraliza o botão no celular */
+    }
+
+    .gallery-grid {
+        grid-template-rows: 200px 250px;
+    }
+}

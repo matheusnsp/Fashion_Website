@@ -7,15 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,700&family=Inter:wght@100;300;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/newsletter.css">
 </head>
 <body>
 
     <div class="bg-wrapper">
-        
+
         <video class="video" autoplay muted loop playsinline id="video-bg">
             <source src="video.mp4" type="video/mp4">
         </video>                
@@ -25,14 +29,13 @@
     <header class="main-header">
         <nav class="nav-menu">
             <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">Biografia</a>
+            <a href="#about" class="nav-link">Expertise</a>
             <a href ="#services" class="nav-link">Serviços</a>
             <a href="#style-quiz" class="nav-link">Diagnóstico</a>
             <a href="#newsletter" class="nav-link">Newsletter</a>
             <span class="nav-link disabled">Provador Virtual <small>(Em breve)</small></span>
         </nav>
     </header>
-
 
     <main id="main-container">
         
@@ -43,9 +46,7 @@
                         <h1 class="brand-title">Catia Poggian</h1>
                         
                         <div class="personal-description">
-                            <p class="role-title">ESTRATEGISTA DE IMAGEM & POSICIONAMENTO</p>
-                            <p class="role-subtitle">CURADORIA DE ESTILO PROFISSIONAL</p>
-                        
+                            <p class="role-title">Mentora e Consultora de Imagem</p>
                         </div>
 
                         
@@ -56,8 +57,7 @@
                         <a href="https://wa.me/1305988998">Entre em contato</a>
                     </div>
                     <div class="home-footer">
-                        <p class="home-tagline">A <span style="color: #C5934C">autoconfiança</span> real nasce da coerência entre a sua <span style="color: #C5934C">imagem</span> e a sua <span style="color: #C5934C">identidade.</span></p>
-
+                        <p class="home-tagline">A <strong><span style="color: #C5934C">autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">identidade</span></strong> e a sua <strong><span style="color: #C5934C">imagem.</span></strong></p>
                     </div>
                 </div>
         
@@ -67,30 +67,27 @@
             </div>
         </section>
 
-      
-
-
         <section class="about-section" id="about">
             <div class="about-container">
                 <div class="about-content">
-                    <span class="about-subtitle">EXPERTISE & IDENTIDADE</span>
+                    <strong><span class="about-subtitle">Expertise & <br> Background</span></strong>
                     <!-- <h2 class="about-title">CATIA <br> POGGIAN</h2> -->
                      <h2 class="about-title">Catia Poggian</span></h2>
                 </div>
         
                 <div class="about-text">
-                    <p>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.
-                    <p>Fashion Designer pelo MoMa (Nova Iorque), com especializações na Passaporte Fashionista Academy e no Estúdio Immagine,
+                    <strong><p>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
+                    <strong><br>Fashion Designer pelo MoMa (Nova Iorque), com especializações na Passaporte Fashionista Academy e no Estúdio Immagine,
                     associada da AICI (Associação Internacional de Consultores de Imagem), palestrante e criadora do 
-                        <strong><span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</strong></span>. </p>
+                        <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span></strong>. </p>
                 </div>
         </section>
 
         <section class="services-section" id="services">
             <div class="container">
                 <header class="section-header">
-                    <span class="serv-title">CURADORIA EXCLUSIVA</span>
-                    <h2 class="serv-subtitle">Serviços Personalizados</h2>
+                    <span class="service-title">Curadoria Exclusiva</span>
+                    <h2 class="service-subtitle">Serviços Personalizados</h2>
                 </header>
         
                 <div class="services-wrapper">
@@ -105,24 +102,16 @@
                                 </div>
                             </div>
                         
-                            <div class="service-gallery">
-                                <div class="gallery-grid">
-                                    <img src="./images/sp1.png" alt="Styling 1" class="img-sp1">
-                                    <img src="./images/sp2.png" alt="Styling 2" class="img-sp2">
-                                    <img src="./images/sp3.png" alt="Styling 3" class="img-sp3">
-                                </div>
+                            <div class="service-single-img">
+                                <img src="./images/sp.png" alt="Assessoria 1" class="img-sp1">
                             </div>
                         </div>
         
                         <div class="service-item">
-
-                            <div class="service-gallery">
-                                <div class="gallery-grid">
-                                    <img src="./images/spas1.png" alt="Assessoria 1" class="img-sp1">
-                                    <img src="./images/spas2.png" alt="Assessoria 2" class="img-sp2">
-                                    <img src="./images/spas3.png" alt="Assessoria 3" class="img-sp3">
+                                <div class="service-single-img">
+                                    <img src="./images/spas.png" alt="Assessoria 1" class="img-sp1">
                                 </div>
-                            </div>
+
 
                             <div class="service-info">
                                 <h3>Styling Pontual + Assessoria no Set</h3>
@@ -156,10 +145,12 @@
                             </div>
                         </div>
                         
-                        <div class="service-item layout-inverso">
+                        <div class="service-item">
                             <div class="service-single-img">
                                 <img src="./images/online.png" alt="Consultoria Online">
                             </div>
+
+
                             <div class="service-info">
                                 <h3>Consultoria Online</h3>
                                 <p>A mesma profundidade da consultoria presencial, adaptada para a flexibilidade do ambiente digital.</p>
@@ -174,8 +165,20 @@
                                     <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Online.">Pedir Orçamento</a>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="service-item">
+                            <div class="service-info">
+                                <h3>Palestra</h3>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                                
+                                <div class="orcamento">
+                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Palestra." target="_blank" rel="noopener">Pedir Orçamento</a>                                </div>
+                            </div>
                         
-                            
+                            <div class="service-single-img">
+                                <img src="./images/palestra.png" alt="Assessoria 1" class="img-sp1">
+                            </div>
                         </div>
                     </div>
         
@@ -188,7 +191,7 @@
                 
                 <div class="quiz-content">
                     <span class="quiz-subtitle">AUTODESCOBERTA</span>
-                    <h2 class="quiz-title">ANÁLISE DE <br> IMAGEM E ESTILO</h2>
+                    <h2 class="quiz-title">Análise de <br> Identidade Visual</h2>
                     <p class="quiz-description">
                         Um diagnóstico exclusivo para identificar o seu estilo universal, e como você pode revelar a sua identidade com mais clareza e autenticidade.
                     </p>
@@ -329,8 +332,7 @@
             <div class="newsletter-container">
                 <div class="newsletter-content">
                     <span class="newsletter-subtitle">NEWSLETTER</span>
-                    <h2 class="newsletter-title">Entre para o círculo de mulheres que dominam sua imagem e presença</h2>
-                    <p class="newsletter-description">Receba insights estratégicos sobre imagem, posicionamento e sofisticação, diretamente no seu e-mail.</p>
+                    <h2 class="newsletter-title">Receba insights estratégicos sobre <span style="color: #C5934C">imagem</span>, <span style="color: #C5934C">posicionamento</span> e <span style="color: #C5934C">estilo</span>, diretamente no seu e-mail.</h2>
                 </div>
                 
                 <form class="newsletter-form" id="newsletter-form">
@@ -342,11 +344,27 @@
                     </div>
                 </form>
             </div>
+            <div class="social-connect-container">
+                <span class="social-label">CONECTE-SE NAS REDES</span>
+                <div class="social-icons-wrapper">
+                    <a href="https://www.instagram.com/catiapoggian" target="_blank" class="social-link-item instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@catiapoggian" target="_blank" class="social-link-item youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://wa.me/13059889985" target="_blank" class="social-link-item whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <!-- <a href="https://www.facebook.com/catia.poggian" target="_blank" class="social-link-item facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a> -->
+                </div>
+            </div>
         </section>
 
-        <!-- <section class="final-cta">
-            <img src="./images/cta.png" alt="Catia Poggian" class="final-cta-image">
-        </section> -->
+        
+
     </main>
 
     <footer class="site-footer">
@@ -356,15 +374,6 @@
                 <p class="footer-details">
                     © 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI
                 </p>
-            </div>
-    
-            <div class="footer-social-wrapper">
-                <span class="footer-label">CONECTE-SE</span>
-                <div class="footer-social-links">
-                    <a href="https://www.instagram.com/catiapoggian" target="_blank" class="social-link">INSTAGRAM</a>
-                    <a href="https://wa.me/13059889985" target="_blank" class="social-link">WHATSAPP</a> 
-                    <a href="https://www.youtube.com/@catiapoggian" target="_blank" class="social-link">YOUTUBE</a>
-                </div>
             </div>
         </div>
     </footer>
