@@ -89,10 +89,11 @@
 }
 
 .home-tagline {
-    font-size: 1rem;
+    font-family: var(--font-title);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     letter-spacing: 3px;
     text-transform: uppercase;
-    max-width: 40%;
+    max-width: 80%;
 }
 
 
@@ -115,6 +116,11 @@
     justify-content: space-between;
     margin-top:10vh;
     height: 80vh; /* Mantém o alinhamento vertical */
+}
+
+.home-text-side .orcamento {
+    text-align: center;
+
 }
 
 /* Estilização da nova descrição abaixo do nome */

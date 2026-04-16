@@ -29,7 +29,6 @@
 :root {
     --primary-dark: #121110;
     --text-primary: #F5F2ED;
-    /* --accent-gold: #cdc3b8;  */
     --accent-gold: #C5934C; 
     
     /* Fontes */
@@ -38,7 +37,7 @@
     --font-subtitle: 'Gentlemens Script', cursive;
     --font-signature: 'Gistesy', cursive;
     --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Ahiti', sans-serif;
+    --font-sans: 'Poppins', serif;
     
     /* Tipografia Responsiva Dinâmica */
     --fs-brand: clamp(2.5rem, 8vw, 10rem); /* Título Principal Gigante */
@@ -73,35 +72,71 @@ body {
 
 
 .services-section { padding: 100px 5%; }
-.section-header { text-align: center; margin-bottom: 40px; }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+
 .serv-title {
     font-family: var(--font-topic);
     font-size: 2.3rem;
     color: var(--bg-biografia);
     text-transform: uppercase;
 }
-.serv-subtitle,
-.service-item h3 {
+
+.serv-subtitle {
     font-family: var(--font-subtitle);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 100;
     color: var(--accent-gold);
-
 }
 
-/* Styling Items */
+/* --- Layout de Grid Editorial --- */
 .service-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    padding: 80px 0;
     border-bottom: 1px solid rgba(197, 164, 126, 0.2);
+    gap: 60px; /* Espaço entre texto e fotos */
+    width: 100%; /* Ocupa a largura total para permitir o alinhamento lado a lado */
 }
 
-.service-item .service-info p { color: var(--text-muted); max-width: 60%; font-size: 1.2rem; }
+/* Bloco de Texto */
+.service-info {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
 
-.orcamento a{
+.service-item h3 {
+    font-family: var(--font-subtitle);
+    font-size: 3.5rem; /* Aumentei um pouco para destacar */
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+.service-info p { 
+    font-family: var(--font-sans);
+    font-size: 1.3rem; /* Ajustado para melhor leitura */
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* --- O Orçamento (Alinhado à esquerda dentro do bloco de texto) --- */
+.service-info .orcamento {
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    width: 100%;
+    margin-top: 40px; /* Espaço entre o parágrafo e o botão */
+}
+
+/* Ajuste no botão para garantir que ele não estique */
+.orcamento a {
     display: inline-block;
+    width: fit-content; /* Garante que o botão tenha apenas o tamanho do texto interno */
     padding: 20px 40px;
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
@@ -110,12 +145,109 @@ body {
     transition: all 0.4s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
-    text-align: center;
+    font-weight: bold;
 }
 
-.orcamento a:hover{
+.orcamento a:hover {
     background-color: var(--accent-gold);
     color: var(--primary-dark);
+}
+
+/* --- Galeria de Fotos (Lado Direito) --- */
+.service-gallery {
+    flex: 1.2; /* Dá um pouco mais de destaque para as fotos */
+    max-width: 650px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas em cima */
+    grid-template-rows: 250px 300px; /* Alturas das linhas */
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(197, 164, 126, 0.3); /* Moldura sutil individual */
+}
+
+.img-sp3 {
+    grid-column: span 2; /* Foto de baixo ocupa as duas colunas */
+}
+
+/* --- Responsivo para Celular --- */
+@media (max-width: 1024px) {
+    .service-item {
+        flex-direction: column; /* Empilha no mobile */
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .service-info .orcamento {
+        justify-content: center; /* Centraliza o botão no celular */
+    }
+
+    .gallery-grid {
+        grid-template-rows: 200px 250px;}
+    }
+
+
+
+
+    /* Ajuste para as listas dentro dos service-items */
+.consultoria-lista {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px 0;
+    text-align: center; /* Centraliza os tópicos para combinar com o botão */
+}
+
+.consultoria-lista li {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Moldura para imagem única (Seguindo o padrão das galerias) */
+.service-single-img {
+    flex: 1;
+    max-width: 550px;
+
+    border: 1px solid var(--accent-gold);
+    border: 1px solid rgba(197, 164, 126, 0.3); /* Moldura sutil individual */
+}
+
+.service-single-img img {
+    width: 100%;
+    height: 600px; /* Altura imponente para consultoria */
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.8); /* Mantendo o tom mais escuro que você pediu */
+}
+
+/* Garante a centralização do botão em todos os service-infos */
+.service-info .orcamento {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .service-single-img {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+    
+    .service-single-img img {
+        height: 400px;
+    }
 }
 
 
@@ -196,11 +328,11 @@ body {
 
 /* --- SEÇÃO PRINCIPAL --- */
 .quiz-section {
-    padding: 100px 5% 150px 5%;
+    padding: 100px 5% 10px 5%;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .quiz-container {
@@ -229,6 +361,7 @@ body {
     display: block;
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .quiz-title {
@@ -241,12 +374,13 @@ body {
 }
 
 .quiz-description {
-    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-size: 1.7rem;
     line-height: 1.8;
     max-width: 450px;
     margin-bottom: 40px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-muted);
 }
 
 .btn-quiz {
@@ -259,6 +393,7 @@ body {
     transition: all 0.4s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .btn-quiz:hover {
@@ -294,7 +429,7 @@ body {
     
     /* ESTRUTURA FIXA */
     width: 100%;
-    min-height: 650px;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Alinha o conteúdo no topo */
@@ -449,6 +584,7 @@ body {
     padding: 120px 8%; /* Aumentei o respiro vertical */
     position: relative;
     z-index: 5;
+    height: 100vh;
 }
 
 .newsletter-container {
@@ -560,52 +696,6 @@ body {
         margin: 0 auto;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .site-footer {
@@ -834,30 +924,17 @@ body {
 
 /* --- FINAL CTA (VERSÃO STATEMENT) --- */
 .final-cta {
-    padding: 220px 8%;
-    text-align: center;
-    position: relative;
-    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Garante estabilidade no layout */
+    background-color: var(--primary-dark); /* Fundo caso a imagem demore a carregar */
 }
 
-
-
-/* TÍTULO PRINCIPAL */
-.final-cta h2 {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 5rem);
-    line-height: 1.1;
-    letter-spacing: -1px;
-    position: relative;
-    display: inline-block;
-    padding: 0 40px;
-}
-
-/* TEXTO ABAIXO */
-.final-cta p {
-    margin-top: 30px;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
+.final-cta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    display: block; /* Remove espaços vazios embaixo da imagem */
 }

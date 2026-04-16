@@ -1,7 +1,7 @@
 /* --- Header & Navigation --- */
 .main-header {
     position: fixed;
-    top: 5px; /* afasta do topo pra dar efeito flutuante */
+    top: 15px; /* afasta do topo pra dar efeito flutuante */
     left: 0;
     width: 100%;
     display: flex;
@@ -22,7 +22,7 @@
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(197, 164, 126, 0.2);
+    border: 0.5px solid var(--accent-gold);
 
 }
 
@@ -36,6 +36,7 @@
     opacity: 0.7;
     transition: var(--transition-fluid);
     position: relative;
+    font-weight: bold;
 }
 
 .nav-link:hover {

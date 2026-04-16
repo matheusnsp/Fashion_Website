@@ -11,6 +11,7 @@
     padding: 0;
     z-index: 10;
     position: relative;
+    
 }
 
 /* Este é o seu bloco branco (o "sticker") */
@@ -19,27 +20,30 @@
     color: var(--text-bio);
     
     /* Tamanho do bloco branco */
-    width: 85%;
-    max-width: 1200px;
-    padding: 80px 60px; /* Espaço interno do texto */
+    /* width: 85%; */
+    padding: 60px; /* Espaço interno do texto */
     
     /* Efeito de Sticker / Bordas */
     border-top-right-radius: 100px; 
     border-bottom-right-radius: 100px;
     box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2);
+    border: 5px solid var(--accent-gold);
+    border-left: none;
     
     /* Layout interno */
     display: flex;
     flex-direction: row-reverse; 
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
 }
 
 .about-content {
     /* Agrupa o Subtítulo e o Título e os alinha à DIREITA */
     flex-direction: column;
     align-items: flex-end; 
+    max-width: 30%;
+
+
+    
 }
 
 .about-title{
@@ -66,27 +70,17 @@
 .about-text {
     max-width: 520px;
     margin-right: auto;
-    font-size: 1rem;
-    line-height: 1.9;
     letter-spacing: 0.02em;
-    color: var(--text-bio);
 }
 
 .about-text p {
-    margin-bottom: 1.4rem;
-
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 450px;
+    margin-bottom: 40px;
+    font-weight: 300;
 }
-
-#cabecalho{
-    font-size: 1rem;
-}
-
-/* .about-text p:first-child {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    color: #888;
-} */
 
 .about-text p:last-child {
     margin-bottom: 0;
