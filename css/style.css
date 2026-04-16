@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Tan Vivre Libre';
-    src: url('/fonts/TAN-VIVRE-LIBRE.woff2') format('woff2'),
-         url('/fonts/TAN-VIVRE-LIBRE.woff') format('woff');
+    src: url('fonts/tan-vivre-libre.woff2') format('woff2'),
+         url('fonts/tan-vivre-libre.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,279 +9,37 @@
 
 @font-face {
     font-family: 'Tan Garland';
-    src: url('./fonts/TAN-Garland.woff2') format('woff2'),
-         url('./fonts/TAN-Garland.woff') format('woff');
+    src: url('fonts/tan-garland.woff2') format('woff2'),
+         url('fonts/tan-garland.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Gistesy';
-    src: url('./fonts/Gistesy.woff2') format('woff2'),
-         url('./fonts/Gistesy.woff') format('woff');
+    src: url('fonts/gistesy.woff2') format('woff2'),
+         url('fonts/gistesy.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Gentlemens Script';
-    src: url('./fonts/Gentlemens-Script.woff2') format('woff2'),
-         url('./fonts/Gentlemens-Script.woff') format('woff');
+    /* O Safari exige aspas ou %20 quando há espaços no nome do arquivo */
+    src: url('fonts/gentlemens-script.woff2') format('woff2'),
+         url('fonts/gentlemens-script.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Athiti';
-    src: url('./fonts/Athiti.woff2') format('woff2'),
-         url('./fonts/Athiti.woff') format('woff');
+    src: url('fonts/athiti.woff2') format('woff2'),
+         url('fonts/athiti.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-/* --- Reset & Variáveis de Luxo --- */
-:root {
-    --primary-dark: #121110;
-    --text-primary: #F5F2ED;
-    --accent-gold: #C5934C; 
-    
-    /* Fontes */
-    --font-topic: 'Tan Vivre Libre', serif;
-    --font-title: 'Tan Garland', serif;
-    /* --font-subtitle: 'Gentlemens Script', cursive; */
-    --font-signature: 'Gistesy', cursive;
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Poppins', serif;
-    
-    
-    /* Tipografia Responsiva Dinâmica */
-    --fs-brand: clamp(2.5rem, 8vw, 10rem); /* Título Principal Gigante */
-    --fs-nav: clamp(1.2rem, 3.5vw, 4rem); /* Links Grandes */
-    --transition-fluid: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-
-    --text-muted: #cdc3b8;
-    --text-bio: #545454;
-
-    --bg-biografia: #EFEBE5; /* O bege para o bloco da biografia */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-}
-
-html {
-    background-color: var(--primary-dark);
-    color: var(--text-primary);
-    font-family: var(--font-sans);
-    scroll-behavior: auto; /* Desativado para GSAP controlar */
-    overflow-x: hidden;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.site-footer {
-    background-color: #050505; /* Fundo preto profundo */
-    color: var(--text-primary);
-    padding: 20px 5%; /* Mais espaço vertical */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil */
-    display: flex;
-    justify-content: center; /* Empurra os dois blocos para as pontas */
-    align-items: center; /* Alinha tudo verticalmente pelo centro */
-}
-
-.footer-container {
-    max-width: 1400px; /* Maior largura total */
-    margin: 0 auto;
-}
-
-/* Lado Esquerdo: Identidade */
-.footer-identity {
-    flex: 1; /* Ocupa metade do espaço */
-    max-width: 500px;
-}
-
-.footer-brand {
-    font-family: var(--font-signature);
-    font-size: 4rem;
-    font-weight: 300; /* Peso leve para POGGIAN */
-    text-align: center;
-}
-
-
-
-.footer-details {
-    font-size: 0.75rem; /* Fonte pequena e elegante */
-    color: var(--text-muted);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.footer-details .divider {
-    color: var(--accent-gold); /* Dourado na barra divisória */
-    opacity: 0.7;
-}
-
-/* Responsividade para Mobile */
-@media (max-width: 900px) {
-    .site-footer {
-        padding: 100px 8%;
-    }
-    
-    .footer-container {
-        flex-direction: column; /* Empilha verticalmente */
-        text-align: center;
-        gap: 80px;
-        justify-content: center;
-    }
-    
-    .footer-identity, .footer-social-wrapper {
-        align-items: center;
-        max-width: 100%;
-        text-align: center;
-    }
-    
-    .footer-brand {
-        font-size: 2.2rem;
-    }
-    
-    .footer-label {
-        align-self: center;
-        margin-right: -6px; /* Ajuste óptico da label centralizada */
-    }
-    
-    .footer-social-links {
-        flex-direction: column; /* Redes em lista vertical no mobile */
-        gap: 25px;
-        align-items: center;
-    }
-}
-
-
-.result-actions-container {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-download-icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-download-icon:hover {
-    background: var(--accent-gold);
-    color: #000;
-    border-color: var(--accent-gold);
-}
-
-.btn-refazer-flex {
-    flex: 1; /* Faz o botão de refazer ocupar o resto do espaço */
-}
-
-
-/* --- CONNECTION SECTION (ALINHADA COM O DESIGN) --- */
-.connection-section {
-    padding: 140px 8%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 5;
-    height: 100vh;
-}
-
-.connection-container {
-    max-width: 80%;
-    text-align: center;
-}
-
-/* LINHA DECORATIVA (igual linguagem do site) */
-.connection-container::before {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 1px;
-    background: var(--accent-gold);
-    margin: 0 auto 35px auto;
-    opacity: 0.5;
-}
-
-/* TÍTULO */
-.connection-container h2 {
-    font-family: var(--font-title);
-    font-size: clamp(3rem, 6vw, 5.5rem); /* Aumentei levemente o limite máximo */
-    line-height: 1.1; /* TAN Garland precisa de um pouco mais de respiro vertical */
-    letter-spacing: 0.02em; /* Fontes display como a Garland funcionam melhor com tracking positivo ou neutro */
-    font-weight: normal; /* Geralmente essas fontes não precisam de negrito extra */
-    position: relative;
-    display: inline-block;
-    padding: 0 40px;
-    text-transform: none; /* Mantém a elegância das curvas da fonte */
-}
-
-/* PARÁGRAFOS */
-.connection-container p {
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
-    line-height: 1.9;
-    /* letter-spacing: 0.04em; */
-    color: var(--text-muted);
-    margin-bottom: 16px;
-
-}
-
-/* ÚLTIMA FRASE MAIS FORTE */
-.connection-container p:last-child {
-    color: var(--text-primary);
-}
-
-
-/* --- FINAL CTA (VERSÃO STATEMENT) --- */
-.final-cta {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative; /* Garante estabilidade no layout */
-    background-color: var(--primary-dark); /* Fundo caso a imagem demore a carregar */
-}
-
-.final-cta img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center;
-    display: block; /* Remove espaços vazios embaixo da imagem */
+    font-display: swap;
 }
