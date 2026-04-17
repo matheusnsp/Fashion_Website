@@ -1,3 +1,68 @@
+@font-face {
+    font-family: 'Tan Vivre Libre';
+    src: url('fonts/TAN-VIVRE-LIBRE.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tan Garland';
+    src: url('./fonts/TAN-Garland.woff2') format('woff2'),
+         url('./fonts/TAN-Garland.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gistesy';
+    src: url('./fonts/Gistesy.woff2') format('woff2'),
+         url('./fonts/Gistesy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gentlemens Script';
+    src: url('./fonts/Gentlemens Script.woff2') format('woff2'),
+         url('./fonts/Gentlemens Script.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Athiti';
+    src: url('./fonts/Athiti.woff2') format('woff2'),
+         url('./fonts/Athiti.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --- Reset & Variáveis de Luxo --- */
+:root {
+    --primary-dark: #121110;
+    --text-primary: #F5F2ED;
+    --accent-gold: #C5934C; 
+    
+    /* Fontes */
+    --font-topic: 'Tan Vivre Libre', serif;
+    --font-title: 'Tan Garland', serif;
+    /* --font-subtitle: 'Gentlemens Script', cursive; */
+    --font-signature: 'Gistesy', cursive;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Poppins', serif;
+    
+    
+    /* Tipografia Responsiva Dinâmica */
+    --fs-brand: clamp(2.5rem, 8vw, 10rem); /* Título Principal Gigante */
+    --fs-nav: clamp(1.2rem, 3.5vw, 4rem); /* Links Grandes */
+    --transition-fluid: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+    --text-muted: #cdc3b8;
+    --text-bio: #545454;
+
+    --bg-biografia: #EFEBE5; /* O bege para o bloco da biografia */
+}
+
 .services-section { padding: 100px 5%; }
 
 .section-header { text-align: center; margin-bottom: 60px; }
@@ -12,7 +77,7 @@
 
 
 .service-subtitle {
-    font-family: var(--font-topic);
+    font-family: "Tan Vivre Libre", serif;
     font-size: 3rem;
     color: var(--accent-gold);
 }

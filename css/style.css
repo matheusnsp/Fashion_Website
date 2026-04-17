@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Tan Vivre Libre';
-    src: url('./fonts/TAN-VIVRE-LIBRE.woff2') format('woff2'),
-         url('./fonts/TAN-VIVRE-LIBRE.woff') format('woff');
+    src: url('fonts/TAN-VIVRE-LIBRE.woff2') format('opentype'),
+        url('fonts/TAN-VIVRE-LIBRE.woff') format('opentype')
+         url('fonts/TAN-VIVRE-LIBRE.woff') format('opentype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 @font-face {
     font-family: 'Tan Garland';
