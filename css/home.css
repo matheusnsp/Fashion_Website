@@ -131,7 +131,7 @@
 }
 
 .role-title {
-    font-family: var(--font-title);
+    /* font-family: var(--font-topic); */
     font-size: 1.4rem;
     letter-spacing: 3px;
     font-weight: bold;
