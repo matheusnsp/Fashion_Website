@@ -90,11 +90,11 @@
 }
 
 .home-tagline {
-    font-family: var(--font-title);
+    font-family: var(--font-sans);
     font-size: 1.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    max-width: 65%;
+    max-width: 70%;
 }
 
 

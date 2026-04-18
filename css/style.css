@@ -3,6 +3,8 @@
     src: url('../fonts/TAN-VIVRE-LIBRE.woff2') format('woff2'),
          url('../fonts/TAN-VIVRE-LIBRE.otf') format('otf'),
          url('../fonts/TAN-VIVRE-LIBRE.woff') format('woff');
+         font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'Tan Garland';
