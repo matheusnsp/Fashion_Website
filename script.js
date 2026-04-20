@@ -36,7 +36,7 @@ if (newsletterForm) {
         button.disabled = true;
 
         try {
-            const res = await fetch("/.netlify/functions/subscribe", {
+            const res = await fetch("../functions/subscribe", {
                 method: "POST",
                 body: JSON.stringify({ email }),
             });
