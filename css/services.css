@@ -1,4 +1,4 @@
-.services-section { padding: 100px 5%; }
+.services-section { padding: 100px 8%; }
 
 .section-header { text-align: center; margin-bottom: 60px; }
 
@@ -30,16 +30,17 @@
 
 /* Bloco de Texto */
 .service-info {
-    flex: 1;
-    max-width: 500px;
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center;
 }
 
 .service-info h3 {
+    text-align: center;
     font-family: var(--font-topic);
-    font-size: 4rem;
+    font-size: 3.7rem;
     color: var(--accent-gold);
     margin-bottom: 20px;
 }
@@ -66,6 +67,7 @@
     display: inline-block;
     width: fit-content; /* Garante que o botão tenha apenas o tamanho do texto interno */
     padding: 20px 40px;
+    border-radius: 10px;
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     text-decoration: none;
@@ -92,9 +94,8 @@
 
 .consultoria-lista li {
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--text-muted);
-
     letter-spacing: 1px;
 
 }
@@ -103,49 +104,171 @@
 
 /* Moldura para imagem única (Seguindo o padrão das galerias) */
 .service-single-img {
-    flex: 1;
-    /* max-width: 550px; */
-
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .service-single-img img {
-    width: 70%;
-    height: auto; 
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
     object-fit: cover;
     display: block;
-    margin: 0 auto; /* Isso centraliza horizontalmente elementos em bloco */
     filter: brightness(0.8);
 }
-
-
-
-
+/* ================================
+   768px — mantém layout, reduz tamanhos
+   ================================ */
 @media (max-width: 768px) {
-    .consultoria-grid { grid-template-columns: 1fr; }
-    .service-item { flex-direction: column; text-align: center; }
-    .service-item p { max-width: 100%; margin-bottom: 15px; }
+
+    .services-section {
+        padding: 60px 4%;
+    }
+
+    .service-title {
+        font-size: 2.5rem;
+    }
+
+    .service-subtitle {
+        font-size: 2.5rem;
+    }
+
+    .service-item {
+        padding: 50px 0;
+        gap: 30px;
+    }
+
+    .service-info h3 {
+        font-size: 2.5rem;
+    }
+
+    .service-info p {
+        font-size: 1.4rem;
+    }
+
+    
+
+    .consultoria-lista li {
+        font-size: 1.4rem;
+    }
+
+    .orcamento a {
+        font-size: 1rem;
+        padding: 14px 28px;
+    }
+
+    .service-single-img img {
+        width: 100%;
+    }
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
-    .service-single-img {
-        max-width: 100%;
-        margin-top: 30px;
-    }
-    
-    .service-single-img img {
-        height: 400px;
-    }
-    .service-item {
-        flex-direction: column; /* Empilha no mobile */
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .service-info .orcamento {
-        justify-content: center; /* Centraliza o botão no celular */
+/* ================================
+   425px — coluna: texto em cima, foto embaixo
+   ================================ */
+@media (max-width: 425px) {
+
+    .services-section {
+        padding: 40px 5%;
     }
 
-    .gallery-grid {
-        grid-template-rows: 200px 250px;
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .service-title {
+        font-size: 1.8rem;
+    }
+
+    .service-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .service-item {
+        flex-direction: column;
+        padding: 40px 0;
+        gap: 24px;
+    }
+
+    /* Texto sempre em cima, independente da ordem no HTML */
+    .service-info {
+        order: 1;
+        width: 80%;
+        text-align: center;
+    }
+
+    .service-single-img {
+        order: 2;
+        width: 90%;
+    }
+
+    .service-single-img img {
+        width: 90%;
+        border-radius: 8px;
+    }
+
+    .service-info h3 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .service-info p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .consultoria-lista {
+        padding-left: 5vw;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .consultoria-lista li {
+        font-size: 1.2rem;
+    }
+
+    .service-info .orcamento {
+        margin-top: 24px;
+    }
+
+    .orcamento a {
+        font-size: 0.9rem;
+        padding: 14px 24px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .service-title {
+        font-size: 1.4rem;
+    }
+
+    .service-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .service-info h3 {
+        font-size: 1.8rem;
+    }
+
+    .service-info p,
+    .consultoria-lista li {
+        font-size: 1.1rem;
+    }
+
+    
+}
+
+@media (max-width: 320px) {
+
+    .service-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-info p,
+    .consultoria-lista li {
+        font-size: 1rem;
     }
 }

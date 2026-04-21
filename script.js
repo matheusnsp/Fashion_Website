@@ -1,8 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // MENU HAMBURGUER (AGORA FUNCIONA)
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+
     // --- Lógica do Menu / Scroll Suave ---
     document.querySelectorAll('.nav-link:not(.disabled)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+
+            // 👇 FECHA O MENU AUTOMATICAMENTE NO MOBILE
+            if (navLinks) {
+                navLinks.classList.remove("active");
+            }
+
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
 
