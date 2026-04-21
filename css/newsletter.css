@@ -1,23 +1,23 @@
-
-/* --- Seção Newsletter (Estilo Integrado) --- */
-.newsletter-section {
+/* ================================
+   NEWSLETTER — LAYOUT BASE
+   ================================ */
+   .newsletter-section {
     background: transparent;
-    padding: 8%; /* Aumentei o respiro vertical */
+    padding: 8%;
     position: relative;
     z-index: 5;
 }
 
-.newsletter-content{
+.newsletter-content {
     width: 100%;
 }
 
 .newsletter-container {
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.05);
     border: 0.5px solid var(--accent-gold);
     backdrop-filter: blur(10px);
-    border-radius: 2px;
-
     -webkit-backdrop-filter: blur(20px);
+    border-radius: 2px;
     padding: 80px 60px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -27,9 +27,9 @@
 }
 
 .newsletter-subtitle {
-    color: var(--accent-gold); /* Detalhe em dourado */
+    color: var(--accent-gold);
     font-family: var(--font-sans);
-    letter-spacing: 6px; /* Letra mais espaçada como ela sugeriu */
+    letter-spacing: 6px;
     font-size: 1.5rem;
     font-weight: bold;
     display: block;
@@ -45,7 +45,7 @@
 }
 
 .newsletter-description {
-    color: whitesmoke; /* Cinza suave para não pesar */
+    color: whitesmoke;
     font-family: var(--font-sans);
     font-size: 1.7rem;
     max-width: 450px;
@@ -53,15 +53,16 @@
     font-weight: 300;
 }
 
-/* Formulário e Inputs */
+/* ================================
+   FORMULÁRIO
+   ================================ */
 .newsletter-form {
     width: 100%;
 }
 
 .input-group {
     display: flex;
-    border-bottom: 1px solid rgba(215, 195, 160, 0.3); /* Linha em dourado sutil */
-    /* padding-bottom: 5px; */
+    border-bottom: 1px solid rgba(215, 195, 160, 0.3);
     transition: all 0.4s ease;
 }
 
@@ -77,19 +78,18 @@
     font-family: var(--font-sans);
     font-size: 1.3rem;
     letter-spacing: 2px;
-    color: var(--text-primary); /* Texto que o usuário digita em branco */
+    color: var(--text-primary);
     outline: none;
 }
 
-/* Estilizando o Placeholder */
 .newsletter-form input::placeholder {
-    color: rgba(215, 195, 160, 0.4); /* Placeholder em dourado apagadinho */
+    color: rgba(215, 195, 160, 0.4);
 }
 
 .btn-newsletter {
     background: transparent;
     border: none;
-    color: var(--accent-gold); /* Botão em dourado */
+    color: var(--accent-gold);
     font-family: var(--font-sans);
     font-size: 1.3rem;
     letter-spacing: 3px;
@@ -99,23 +99,21 @@
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
     font-weight: 600;
-
-    
 }
 
 .btn-newsletter:hover {
     color: white;
-    transform: translateX(5px); /* Efeito de movimento na seta */
+    transform: translateX(5px);
 }
 
-
-/* --- Seção Conecte-se (Redes Sociais) --- */
+/* ================================
+   REDES SOCIAIS
+   ================================ */
 .social-connect-section {
     background: transparent;
     padding: 80px 0;
     display: flex;
     justify-content: center;
-
 }
 
 .social-connect-container {
@@ -139,60 +137,165 @@
 }
 
 .social-link-item {
-    font-size: 3rem; /* Tamanho do ícone */
+    font-size: 3rem;
     transition: transform 0.3s ease, filter 0.3s ease;
     text-decoration: none;
 }
 
-/* Cores Oficiais dos Ícones */
-.social-link-item.instagram {
-    color: #E1306C;
-}
+.social-link-item.instagram { color: #E1306C; }
+.social-link-item.youtube   { color: #FF0000; }
+.social-link-item.facebook  { color: #1877F2; }
+.social-link-item.whatsapp  { color: #25D366; }
 
-.social-link-item.youtube {
-    color: #FF0000;
-}
-
-.social-link-item.facebook {
-    color: #1877F2;
-}
-
-.social-link-item.whatsapp {
-    color: #25D366;
-}
-
-/* Efeito ao passar o mouse */
 .social-link-item:hover {
     transform: translateY(-5px);
     filter: brightness(1.2);
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .social-icons-wrapper {
-        gap: 30px;
-    }
-    .social-link-item {
-        font-size: 1.8rem;
-    }
-}
-
-
-
-
-/* Responsivo */
-@media (max-width: 1024px) {
+/* ================================
+   PORTRAIT — tablet grande  ≤ 1440px
+   ================================ */
+@media only screen and (max-width: 1440px) and (orientation: portrait) {
     .newsletter-container {
         grid-template-columns: 1fr;
-        padding: 60px 40px;
-        gap: 50px;
+        padding: 70px 50px;
+        gap: 60px;
         text-align: center;
     }
+
     .newsletter-description {
         margin: 0 auto;
+        font-size: 2rem;
     }
+
+    .newsletter-title  { font-size: 3rem; }
+    .newsletter-subtitle { font-size: 1.8rem; }
+
     .input-group {
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 auto;
     }
+
+    .social-label      { font-size: 2.5rem; }
+    .social-link-item  { font-size: 2.8rem; }
+    .social-icons-wrapper { gap: 50px; }
+}
+
+/* ================================
+   PORTRAIT — tablet/celular  ≤ 950px
+   ================================ */
+@media (max-width: 950px) and (orientation: portrait) {
+    .newsletter-container {
+        padding: 60px 40px;
+        gap: 50px;
+    }
+
+    .newsletter-title       { font-size: 2.5rem; }
+    .newsletter-subtitle    { font-size: 1.5rem; }
+    .newsletter-description { font-size: 1.6rem; }
+
+    .input-group {
+        max-width: 420px;
+    }
+
+    .social-label     { font-size: 2rem; }
+    .social-link-item { font-size: 2.2rem; }
+    .social-icons-wrapper { gap: 35px; }
+}
+
+/* ================================
+   PORTRAIT — celular pequeno  ≤ 450px
+   ================================ */
+@media (max-width: 450px) and (orientation: portrait) {
+    .newsletter-section { padding: 10% 5%; }
+
+    .newsletter-container {
+        padding: 50px 30px;
+        gap: 36px;
+    }
+
+    .newsletter-title       { font-size: 2rem; }
+    .newsletter-subtitle    { font-size: 1.2rem; letter-spacing: 4px; }
+    .newsletter-description { font-size: 1.2rem; }
+
+    .newsletter-form input  { font-size: 1rem; }
+    .btn-newsletter         { font-size: 1rem; }
+
+    .input-group {
+        max-width: 100%;
+    }
+
+    .social-label     { font-size: 1.5rem; letter-spacing: 3px; }
+    .social-link-item { font-size: 1.8rem; }
+    .social-icons-wrapper { gap: 30px; }
+}
+
+/* ================================
+   PORTRAIT — celular muito pequeno  ≤ 320px
+   ================================ */
+@media (max-width: 320px) and (orientation: portrait) {
+    .newsletter-container {
+        padding: 40px 20px;
+        gap: 28px;
+    }
+
+    .newsletter-title       { font-size: 1.7rem; }
+    .newsletter-subtitle    { font-size: 1rem; letter-spacing: 3px; }
+    .newsletter-description { font-size: 1rem; }
+
+    .newsletter-form input  { font-size: 0.9rem; }
+    .btn-newsletter         { font-size: 0.9rem; }
+
+    .social-label     { font-size: 1.2rem; }
+    .social-link-item { font-size: 1.5rem; }
+    .social-icons-wrapper { gap: 20px; }
+}
+
+/* ================================
+   LANDSCAPE — celular/tablet  ≤ 950px
+   ================================ */
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+    .newsletter-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 30px;
+        gap: 40px;
+        text-align: left;
+    }
+
+    .newsletter-description { margin: 0; font-size: 1rem; }
+    .newsletter-title       { font-size: 1.6rem; }
+    .newsletter-subtitle    { font-size: 1rem; letter-spacing: 4px; }
+
+    .newsletter-form input  { font-size: 0.5rem; }
+    .btn-newsletter         { font-size: 0.8rem; }
+
+    .input-group { max-width: 100%; margin: 0; }
+
+    .social-label     { font-size: 1.5rem; }
+    .social-link-item { font-size: 1.6rem; }
+    .social-icons-wrapper { gap: 25px; }
+}
+
+/* ================================
+   PORTRAIT — iPad / tablet médio  451px – 950px
+   ================================ */
+@media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
+    .newsletter-section { padding: 8% 6%; }
+
+    .newsletter-container {
+        padding: 65px 45px;
+        gap: 55px;
+    }
+
+    .newsletter-title       { font-size: 2.8rem; }
+    .newsletter-subtitle    { font-size: 1.7rem; }
+    .newsletter-description { font-size: 1.8rem; }
+
+    .input-group {
+        max-width: 460px;
+    }
+
+    .social-label     { font-size: 2.3rem; }
+    .social-link-item { font-size: 2.5rem; }
+    .social-icons-wrapper { gap: 42px; }
 }

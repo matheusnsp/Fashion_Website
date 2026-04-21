@@ -1,0 +1,164 @@
+/* ================================
+   FOOTER — LAYOUT BASE
+   ================================ */
+   .site-footer {
+    background-color: #050505;
+    color: var(--text-primary);
+    padding: 20px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ================================
+   IDENTIDADE
+   ================================ */
+.footer-identity {
+    flex: 1;
+    max-width: 500px;
+}
+
+.footer-brand {
+    font-family: var(--font-signature);
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.footer-details {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.footer-details .divider {
+    color: var(--accent-gold);
+    opacity: 0.7;
+}
+
+/* ================================
+   PORTRAIT — tablet grande  ≤ 1440px
+   ================================ */
+@media only screen and (max-width: 1440px) and (orientation: portrait) {
+    .site-footer {
+        padding: 60px 6%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+        justify-content: center;
+    }
+
+    .footer-identity {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .footer-brand { font-size: 3.5rem; }
+
+    .footer-social-links {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+}
+
+/* ================================
+   PORTRAIT — iPad / tablet médio  451px – 900px
+   ================================ */
+@media (min-width: 451px) and (max-width: 900px) and (orientation: portrait) {
+    .site-footer {
+        padding: 80px 7%;
+    }
+
+    .footer-container {
+        gap: 50px;
+    }
+
+    .footer-brand { font-size: 2.8rem; }
+
+    .footer-details { font-size: 0.7rem; }
+}
+
+/* ================================
+   PORTRAIT — celular  ≤ 450px
+   ================================ */
+@media (max-width: 450px) and (orientation: portrait) {
+    .site-footer {
+        padding: 60px 8%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .footer-identity,
+    .footer-social-wrapper {
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand { font-size: 2.2rem; }
+
+    .footer-label {
+        align-self: center;
+        margin-right: -6px;
+    }
+
+    .footer-social-links {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+}
+
+/* ================================
+   PORTRAIT — celular muito pequeno  ≤ 320px
+   ================================ */
+@media (max-width: 320px) and (orientation: portrait) {
+    .site-footer {
+        padding: 40px 6%;
+    }
+
+    .footer-brand    { font-size: 1.8rem; }
+    .footer-details  { font-size: 0.65rem; letter-spacing: 2px; }
+}
+
+/* ================================
+   LANDSCAPE — celular/tablet  ≤ 950px
+   ================================ */
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+    .site-footer {
+        padding: 30px 5%;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+        text-align: left;
+    }
+
+    .footer-brand { font-size: 2.5rem; }
+
+    .footer-details { font-size: 0.7rem; }
+
+    .footer-social-links {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+}

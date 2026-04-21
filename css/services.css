@@ -1,6 +1,15 @@
-.services-section { padding: 100px 8%; margin-top: 10vh; }
+/* ================================
+   SERVICES — LAYOUT BASE
+   ================================ */
+   .services-section {
+    padding: 100px 8%;
+    margin-top: 10vh;
+}
 
-.section-header { text-align: center; margin-bottom: 60px; }
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
 .service-title {
     font-family: var(--font-sans);
@@ -10,25 +19,25 @@
     text-transform: uppercase;
 }
 
-
 .service-subtitle {
     font-family: var(--font-topic);
     font-size: 3rem;
     color: var(--accent-gold);
 }
 
-/* --- Layout de Grid Editorial --- */
+/* ================================
+   GRID EDITORIAL
+   ================================ */
 .service-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 80px 0;
     border-bottom: 1px solid rgba(197, 164, 126, 0.2);
-    gap: 60px; /* Espaço entre texto e fotos */
-    width: 100%; /* Ocupa a largura total para permitir o alinhamento lado a lado */
+    gap: 60px;
+    width: 100%;
 }
 
-/* Bloco de Texto */
 .service-info {
     flex: 1 1 0;
     min-width: 0;
@@ -45,27 +54,25 @@
     margin-bottom: 20px;
 }
 
-
-.service-info p { 
+.service-info p {
     font-family: var(--font-serif);
-    font-size: 2rem; /* Ajustado para melhor leitura */
+    font-size: 2rem;
     line-height: 1.6;
+    text-align: left;
     color: var(--text-primary);
     margin-bottom: 15px;
 }
 
-/* --- O Orçamento (Alinhado à esquerda dentro do bloco de texto) --- */
 .service-info .orcamento {
     display: flex;
-    justify-content: center; /* Centraliza o botão horizontalmente */
+    justify-content: center;
     width: 100%;
-    margin-top: 40px; /* Espaço entre o parágrafo e o botão */
+    margin-top: 40px;
 }
 
-/* Ajuste no botão para garantir que ele não estique */
 .orcamento a {
     display: inline-block;
-    width: fit-content; /* Garante que o botão tenha apenas o tamanho do texto interno */
+    width: fit-content;
     padding: 20px 40px;
     border-radius: 10px;
     border: 1px solid var(--accent-gold);
@@ -83,13 +90,8 @@
     color: var(--primary-dark);
 }
 
-
-
-    /* Ajuste para as listas dentro dos service-items */
 .consultoria-lista {
-    list-style:inside;
-    padding: 0;
-
+    list-style: inside;
 }
 
 .consultoria-lista li {
@@ -97,12 +99,9 @@
     font-size: 1.8rem;
     color: var(--text-muted);
     letter-spacing: 1px;
-
 }
 
-
-
-/* Moldura para imagem única (Seguindo o padrão das galerias) */
+/* Imagem única */
 .service-single-img {
     flex: 1 1 0;
     min-width: 0;
@@ -110,6 +109,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .service-single-img img {
     width: 100%;
     border-radius: 8px;
@@ -118,119 +118,168 @@
     display: block;
     filter: brightness(0.8);
 }
+
 /* ================================
-   768px — mantém layout, reduz tamanhos
+   PORTRAIT — tablet grande  ≤ 1440px
    ================================ */
-@media (max-width: 768px) {
-
+@media only screen and (max-width: 1440px) and (orientation: portrait) {
     .services-section {
-        padding: 60px 4%;
+        padding: 80px 6%;
     }
 
-    .service-title {
-        font-size: 2.5rem;
-    }
-
-    .service-subtitle {
-        font-size: 2.5rem;
-    }
+    .service-title    { font-size: 3.5rem; }
+    .service-subtitle { font-size: 2.8rem; }
 
     .service-item {
-        padding: 50px 0;
-        gap: 30px;
+        padding: 60px 0;
+        gap: 40px;
     }
 
-    .service-info h3 {
-        font-size: 2.5rem;
-    }
+    .service-info h3  { font-size: 3rem; }
+    .service-info p   { font-size: 2rem; }
 
-    .service-info p {
-        font-size: 1.4rem;
-    }
-
-    
-
-    .consultoria-lista li {
-        font-size: 1.4rem;
-    }
+    .consultoria-lista li { font-size: 1.6rem; }
 
     .orcamento a {
-        font-size: 1rem;
-        padding: 14px 28px;
+        font-size: 1.2rem;
+        padding: 16px 32px;
+    }
+}
+@media only screen and (max-width: 1440px) and (orientation: landscape) {
+
+    .service-title    { font-size: 3.3rem; }
+    .service-subtitle { font-size: 2.8rem; }
+
+    .service-item {
+        padding: 60px 0;
+        gap: 40px;
     }
 
-    .service-single-img img {
-        width: 100%;
+    .service-info h3  { font-size: 3rem; }
+    .service-info p   { font-size: 1.8rem; }
+
+    .consultoria-lista li { font-size: 1.6rem; }
+
+    .orcamento a {
+        font-size: 1.2rem;
+        padding: 16px 32px;
     }
 }
 
 /* ================================
-   425px — coluna: texto em cima, foto embaixo
+   PORTRAIT — tablet/celular  ≤ 950px
+   Vira coluna: texto em cima, foto embaixo
    ================================ */
-@media (max-width: 425px) {
-
+@media (max-width: 950px) and (orientation: portrait) {
     .services-section {
-        padding: 40px 5%;
+        padding: 60px 5%;
     }
 
-    .section-header {
-        margin-bottom: 30px;
-    }
+    .section-header { margin-bottom: 40px; }
 
-    .service-title {
-        font-size: 1.8rem;
-    }
-
-    .service-subtitle {
-        font-size: 1.8rem;
-    }
+    .service-title    { font-size: 2.5rem; }
+    .service-subtitle { font-size: 2.5rem; }
 
     .service-item {
         flex-direction: column;
-        padding: 40px 0;
-        gap: 24px;
+        padding: 50px 0;
+        gap: 30px;
     }
 
-    /* Texto sempre em cima, independente da ordem no HTML */
     .service-info {
         order: 1;
         width: 80%;
         text-align: center;
     }
 
+
     .service-single-img {
         order: 2;
-        width: 90%;
+        width: 100%;
     }
 
     .service-single-img img {
-        width: 90%;
+        width: 80%;
         border-radius: 8px;
     }
 
-    .service-info h3 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .service-info p {
-        font-size: 1.2rem;
-        text-align: center;
-    }
+    .service-info h3  { font-size: 3rem; text-align: center; }
+    .service-info p   { font-size: 1.8rem; }
 
     .consultoria-lista {
-        padding-left: 5vw;
         text-align: left;
         display: inline-block;
     }
 
-    .consultoria-lista li {
-        font-size: 1.2rem;
+    .consultoria-lista li { font-size: 1.8rem; }
+
+    .service-info .orcamento { margin-top: 28px; }
+
+    .orcamento a {
+        font-size: 1.3rem;
+        padding: 14px 28px;
+    }
+}
+
+/* ================================
+LANDSCAPE — celular/tablet  ≤ 950px
+================================ */
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+    .services-section {
+        padding: 40px 5%;
+        margin-top: 5vh;
     }
 
-    .service-info .orcamento {
-        margin-top: 24px;
+    .service-single-img img {
+        width: 80%;
     }
+
+    .service-title    { font-size: 2rem; }
+    .service-subtitle { font-size: 2rem; }
+
+    .service-item {
+        padding: 40px 0;
+        gap: 30px;
+    }
+
+    .service-info h3 { font-size: 2.5rem; }
+    .service-info p  { font-size: 1.5rem; }
+
+    .consultoria-lista li { font-size: 1.1rem; }
+
+    .orcamento a {
+        font-size: 1rem;
+        padding: 12px 24px;
+        /* margin: -5vh; */
+    }
+}
+
+/* ================================
+   PORTRAIT — celular pequeno  ≤ 450px
+   ================================ */
+@media (max-width: 450px) and (orientation: portrait) {
+    .services-section {
+        padding: 40px 5%;
+    }
+
+    .section-header { margin-bottom: 30px; }
+
+    .service-title    { font-size: 1.8rem; }
+    .service-subtitle { font-size: 1.8rem; }
+
+    .service-item {
+        padding: 40px 0;
+        gap: 24px;
+    }
+
+    .service-info { width: 80%; }
+
+    .service-info h3  { font-size: 2rem; }
+    .service-info p   { font-size: 1.2rem; }
+
+    .consultoria-lista li { font-size: 1.2rem; }
+
+    .service-info .orcamento { margin-top: 24px; }
 
     .orcamento a {
         font-size: 0.9rem;
@@ -239,36 +288,24 @@
     }
 }
 
-@media (max-width: 375px) {
+/* ================================
+   PORTRAIT — celular muito pequeno  ≤ 320px
+   ================================ */
+@media (max-width: 320px) and (orientation: portrait) {
+    .service-title    { font-size: 1.4rem; }
+    .service-subtitle { font-size: 1.6rem; }
 
-    .service-title {
-        font-size: 1.4rem;
-    }
-
-    .service-subtitle {
-        font-size: 1.6rem;
-    }
-
-    .service-info h3 {
-        font-size: 1.8rem;
-    }
+    .service-info h3 { font-size: 1.5rem; }
 
     .service-info p,
-    .consultoria-lista li {
-        font-size: 1.1rem;
-    }
+    .consultoria-lista li { font-size: 1rem; }
 
-    
-}
-
-@media (max-width: 320px) {
-
-    .service-info h3 {
-        font-size: 1.5rem;
-    }
-
-    .service-info p,
-    .consultoria-lista li {
-        font-size: 1rem;
+    .orcamento a {
+        font-size: 0.8rem;
+        padding: 12px 20px;
     }
 }
+
+
+
+/* IPADS — adicionar aqui */

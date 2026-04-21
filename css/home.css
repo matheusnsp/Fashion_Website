@@ -1,143 +1,139 @@
 /* --- Layout Base --- */
 .section {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    /* overflow: hidden; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* --- Seção Home Imersiva --- */
 .bg-wrapper {
-    position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    z-index: -1;
-    background-color: #000;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  z-index: -1;
+  background-color: #000;
 }
 
 .video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-    filter: contrast(130%) saturate(180%) hue-rotate(-5deg);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: contrast(130%) saturate(180%) hue-rotate(-5deg);
 }
 
 .overlay-vignette {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 100%);
-    z-index: 2;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 100%);
+  z-index: 2;
 }
 
 /* Tipografia */
 .brand-header .location {
-    font-size: 0.9rem;
-    letter-spacing: 5px;
-    font-weight: 100;
+  font-size: 0.9rem;
+  letter-spacing: 5px;
+  font-weight: 100;
 }
 
 .brand-title {
-    font-family: var(--font-signature);
-    font-size: var(--fs-brand);
-    font-weight: 300;
-    line-height: 0.85;
-    margin-top: 1rem;
+  font-family: var(--font-signature);
+  font-size: var(--fs-brand);
+  font-weight: 300;
+  line-height: 0.85;
+  margin-top: 1rem;
 }
 
 .last-name {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .home-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .footer-brand,
 .footer-brand:visited,
 .footer-brand:hover,
 .footer-brand:active {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .home-tagline {
-    font-family: var(--font-sans);
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    max-width: 75%;
-    
+  font-family: var(--font-sans);
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  max-width: 75%;
 }
 
 /* Container principal — desktop: linha com texto + foto */
 .home-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1600px;
-    z-index: 3;
-    position: relative;
-    margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1600px;
+  z-index: 3;
+  position: relative;
+  margin-top: 10vh;
 }
 
 .home-text-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    height: 80vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
 }
 
 .personal-description {
-    margin-top: 2rem;
-    border-left: 1px solid var(--accent-gold);
-    padding-left: 20px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+  margin-top: 2rem;
+  border-left: 1px solid var(--accent-gold);
+  padding-left: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .role-title {
-    font-size: 1.4rem;
-    letter-spacing: 3px;
-    font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
-
 .home-image-side {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100vh;
-    position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100vh;
+  position: relative;
 }
 
 .profile-photo {
-    height: 100vh; 
-    width: auto;
-    object-fit: contain;
-    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  height: 100vh; 
+  width: auto;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 }
 
 /* ================================
-   MOBILE — foto no topo, texto abaixo
-   ================================ */
-
-@media only screen and (max-width: 1440px) and (orientation: portrait){
-    .home-content {
-      height: 110vh;
+ PORTRAIT — tablet grande  ≤ 1440px
+ ================================ */
+@media only screen and (max-width: 1440px) and (orientation: portrait) {
+  .home-content {
+      height: auto;
+      min-height: 100svh;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
@@ -145,286 +141,187 @@
       max-width: 100%;
       padding: 0;
       gap: 0;
-      /* margin-top: 5vh; */
-    }
-  
-    /* --- Foto (order 1) --- */
-    .home-image-side {
+  }
+
+  .home-image-side {
       order: 1;
       flex: none;
-      display: flex;
       width: auto;
       height: 60vh;
       justify-content: center;
       align-items: flex-end;
-      position: relative;
       overflow: hidden;
-      margin-top: 5vh;
-    }
-  
-    .profile-photo {
+  }
+
+  .profile-photo {
       height: 100%;
       width: 100%;
       mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    }
-  
-    /* --- Texto (order 2) --- */
-    .home-text-side {
+      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+
+  .home-text-side {
       order: 2;
       flex: none;
       width: 100%;
       height: auto;
       margin-top: -60px;
-      padding: 0 var(--home-padding-x) 40px;
-      display: flex;
+      padding: 0 var(--home-padding-x, 24px) 40px;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       gap: 18px;
-      position: relative;
       z-index: 4;
       text-align: center;
-    }
-  
-    .home-text-side .orcamento a {
+  }
+
+  .home-text-side .orcamento a {
       margin: 20px;
       padding: 15px;
       font-size: 2rem;
-    }
-  
-    .brand-header {
+  }
+
+  .brand-header {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-  
-    .brand-title {
+  }
+
+  .brand-title {
       font-size: 7rem;
       line-height: 1;
       margin-top: 0;
       text-align: center;
-    }
-  
-    .role-title {
-      /* margin-left: -2vw; */
-      font-size: 1.7rem;
-    }
-  
-    .home-tagline {
+  }
+
+  .role-title   { font-size: 1.7rem; }
+
+  .home-tagline {
       font-size: 3rem;
       letter-spacing: 2px;
-      max-width: 80%;
+      max-width: 75%;
       text-align: center;
-    }
-  
-    .home-footer {
-      justify-content: center;
-    }
+  }
+
+  .home-footer { justify-content: center; }
 }
 
-@media (max-width: 950px) and (orientation: portrait){
-    .home-content {
-      height: auto;
-      min-height: 100svh;  /* ← garante que cobre a tela sem sobrar */
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      max-width: 100%;
-      padding: 0;
-      gap: 0;
-      /* margin-top: 5vh; */
-    }
-    
-    /* --- Foto (order 1) --- */
-    .home-image-side {
-      order: 1;
-      flex: none;
-      display: flex;
-      width: auto;
-      height: 60vh;
-      justify-content: center;
-      align-items: flex-end;
-      position: relative;
-      overflow: hidden;
-      margin-top: 5vh;
-    }
-  
-    .profile-photo {
-      height: 100%;
-      width: 100%;
-      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    }
-  
-    /* --- Texto (order 2) --- */
-    .home-text-side {
-      order: 2;
-      flex: none;
-      width: 100%;
-      height: auto;
-      margin-top: -60px;
-      padding: 0 var(--home-padding-x) 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 18px;
-      position: relative;
-      z-index: 4;
-      text-align: center;
-    }
-  
-    .home-text-side .orcamento a {
-      margin: 20px;
-      padding: 15px;
-      font-size: 1rem;
-    }
-  
-    .brand-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .brand-title {
-      font-size: 5rem;
-      line-height: 1;
-      margin-top: 0;
-      text-align: center;
-    }
-  
-    .role-title {
-      margin-left: -2vw;
-      font-size: 0.85rem;
-    }
-  
-    .home-tagline {
+/* ================================
+ PORTRAIT — tablet médio  ≤ 950px
+ ================================ */
+@media (max-width: 950px) and (orientation: portrait) {
+  .brand-title  { font-size: 5rem; }
+
+  .role-title {
+      margin-left: 5px;
       font-size: 1.2rem;
       letter-spacing: 2px;
+      font-weight: bold;
+  }
+
+  .home-tagline {
+      font-size: 2rem;
+      max-width: 75%;
+  }
+
+  .home-image-side { height: 60vh; }
+
+  .home-text-side .orcamento a { font-size: 1.2rem; }
+}
+
+/* ================================
+ PORTRAIT — celular grande  ≤ 768px
+ ================================ */
+@media (max-width: 768px) and (orientation: portrait) {
+  .brand-title  { font-size: 4.5rem; }
+
+  .role-title {
+      margin-left: 0;
+      font-size: 1rem;
+      letter-spacing: 2px;
+  }
+
+  .home-tagline {
+      font-size: 1.5rem;
       max-width: 80%;
-      text-align: center;
-    }
-  
-    .home-footer {
-      justify-content: center;
-    }
+  }
+
+  .home-image-side { height: 55vh; }
+
+  .home-text-side .orcamento a { font-size: 1rem; }
 }
-  
-@media only screen and (max-width: 950px) and (orientation: portrait){
-    .brand-title {
-         font-size: 5rem; 
-    }
-  
-    .role-title {
-        margin-left: 5px;
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-        font-weight: bold;
-    }
-  
-    .home-tagline {
-        font-size: 1.5rem;
-        width: 60%;
-    }
-  
-    .home-image-side {
-        margin-top: 5vh;
-        height: 60vh;
-    }
-  
-    .home-text-side .orcamento a {
-        font-size: 1.2rem;
-    }
-}
-  /* ============================================================
-     CELULAR PEQUENO  ≤ 450px
-     ============================================================ */
+
+/* ================================
+ PORTRAIT — celular pequeno  ≤ 450px
+ ================================ */
 @media (max-width: 450px) and (orientation: portrait) {
-    .brand-title { 
-        font-size: 4rem; 
-    }
-  
-    .role-title {
+  .brand-title  { font-size: 4rem; }
+
+  .role-title {
       margin-left: -3vw;
       font-size: 0.8rem;
       letter-spacing: 2px;
       font-weight: bold;
-    }
-  
-    .home-tagline {
-      font-size: 1rem;
-    }
-  
-    /* .home-image-side {
-      height: 50vh;
-    } */
-  
-    .home-text-side .orcamento a {
-      font-size: 0.8rem;
-    }
+  }
+
+  .home-tagline { font-size: 1.2rem; }
+
+  .home-image-side { height: 50vh; }
+
+  .home-text-side .orcamento a { font-size: 0.8rem; }
 }
 
-/* ============================================================
-    CELULAR MUITO PEQUENO  ≤ 320px
-    ============================================================ */
+/* ================================
+ PORTRAIT — celular muito pequeno  ≤ 320px
+ ================================ */
 @media (max-width: 320px) and (orientation: portrait) {
-.brand-title { font-size: 3.5rem; }
+  .brand-title  { font-size: 3.5rem; }
 
-.role-title {
-    margin-left: -4vw;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    font-weight: bold;
+  .role-title {
+      margin-left: -4vw;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+  }
+
+  .home-tagline {
+      font-size: 0.9rem;
+      max-width: 75%;
+  }
+
+  .home-image-side { height: 55vh; }
+
+  .home-text-side .orcamento a { font-size: 0.7rem; }
 }
 
-.home-tagline {
-    font-size: 0.9rem;
-    max-width: 85%;
-}
-
-.home-image-side {
-    height: 55vh;
-}
-
-.home-text-side .orcamento a {
-    font-size: 0.7rem;
-}
-}
-/* ============================================================
-CELULAR DEITADO  660px – 767px
-============================================================ */
+/* ================================
+ LANDSCAPE — celular/tablet  ≤ 950px
+ ================================ */
 @media only screen and (max-width: 950px) and (orientation: landscape) {
-.brand-title { font-size: 3.5rem; }
+  .brand-title  { font-size: 3.5rem; }
+  .role-title   { font-size: 0.7rem; }
 
-.role-title {
-    /* margin-left: -2vw; */
-    font-size: 0.6rem;
-}
+  .home-tagline {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      max-width: 75%;
+  }
 
-.home-tagline {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    max-width: 85%;
-}
+  .home-image-side {
+      flex: 1;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 100vh;
+      position: relative;
+  }
 
-.home-image-side {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100vh;
-    position: relative;
-}
+  .profile-photo {
+      object-fit: contain;
+      mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  }
 
-.profile-photo {
-    object-fit: contain;
-    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-}
-
-.home-text-side .orcamento a {
-    font-size: 0.7rem;
-}
+  .home-text-side .orcamento a { font-size: 0.8rem; }
 }
 
 /* IPADS — adicionar aqui */

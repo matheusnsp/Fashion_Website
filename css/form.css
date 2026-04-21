@@ -1,10 +1,12 @@
-/* --- SEÇÃO PRINCIPAL --- */
-.quiz-section {
-    padding: 100px 5% 10px 5%;
+/* ================================
+   QUIZ SECTION — BASE (DESKTOP)
+   ================================ */
+   .quiz-section {
+    padding: 80px 5% 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .quiz-container {
@@ -15,15 +17,12 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    min-height: 700px; /* Garante que o container não encolha */
 }
 
 /* --- LADO ESQUERDO: TEXTO --- */
 .quiz-content {
     flex: 1;
     max-width: 500px;
-    align-self: flex-start; 
-    margin-top: 50px;
 }
 
 .quiz-subtitle {
@@ -31,28 +30,18 @@
     font-size: 1.5rem;
     color: var(--accent-gold);
     display: block;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .quiz-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 10rem);
-    font-weight: 500;
-    line-height: 0.85;
-    margin: 1.5rem 0;
-}
-
-.quiz-title {
     font-family: var(--font-topic);
-    
+    font-size: clamp(2.5rem, 6vw, 6rem);
     font-weight: 500;
-    line-height: 0.85;
-    margin: 1.5rem 0;
-    /* text-transform: uppercase; */
+    line-height: 0.9;
+    margin: 1rem 0;
 }
-
 
 .quiz-description {
     font-family: var(--font-sans);
@@ -66,7 +55,7 @@
 
 .btn-quiz {
     display: inline-block;
-    padding: 20px 40px;
+    /* padding: 40px 40px; */
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     text-decoration: none;
@@ -88,59 +77,50 @@
     max-width: 600px;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
     transform: translateX(30px);
-    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-    display: block; 
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+/* Só aparece quando .active é adicionado via JS */
 .quiz-aside-form.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
     transform: translateX(0);
 }
 
 .form-window {
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid  #C5934C;
-    padding: 45px;
-    backdrop-filter: blur(10px);
-    border-radius: 2px;
-    
-    /* ESTRUTURA FIXA */
-    width: 100%;
-    min-height: 660px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.5px solid var(--accent-gold);
+    padding: 40px;
+    backdrop-filter: blur(15px);
+    border-radius: 4px;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinha o conteúdo no topo */
 }
 
-/* O formulário precisa ocupar o espaço total para empurrar o rodapé */
 #style-form {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Controle das Etapas */
+/* --- STEPS --- */
 .form-step {
     display: none;
     flex-direction: column;
-
 }
 
 .form-step.active {
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* Adicionamos uma transição suave para evitar o "salto" brusco */
     animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .step-indicator {
@@ -151,6 +131,7 @@
     margin-bottom: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .form-window h3 {
@@ -174,7 +155,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-bottom: 20px;
-    min-height: 280px; /* Garante que o espaço das opções seja sempre igual */
+    min-height: 280px;
     align-content: start;
 }
 
@@ -197,21 +178,6 @@
     color: var(--primary-dark);
 }
 
-.btn-quiz {
-    display: inline-block;
-    padding: 20px 40px;
-    border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
-    text-decoration: none;
-    letter-spacing: 3px;
-    transition: all 0.4s ease;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-
-
 .option-card:has(input:checked) {
     border-color: var(--accent-gold);
     background: rgba(197, 164, 126, 0.1);
@@ -221,9 +187,9 @@
     accent-color: var(--accent-gold);
 }
 
-/* --- BOTÃO PRÓXIMO (FIXADO NO FUNDO) --- */
+/* --- BOTÃO PRÓXIMO --- */
 .form-footer {
-    margin-top: auto; /* Empurra o botão para a extremidade inferior */
+    margin-top: auto;
     padding-top: 10px;
 }
 
@@ -245,26 +211,443 @@
     color: var(--primary-dark);
 }
 
-/* --- RESULTADO (DOSSIÊ) --- */
-.quiz-result-view {
+/* --- RESULTADO --- */
+.result-actions-container {
     display: flex;
-    flex-direction: column;
-    height: 100%; /* Ocupa todo o bloco fixo */
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* --- RESPONSIVIDADE --- */
+.btn-download-icon {
+    width: 50px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-download-icon:hover {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+}
+
+.btn-refazer-flex {
+    flex: 1;
+}
+
+
+/* ================================
+   ≤ 1024px — LAYOUT EMPILHADO
+   Texto CENTRALIZADO
+   Quiz SEMPRE oculto até clicar
+   ================================ */
 @media (max-width: 1024px) {
+
+    .quiz-section {
+        height: auto;
+        min-height: 100svh;
+    }
+
     .quiz-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 50px;
+        gap: 40px;
+        min-height: unset;
     }
-    .quiz-content { max-width: 100%; }
-    .quiz-description { margin: 0 auto 40px; }
+
+    .quiz-content {
+        max-width: 100%;
+        align-self: center;
+        margin-top: 0;
+    }
+
+    .quiz-description {
+        margin: 0 auto 40px;
+    }
+
+    /* O formulário fica invisível e sem espaço até .active */
+    .quiz-aside-form {
+        max-width: 680px;
+        width: 100%;
+        /* Mantém opacity:0 / visibility:hidden / pointer-events:none do base */
+        /* transform muda para baixo para mobile */
+        transform: translateY(20px);
+
+        /* Quando não ativo, não ocupa altura */
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+                    visibility 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+                    transform 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+                    max-height 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .quiz-aside-form.active {
+        transform: translateY(0);
+        max-height: 2000px; /* valor alto o suficiente para o conteúdo */
+        overflow: visible;
+    }
+
+    .form-window {
+        min-height: 600px;
+        padding: 40px 30px;
+    }
+
+    /* Centraliza texto dentro do form também */
+    .form-window h3,
+    .step-instruction {
+        text-align: left; /* dentro do form mantém left para legibilidade */
+    }
+
+    .quiz-title    { font-size: clamp(3rem, 8vw, 6rem); }
+    .quiz-subtitle { font-size: 1.6rem; }
+    .quiz-description { font-size: 2rem; }
 }
 
-@media (max-width: 600px) {
-    .options-grid { grid-template-columns: 1fr; }
-    .form-window { padding: 30px 20px; min-height: 850px; }
+/* ================================
+   LANDSCAPE — celular/tablet ≤ 950px
+   ================================ */
+   @media only screen and (max-width: 950px) and (orientation: landscape) {
+
+    .quiz-section {
+        height: auto;
+        min-height: 100svh;
+    }
+
+    .quiz-container {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: center; /* mantém centralizado mesmo em landscape mobile */
+        gap: 30px;
+        min-height: unset;
+    }
+
+    .quiz-content {
+        max-width: 45%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quiz-description { margin: 0 auto 30px; font-size: 1.2rem; }
+    .quiz-title       { font-size: clamp(2rem, 5vw, 3rem); }
+    .quiz-subtitle    { font-size: 1.1rem; margin-bottom: 20px; }
+
+    .quiz-aside-form {
+        max-width: 52%;
+        transform: translateY(20px);
+    }
+
+    .quiz-aside-form.active {
+        transform: translateY(0);
+    }
+
+    .form-window {
+        padding: 25px 22px;
+        min-height: unset;
+    }
+
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: unset;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .option-card      { font-size: 1.1rem; padding: 10px; }
+    .step-indicator   { font-size: 1.1rem; }
+    .form-window h3   { font-size: 1.3rem; }
+    .step-instruction { font-size: 1.2rem; margin-bottom: 15px; }
+    .btn-next         { padding: 14px; font-size: 1rem; }
+}
+
+/* ================================
+   ≤ 768px — Tablet médio / celular grande
+   ================================ */
+@media (max-width: 768px) {
+
+    .quiz-aside-form {
+        max-width: 100%;
+    }
+
+    .form-window {
+        padding: 35px 25px;
+        min-height: 560px;
+    }
+
+    .quiz-title       { font-size: clamp(2.8rem, 7vw, 4.5rem); }
+    .quiz-subtitle    { font-size: 1.4rem; }
+    .quiz-description { font-size: 1.8rem; }
+
+    .step-indicator   { font-size: 1.3rem; }
+    .form-window h3   { font-size: 1.5rem; }
+    .step-instruction { font-size: 1.4rem; }
+    .option-card      { font-size: 1.4rem; padding: 12px; }
+}
+
+
+/* ================================
+   ≤ 450px — Celular
+   ================================ */
+@media (max-width: 450px) {
+
+    .quiz-section {
+        height: auto;
+        min-height: 100svh;
+    }
+
+    .quiz-description { font-size: 1.5rem; }
+    .quiz-title       { font-size: clamp(2.2rem, 8vw, 3rem); }
+    .quiz-subtitle    { font-size: 1.2rem; }
+
+    .form-window {
+        padding: 28px 18px;
+        min-height: unset;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+        min-height: unset;
+        gap: 10px;
+    }
+
+    .option-card      { font-size: 1.2rem; padding: 12px 10px; }
+    .step-indicator   { font-size: 1.2rem; }
+    .form-window h3   { font-size: 1.4rem; }
+    .step-instruction { font-size: 1.3rem; }
+    .btn-next         { font-size: 1.1rem; padding: 15px 20px; }
+}
+
+
+/* ================================
+   ≤ 320px — Celular muito pequeno
+   ================================ */
+@media (max-width: 320px) {
+
+
+
+    .quiz-title       { font-size: 2rem; }
+    .quiz-description { font-size: 1.2rem; }
+
+    .form-window { padding: 22px 14px; }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .option-card      { font-size: 1.1rem; }
+    .step-indicator   { font-size: 1rem; }
+    .form-window h3   { font-size: 1.2rem; }
+    .step-instruction { font-size: 1.1rem; }
+    .btn-next         { font-size: 1rem; padding: 13px; }
+}
+
+
+
+
+/* Container principal do diagnóstico */
+#capture-area { padding: 10px; color: var(--text-primary); }
+
+
+.step-indicator {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Card Principal (DNA Visual) */
+.main-style-card {
+    border: 1px solid var(--accent-gold);
+    padding: 25px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.03);
+}
+
+.dna-label {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.dna-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dna-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+}
+
+.dna-percentage {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+/* Grid de Estilos Secundários */
+.secondary-styles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.secondary-card {
+    border: 0.5px solid #C5934C;
+    padding: 18px 14px;
+    background: rgba(255,255,255,0.02);
+}
+
+.secondary-label {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.secondary-value {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Lista de Barras de Progresso */
+.progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 2px;
+    margin-bottom: 8px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.style-name {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    width: 70px;
+    min-width: 90px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+
+.progress-track {
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.progress-bar {
+    height: 1px;
+    transition: width 1s ease-out;
+}
+
+/* Classes de estado para a barra */
+.bar-active { background: var(--accent-gold); opacity: 1; }
+.bar-inactive { background: white; opacity: 0.4; }
+
+.percent-value {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    width: 35px;
+    text-align: right;
+}
+
+.text-gold { color: var(--accent-gold); }
+
+
+
+/* Tablet e Telas Médias */
+@media (max-width: 1024px) {
+    .quiz-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .quiz-content { max-width: 100%; }
+    .quiz-description { margin: 0 auto 30px; }
+
+    .quiz-aside-form {
+        max-width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(20px);
+    }
+
+    .quiz-aside-form.active {
+        max-height: 1500px;
+        transform: translateY(0);
+        margin-top: 20px;
+    }
+}
+
+/* Landscape (Celular Deitado) */
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+    .quiz-section { padding: 40px 5%; }
+    .form-window { min-height: unset; padding: 20px; }
+    .options-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .quiz-title { font-size: 2.2rem; }
+}
+
+/* Celulares (iPhone, Android Modernos) */
+@media (max-width: 768px) {
+    .form-window { padding: 30px 20px; min-height: 500px; }
+    
+    .options-grid {
+        grid-template-columns: 1fr 1fr; /* Mantém 2 colunas se o texto for curto */
+        gap: 10px;
+    }
+
+    .option-card { font-size: 1rem; padding: 12px; }
+    .quiz-description { font-size: 1.1rem; }
+}
+
+/* Celulares Pequenos */
+@media (max-width: 450px) {
+    .quiz-title { font-size: 2.5rem; }
+    .quiz-subtitle { font-size: 1rem; letter-spacing: 3px; }
+    
+    .options-grid {
+        grid-template-columns: 1fr; /* Uma coluna para não apertar o texto */
+    }
+
+    .dna-title { font-size: 1.5rem; }
+    .dna-percentage{font-size: 1.2rem}
+    .secondary-styles-grid { grid-template-columns: 1fr; }
+
+    .step-indicator{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 320px){
+
 }
