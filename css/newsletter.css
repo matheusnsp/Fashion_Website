@@ -219,7 +219,7 @@
     .newsletter-description { font-size: 1.2rem; }
 
     .newsletter-form input  { font-size: 1rem; }
-    .btn-newsletter         { font-size: 1rem; }
+    .btn-newsletter         { font-size: 1rem; margin-left: -5vw; }
 
     .input-group {
         max-width: 100%;
@@ -244,7 +244,7 @@
     .newsletter-description { font-size: 1rem; }
 
     .newsletter-form input  { font-size: 0.9rem; }
-    .btn-newsletter         { font-size: 0.9rem; }
+    .btn-newsletter         { font-size: 0.9rem; margin-left: -10vw; }
 
     .social-label     { font-size: 1.2rem; }
     .social-link-item { font-size: 1.5rem; }

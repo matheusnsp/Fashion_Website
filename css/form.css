@@ -55,7 +55,7 @@
 
 .btn-quiz {
     display: inline-block;
-    padding: 30px 30px;
+    padding: 20px 40px;
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     text-decoration: none;
@@ -401,8 +401,10 @@
 @media (max-width: 450px) {
 
     .quiz-section {
-        height: auto;
+        /* height: auto; */
         min-height: 100svh;
+        margin: 0 auto;
+        width: 80%;
     }
 
     .quiz-description { font-size: 1.5rem; }
