@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ─── MENU HAMBURGUER ──────────────────────────────────────────
-    const hamburger = document.getElementById("hamburger");
-    const navLinks  = document.getElementById("navLinks");
+    // ─── FECHAR MENU AO CLICAR FORA ─────────────────────────
+    document.addEventListener("click", (e) => {
+        if (!navLinks || !hamburger) return;
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    }
+        const clicouDentroMenu = navLinks.contains(e.target);
+        const clicouNoBotao    = hamburger.contains(e.target);
+
+        if (!clicouDentroMenu && !clicouNoBotao) {
+            navLinks.classList.remove("active");
+        }
+    });
 
     // ─── SCROLL SUAVE ─────────────────────────────────────────────
     document.querySelectorAll('.nav-link:not(.disabled)').forEach(anchor => {

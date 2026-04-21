@@ -55,7 +55,7 @@
 
 .btn-quiz {
     display: inline-block;
-    /* padding: 40px 40px; */
+    padding: 30px 30px;
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     text-decoration: none;
@@ -627,7 +627,7 @@
     }
 
     .option-card { font-size: 1rem; padding: 12px; }
-    .quiz-description { font-size: 1.1rem; }
+    .quiz-description { font-size: 1.4rem; }
 }
 
 /* Celulares Pequenos */
@@ -646,8 +646,17 @@
     .step-indicator{
         font-size: 1.5rem;
     }
+
+
+    .btn-quiz {
+        padding: 20px 20px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 320px){
 
+    .btn-quiz {
+        padding: 15px 15px;
+    }
 }
