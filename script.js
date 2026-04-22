@@ -50,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             button.disabled     = true;
 
             try {
-                const res  = await fetch("../functions/subscribe", {
+                const res  = await fetch("/api/subscribe", {  // ✅ caminho correto para o Vercel
                     method: "POST",
+                    headers: { "Content-Type": "application/json" },  // ✅ header necessário
                     body: JSON.stringify({ email }),
                 });
                 const data = await res.json();
@@ -183,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             percent: totalPontos > 0 ? Math.round((item.points / totalPontos) * 100) : 0
         }));
 
-        const dna        = ranking[0];
+        const dna         = ranking[0];
         const secundario1 = ranking[1] && ranking[1].points > 0 ? ranking[1] : null;
         const secundario2 = ranking[2] && ranking[2].points > 0 ? ranking[2] : null;
 
