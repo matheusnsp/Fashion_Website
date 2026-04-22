@@ -45,26 +45,6 @@
         </nav>
     </header>
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            const isOpen = navMenu.classList.toggle('nav-open');
-            hamburger.classList.toggle('is-active', isOpen);
-            hamburger.setAttribute('aria-expanded', isOpen);
-        });
-
-        // Fecha o menu ao clicar em um link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('nav-open');
-                hamburger.classList.remove('is-active');
-                hamburger.setAttribute('aria-expanded', false);
-            });
-        });
-    </script>
-
     <main id="main-container">
         
         <section class="section home-section" id="home">

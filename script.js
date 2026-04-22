@@ -1,14 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ─── FECHAR MENU AO CLICAR FORA ─────────────────────────
-    document.addEventListener("click", (e) => {
-        if (!navLinks || !hamburger) return;
+    // ─── VARIÁVEIS DO MENU ────────────────────────────────────────
+    const navMenu   = document.querySelector(".nav-menu");
+    const hamburger = document.querySelector(".hamburger");
 
-        const clicouDentroMenu = navLinks.contains(e.target);
+    // ─── ABRIR/FECHAR MENU AO CLICAR NO HAMBÚRGUER ───────────────
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            const isOpen = navMenu.classList.toggle("nav-open");
+            hamburger.classList.toggle("is-active", isOpen);
+        });
+    }
+
+    // ─── FECHAR MENU AO CLICAR FORA ──────────────────────────────
+    document.addEventListener("click", (e) => {
+        if (!navMenu || !hamburger) return;
+
+        const clicouDentroMenu = navMenu.contains(e.target);
         const clicouNoBotao    = hamburger.contains(e.target);
 
         if (!clicouDentroMenu && !clicouNoBotao) {
-            navLinks.classList.remove("active");
+            navMenu.classList.remove("nav-open");
+            hamburger.classList.remove("is-active");
         }
     });
 
@@ -17,7 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            if (navLinks) navLinks.classList.remove("active");
+            // Fecha o menu ao clicar num link
+            if (navMenu)   navMenu.classList.remove("nav-open");
+            if (hamburger) hamburger.classList.remove("is-active");
 
             const targetId      = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
@@ -50,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
             button.disabled     = true;
 
             try {
-                const res  = await fetch("/api/subscribe", {  // ✅ caminho correto para o Vercel
+                const res  = await fetch("/api/subscribe", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },  // ✅ header necessário
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email }),
                 });
                 const data = await res.json();
@@ -92,10 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
         openQuizBtn.addEventListener('click', () => {
             quizAside.classList.add('active');
 
-            // Esconde o botão de iniciar
             gsap.to(openQuizBtn, { opacity: 0, pointerEvents: "none", duration: 0.5 });
 
-            // Anima os elementos do form ao aparecer
             gsap.from(".form-window > *", {
                 opacity: 0,
                 y: 20,
@@ -104,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 delay: 0.3
             });
 
-            // Em mobile, rola suavemente até o formulário
             if (window.innerWidth <= 1024) {
                 setTimeout(() => {
                     gsap.to(window, {
@@ -149,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             { opacity: 1, y: 0, duration: 0.3, clearProps: "all" }
                         );
 
-                        // Rola até o topo do form em mobile
                         if (window.innerWidth <= 1024) {
                             gsap.to(window, {
                                 duration: 0.6,
@@ -167,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. CÁLCULO E RENDERIZAÇÃO DO RESULTADO
     function finalizarDiagnostico() {
-        let ranking    = [];
+        let ranking     = [];
         let totalPontos = 0;
 
         steps.forEach(step => {
@@ -266,7 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "power4.out"
         });
 
-        // Rola até o resultado em mobile
         if (window.innerWidth <= 1024) {
             gsap.to(window, {
                 duration: 0.8,
