@@ -26,50 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ─── SCROLL SUAVE ─────────────────────────────────────────────
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function (e) {
-    
-            const page = this.dataset.page;
-            const href = this.getAttribute("href");
-    
-            // 👉 páginas SPA
-            if (page) {
-                e.preventDefault();
-                loadPage(page);
-                return;
-            }
-    
-            // 👉 scroll interno (#)
-            if (href.startsWith("#")) {
-                e.preventDefault();
-    
-                const target = document.querySelector(href);
-    
-                if (target) {
-                    gsap.to(window, {
-                        duration: 1.2,
-                        scrollTo: target
-                    });
-                }
+    document.querySelectorAll('.nav-link:not(.disabled)').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Fecha o menu ao clicar num link
+            if (navMenu)   navMenu.classList.remove("nav-open");
+            if (hamburger) hamburger.classList.remove("is-active");
+
+            const targetId      = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                gsap.to(window, {
+                    duration: 1.5,
+                    scrollTo: targetSection,
+                    ease: "power4.inOut"
+                });
             }
         });
     });
-
-    async function loadPage(page) {
-        const container = document.getElementById("main-container");
-    
-        try {
-            const res = await fetch(`./html/${page}.html`);
-            const html = await res.text();
-    
-            container.innerHTML = html;
-    
-            window.scrollTo(0, 0);
-    
-        } catch (err) {
-            container.innerHTML = "<p>Erro ao carregar página.</p>";
-        }
-    }
 
     // ─── NEWSLETTER ───────────────────────────────────────────────
     const newsletterForm = document.getElementById("newsletter-form");

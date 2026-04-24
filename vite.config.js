@@ -1,10 +1,3 @@
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  root: 'html',
-  base: './',
-  build: {
-    outDir: '../dist',
-    emptyOutDir: true,
+export default {
+    base: '/Fashion_Website/',
   }
-})

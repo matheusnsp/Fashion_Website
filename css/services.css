@@ -38,10 +38,6 @@
     width: 100%;
 }
 
-.service-category > .service-item:last-of-type {
-    border-bottom: none;
-}
-
 .service-info {
     flex: 1 1 0;
     min-width: 0;
