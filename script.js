@@ -25,21 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ─── SCROLL SUAVE ─────────────────────────────────────────────
+    // ─── SCROLL SUAVE (AJUSTADO) ──────────────────────────────────
     document.querySelectorAll('.nav-link:not(.disabled)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
 
-            // Só aplica o scroll suave e preventDefault se for um link interno (#)
+            // AJUSTE: Só aplica o scroll suave e e.preventDefault() se for link interno (#)
             if (href && href.startsWith('#')) {
-                e.preventDefault();
-
-                // Fecha o menu mobile ao clicar
-                if (navMenu)   navMenu.classList.remove("nav-open");
-                if (hamburger) hamburger.classList.remove("is-active");
-
                 const targetSection = document.querySelector(href);
+                
                 if (targetSection) {
+                    e.preventDefault();
+
+                    // Fecha o menu mobile ao clicar
+                    if (navMenu)   navMenu.classList.remove("nav-open");
+                    if (hamburger) hamburger.classList.remove("is-active");
+
                     gsap.to(window, {
                         duration: 1.5,
                         scrollTo: targetSection,
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             }
+            // Se o link for para outra página (ex: html/services.html), o navegador segue o link normal
         });
     });
 
@@ -133,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnNext) {
         btnNext.addEventListener('click', () => {
             const currentStepEl = steps[currentStep];
+            if (!currentStepEl) return; // Segurança caso não esteja na página do form
+
             const checkboxes    = currentStepEl.querySelectorAll('input[type="checkbox"]:checked');
 
             if (checkboxes.length === 0) {
@@ -210,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderizarResultado(dna, sec1, sec2, todos) {
         const formWindow = document.querySelector('.form-window');
+        if (!formWindow) return;
 
         const resultadoHTML = `
             <div id="capture-area">
