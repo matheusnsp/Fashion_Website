@@ -2,10 +2,15 @@
    NEWSLETTER — LAYOUT BASE
    ================================ */
    .newsletter-section {
+    height: 100vh;
     background: transparent;
     padding: 8%;
     position: relative;
     z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .newsletter-content {
@@ -23,7 +28,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 120px;
     align-items: center;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
+    margin: auto 0;
 }
 
 .newsletter-subtitle {

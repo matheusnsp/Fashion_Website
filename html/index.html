@@ -8,21 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/about.css">
-    <link rel="stylesheet" href="./css/services.css">
-    <link rel="stylesheet" href="./css/form.css">
-    <link rel="stylesheet" href="./css/newsletter.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/newsletter.css">
 </head>
 <body>
 
     <div class="bg-wrapper">
 
         <video class="video" autoplay muted loop playsinline id="video-bg">
-            <source src="video.mp4" type="video/mp4">
+            <source src="../images/video.mp4" type="video/mp4">
         </video>                
         <div class="overlay-vignette"></div>
     </div>
@@ -36,12 +36,12 @@
         </button>
 
         <nav class="nav-menu" id="nav-menu">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">Expertise</a>
-            <a href ="#services" class="nav-link">Serviços</a>
-            <a href="#style-quiz" class="nav-link">Diagnóstico</a>
-            <a href="#newsletter" class="nav-link">Newsletter</a>
-            <span class="nav-link disabled">Provador Virtual <small>(Em breve)</small></span>
+            <a href="index.html" class="nav-link">Home</a>
+            <!-- <a href="index.html#about" class="nav-link">Expertise</a> -->
+        
+            <a href="services.html" class="nav-link">Serviços</a>
+            <a href="form.html" class="nav-link">Diagnóstico</a>
+            <a href="newsletter.html" class="nav-link">Newsletter</a>
         </nav>
     </header>
 
@@ -70,7 +70,7 @@
                 </div>
         
                 <div class="home-image-side">
-                    <img src="img.png" alt="Catia Poggian" class="profile-photo">
+                    <img src="../images/img.png" alt="Catia Poggian" class="profile-photo">
                 </div>
             </div>
         </section>
@@ -90,7 +90,7 @@
                 </div>
         </section>
 
-        <section class="services-section" id="services">
+        <!-- <section class="services-section" id="services">
             <div class="container">
                 <header class="section-header">
                     <span class="service-title">Curadoria Exclusiva</span>
@@ -191,9 +191,9 @@
         
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="section quiz-section" id="style-quiz">
+        <!-- <section class="section quiz-section" id="style-quiz">
             <div class="quiz-container">
                 
                 <div class="quiz-content">
@@ -333,9 +333,9 @@
                 </div>
         
             </div>
-        </section>
+        </section> -->
 
-        <section class="newsletter-section" id="newsletter">
+        <!-- <section class="newsletter-section" id="newsletter">
             <div class="newsletter-container">
                 <div class="newsletter-content">
                     <span class="newsletter-subtitle">NEWSLETTER</span>
@@ -365,13 +365,28 @@
                     <a href="https://wa.me/13059889985" target="_blank" class="social-link-item whatsapp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
+                </div>
+            </div>
+        </section> -->
+        <section class="newsletter-section" id="newsletter">
+            <div class="social-connect-container">
+                <span class="social-label">CONECTE-SE NAS REDES</span>
+                <div class="social-icons-wrapper">
+                    <a href="https://www.instagram.com/catiapoggian" target="_blank" class="social-link-item instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@catiapoggian" target="_blank" class="social-link-item youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://wa.me/13059889985" target="_blank" class="social-link-item whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
                     <!-- <a href="https://www.facebook.com/catia.poggian" target="_blank" class="social-link-item facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a> -->
                 </div>
             </div>
         </section>
-
         
 
     </main>
