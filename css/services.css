@@ -46,6 +46,11 @@
     justify-content: center;
 }
 
+/* Seleciona o último .service-item da lista para remover a linha divisória */
+.service-item:last-child {
+    border-bottom: none;
+}
+
 .service-info h3 {
     text-align: center;
     font-family: var(--font-topic);

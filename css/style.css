@@ -74,8 +74,24 @@ html {
     font-family: var(--font-sans);
     scroll-behavior: auto; /* Desativado para GSAP controlar */
     overflow-x: hidden;
+    /* Adicione isso para garantir que o HTML ocupe a tela toda */
+    height: 100%;
 }
 
 body {
     overflow-x: hidden;
+    /* CONFIGURAÇÃO PARA O FOOTER PRENDER NO FUNDO */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa no mínimo a altura da tela inteira */
+}
+
+/* IMPORTANTE: Garante que o conteúdo principal "empurre" o footer */
+main {
+    flex: 1 0 auto;
+}
+
+/* O footer apenas se posiciona naturalmente ao final do fluxo flex */
+.site-footer {
+    flex-shrink: 0;
 }

@@ -127,6 +127,61 @@
   mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 }
 
+/* REDES SOCIAIS - CONECTE-SE */
+
+.connection-section {
+  margin-top: 8vh;
+}
+
+.connection-content {
+  width: 100%;
+}
+
+.social-connect-section {
+  background: transparent;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-connect-container {
+  margin-bottom: 16vh;
+  height: 10vh;
+  text-align: center;
+}
+
+.social-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 3rem;
+  letter-spacing: 4px;
+  color: var(--accent-gold);
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.social-link-item {
+  font-size: 3rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link-item.instagram { color: #E1306C; }
+.social-link-item.youtube   { color: #FF0000; }
+.social-link-item.facebook  { color: #1877F2; }
+.social-link-item.whatsapp  { color: #25D366; }
+
+.social-link-item:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.2);
+}
+
 /* ================================
  PORTRAIT — tablet grande  ≤ 1440px
  ================================ */
@@ -204,6 +259,10 @@
   }
 
   .home-footer { justify-content: center; }
+
+  .social-label      { font-size: 2.5rem; }
+  .social-link-item  { font-size: 2.8rem; }
+  .social-icons-wrapper { gap: 50px; }
 }
 
 /* ================================
@@ -227,6 +286,10 @@
   .home-image-side { height: 60vh; }
 
   .home-text-side .orcamento a { font-size: 1.2rem; }
+
+  .social-label     { font-size: 2rem; }
+  .social-link-item { font-size: 2.2rem; }
+  .social-icons-wrapper { gap: 35px; }
 }
 
 /* ================================
@@ -269,6 +332,10 @@
   .home-image-side { height: 50vh; }
 
   .home-text-side .orcamento a { font-size: 0.8rem; }
+
+  .social-label     { font-size: 1.5rem; letter-spacing: 3px; }
+  .social-link-item { font-size: 1.8rem; }
+  .social-icons-wrapper { gap: 30px; }
 }
 
 /* ================================
@@ -292,6 +359,11 @@
   .home-image-side { height: 55vh; }
 
   .home-text-side .orcamento a { font-size: 0.7rem; }
+
+
+  .social-label     { font-size: 1.2rem; }
+  .social-link-item { font-size: 1.5rem; }
+  .social-icons-wrapper { gap: 20px; }
 }
 
 /* ================================
@@ -322,6 +394,18 @@
   }
 
   .home-text-side .orcamento a { font-size: 0.8rem; }
+
+  .social-label     { font-size: 1.5rem; }
+  .social-link-item { font-size: 1.6rem; }
+  .social-icons-wrapper { gap: 25px; }
 }
 
-/* IPADS — adicionar aqui */
+/* ================================
+   PORTRAIT — iPad / tablet médio  451px – 950px
+   ================================ */
+   @media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
+
+    .social-label     { font-size: 2.3rem; }
+    .social-link-item { font-size: 2.5rem; }
+    .social-icons-wrapper { gap: 42px; }
+}

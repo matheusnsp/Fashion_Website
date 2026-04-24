@@ -9,18 +9,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Garante que ocupe a largura total */
 }
 
 .footer-container {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 /* ================================
    IDENTIDADE
    ================================ */
 .footer-identity {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens internamente (texto e marca) */
+    text-align: center;  /* Garante o alinhamento do texto */
     max-width: 500px;
 }
 
@@ -36,6 +40,7 @@
     color: var(--text-muted);
     letter-spacing: 3px;
     text-transform: uppercase;
+    margin-top: -5%;
 }
 
 .footer-details .divider {
@@ -94,7 +99,7 @@
    ================================ */
 @media (max-width: 450px) and (orientation: portrait) {
     .site-footer {
-        padding: 60px 8%;
+        padding: 30px 8%;
     }
 
     .footer-container {
@@ -111,17 +116,11 @@
         text-align: center;
     }
 
-    .footer-brand { font-size: 2.2rem; }
+    .footer-brand { font-size: 2.5rem; }
 
     .footer-label {
         align-self: center;
         margin-right: -6px;
-    }
-
-    .footer-social-links {
-        flex-direction: column;
-        gap: 25px;
-        align-items: center;
     }
 }
 
@@ -129,12 +128,10 @@
    PORTRAIT — celular muito pequeno  ≤ 320px
    ================================ */
 @media (max-width: 320px) and (orientation: portrait) {
-    .site-footer {
-        padding: 40px 6%;
-    }
-
-    .footer-brand    { font-size: 1.8rem; }
+    .site-footer     { padding: 40px 6%; }
+    .footer-brand    { font-size: 2.2rem; }
     .footer-details  { font-size: 0.65rem; letter-spacing: 2px; }
+    
 }
 
 /* ================================
