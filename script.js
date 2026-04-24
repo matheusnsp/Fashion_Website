@@ -28,21 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─── SCROLL SUAVE ─────────────────────────────────────────────
     document.querySelectorAll('.nav-link:not(.disabled)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
 
-            // Fecha o menu ao clicar num link
-            if (navMenu)   navMenu.classList.remove("nav-open");
-            if (hamburger) hamburger.classList.remove("is-active");
+            // Só aplica o scroll suave e preventDefault se for um link interno (#)
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
 
-            const targetId      = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+                // Fecha o menu mobile ao clicar
+                if (navMenu)   navMenu.classList.remove("nav-open");
+                if (hamburger) hamburger.classList.remove("is-active");
 
-            if (targetSection) {
-                gsap.to(window, {
-                    duration: 1.5,
-                    scrollTo: targetSection,
-                    ease: "power4.inOut"
-                });
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: targetSection,
+                        ease: "power4.inOut"
+                    });
+                }
             }
         });
     });
@@ -102,11 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const openQuizBtn = document.getElementById('open-quiz');
     let   currentStep = 0;
 
-    // 1. ABRIR O QUIZ — funciona em QUALQUER tamanho de tela
     if (openQuizBtn && quizAside) {
         openQuizBtn.addEventListener('click', () => {
             quizAside.classList.add('active');
-
             gsap.to(openQuizBtn, { opacity: 0, pointerEvents: "none", duration: 0.5 });
 
             gsap.from(".form-window > *", {
@@ -129,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. NAVEGAÇÃO ENTRE STEPS
     if (btnNext) {
         btnNext.addEventListener('click', () => {
             const currentStepEl = steps[currentStep];
@@ -176,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. CÁLCULO E RENDERIZAÇÃO DO RESULTADO
     function finalizarDiagnostico() {
         let ranking     = [];
         let totalPontos = 0;
@@ -213,59 +212,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const formWindow = document.querySelector('.form-window');
 
         const resultadoHTML = `
-    <div id="capture-area">
-        <span class="step-indicator">DIAGNÓSTICO CONCLUÍDO</span>
-
-        <div class="main-style-card">
-            <p class="dna-label">Seu DNA Visual</p>
-            <div class="dna-header-flex">
-                <h4 class="dna-title">${dna.style}</h4>
-                <span class="dna-percentage">${dna.percent}%</span>
-            </div>
-        </div>
-
-        <div class="secondary-styles-grid">
-            ${sec1 ? `
-            <div class="secondary-card">
-                <p class="secondary-label">Secundário I</p>
-                <p class="secondary-value">${sec1.style}</p>
-            </div>` : ''}
-
-            ${sec2 ? `
-            <div class="secondary-card">
-                <p class="secondary-label">Secundário II</p>
-                <p class="secondary-value">${sec2.style}</p>
-            </div>` : ''}
-        </div>
-
-        <div class="progress-list">
-            ${todos.map(item => {
-                const isMain = item.style === dna.style;
-                return `
-                <div class="progress-item">
-                    <span class="style-name">${item.style}</span>
-                    <div class="progress-track">
-                        <div class="progress-bar ${isMain ? 'bar-active' : 'bar-inactive'}" 
-                             style="width: ${item.percent}%"></div>
+            <div id="capture-area">
+                <span class="step-indicator">DIAGNÓSTICO CONCLUÍDO</span>
+                <div class="main-style-card">
+                    <p class="dna-label">Seu DNA Visual</p>
+                    <div class="dna-header-flex">
+                        <h4 class="dna-title">${dna.style}</h4>
+                        <span class="dna-percentage">${dna.percent}%</span>
                     </div>
-                    <span class="percent-value ${isMain ? 'text-gold' : ''}">${item.percent}%</span>
                 </div>
-                `;
-            }).join('')}
-        </div>
-    </div>
-
-    <div class="result-actions-container">
-        <button onclick="window.location.reload()" class="btn-next btn-refazer-flex">Refazer Diagnóstico —</button>
-        <button onclick="window.baixarDossie()" class="btn-download-icon" title="Baixar meu DNA Visual">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-        </button>
-    </div>
-`;
+                <div class="secondary-styles-grid">
+                    ${sec1 ? `<div class="secondary-card"><p class="secondary-label">Secundário I</p><p class="secondary-value">${sec1.style}</p></div>` : ''}
+                    ${sec2 ? `<div class="secondary-card"><p class="secondary-label">Secundário II</p><p class="secondary-value">${sec2.style}</p></div>` : ''}
+                </div>
+                <div class="progress-list">
+                    ${todos.map(item => `
+                        <div class="progress-item">
+                            <span class="style-name">${item.style}</span>
+                            <div class="progress-track">
+                                <div class="progress-bar ${item.style === dna.style ? 'bar-active' : 'bar-inactive'}" style="width: ${item.percent}%"></div>
+                            </div>
+                            <span class="percent-value ${item.style === dna.style ? 'text-gold' : ''}">${item.percent}%</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="result-actions-container">
+                <button onclick="window.location.reload()" class="btn-next btn-refazer-flex">Refazer Diagnóstico —</button>
+                <button onclick="window.baixarDossie()" class="btn-download-icon" title="Baixar meu DNA Visual">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </button>
+            </div>`;
 
         formWindow.innerHTML = resultadoHTML;
 
@@ -288,11 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── DOWNLOAD DOSSIÊ (html2canvas) ────────────────────────────
     window.baixarDossie = function () {
-        const area    = document.getElementById('capture-area');
+        const area = document.getElementById('capture-area');
         const btnIcon = document.querySelector('.btn-download-icon');
 
         if (!area) return;
-
         btnIcon.style.opacity = "0.5";
 
         html2canvas(area, {
@@ -301,9 +281,9 @@ document.addEventListener('DOMContentLoaded', () => {
             logging: false,
             useCORS: true
         }).then(canvas => {
-            const link      = document.createElement('a');
-            link.download   = 'meu-dna-visual.png';
-            link.href       = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = 'meu-dna-visual.png';
+            link.href = canvas.toDataURL('image/png');
             link.click();
             btnIcon.style.opacity = "1";
         });
