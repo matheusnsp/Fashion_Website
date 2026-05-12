@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Catia Poggian | Estrategista de Marca</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,700&family=Inter:wght@100;300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/newsletter.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+
+    <div class="bg-wrapper">
+        <video class="video" autoplay muted loop playsinline id="video-bg">
+            <source src="/video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay-vignette"></div>
+    </div>
+
+    <header class="main-header">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <a href="/index.html" class="nav-link" data-i18n="nav.home">Home</a>
+            <a href="services.html" class="nav-link" data-i18n="nav.services">Serviços</a>
+            <a href="newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a>
+            <span class="nav-divider">|</span>
+            <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">EN</button>
+        </nav>
+        <button class="lang-toggle lang-toggle--mobile" id="lang-toggle">EN</button>
+    </header>
+
+    <main id="main-container">
+
+        <section class="section quiz-section" id="style-quiz">
+            <div class="quiz-container">
+
+                <div class="quiz-content">
+                    <!-- <span class="quiz-subtitle">AUTODESCOBERTA</span> -->
+                    <h2 class="quiz-title" data-i18n="form.quiz.title">Análise de <br> Identidade Visual</h2>
+                    <p class="quiz-description" data-i18n="form.quiz.description">
+                        Um diagnóstico exclusivo para identificar o seu estilo, e como você pode revelar a sua identidade com mais clareza e autenticidade.
+                    </p>
+                    <a href="javascript:void(0)" id="open-quiz" class="btn-quiz" data-i18n="form.quiz.cta">INICIAR DIAGNÓSTICO →</a>
+                </div>
+
+                <div id="quiz-aside-container" class="quiz-aside-form">
+                    <div class="form-window">
+                        <form id="style-form">
+
+                            <div class="form-step active" data-step="1" data-style="Esportivo">
+                                <span class="step-indicator" data-i18n="form.step1.indicator">Cenário 1 de 7</span>
+                                <h3 data-i18n="form.step1.question">Com quais destas características você se identifica?</h3>
+                                <p class="step-instruction" data-i18n="form.step1.instruction">Selecione todas que descrevem sua personalidade:</p>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c1" value="agradavel"><span data-i18n="form.step1.o1">Agradável</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="comunicativa"><span data-i18n="form.step1.o2">Comunicativa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="casual"><span data-i18n="form.step1.o3">Casual</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="ativa"><span data-i18n="form.step1.o4">Ativa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="amigavel"><span data-i18n="form.step1.o5">Amigável</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="esportiva"><span data-i18n="form.step1.o6">Esportiva</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="otimista"><span data-i18n="form.step1.o7">Otimista</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="positiva"><span data-i18n="form.step1.o8">Positiva</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c1" value="despretensiosa"><span data-i18n="form.step1.o9">Despretensiosa</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="2" data-style="Clássico">
+                                <span class="step-indicator" data-i18n="form.step2.indicator">Cenário 2 de 7</span>
+                                <h3 data-i18n="form.step2.question">Marque o que reflete seu jeito de ser:</h3>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o1">Metódica</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o2">Conservadora</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o3">Conscienciosa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o4">Eficiente</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o5">Leal</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o6">Organizada</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o7">Confiável</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o8">Responsável</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c2"><span data-i18n="form.step2.o9">Sensata</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="3" data-style="Elegante">
+                                <span class="step-indicator" data-i18n="form.step3.indicator">Cenário 3 de 7</span>
+                                <h3 data-i18n="form.step3.question">Quais destas palavras combinam com você?</h3>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o1">Culta</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o2">Nobre</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o3">Perspicaz</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o4">Distinta</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o5">Equilibrada</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o6">Refinada</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o7">Discreta</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o8">Elegante</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c3"><span data-i18n="form.step3.o9">Imponente</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="4" data-style="Feminino">
+                                <span class="step-indicator" data-i18n="form.step4.indicator">Cenário 4 de 7</span>
+                                <h3 data-i18n="form.step4.question">Selecione as características que você possui:</h3>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o1">Generosa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o2">Ponderada</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o3">Atenciosa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o4">Romântica</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o5">Sensível</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o6">Gentil</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o7">Incentivadora</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o8">Compreensiva</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c4"><span data-i18n="form.step4.o9">Afetuosa</span></label>
+                                </div>
+                            </div>
+                            <div class="form-step" data-step="5" data-style="Sensual">
+                                <span class="step-indicator" data-i18n="form.step5.indicator">Cenário 5 de 7</span>
+                                <h3 data-i18n="form.step5.question">Como você se descreve?</h3>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o1">Vaidosa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o2">Atraente</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o3">Confiante</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o4">Sedutora</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o5">Provocante</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o6">Masculina/Viril</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o7">Estimulante</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c5"><span data-i18n="form.step5.o8">Insinuante</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="6" data-style="Criativo">
+                                <span class="step-indicator" data-i18n="form.step6.indicator">Cenário 6 de 7</span>
+                                <h3 data-i18n="form.step6.question">Quais traços de personalidade são seus?</h3>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o1">Desprendida</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o2">Artística</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o3">Construtiva</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o4">Independente</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o5">Original</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o6">Espontânea</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o7">Inovadora</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o8">Informal</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c6"><span data-i18n="form.step6.o9">Exclusiva</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="7" data-style="Dramático">
+                                <span class="step-indicator" data-i18n="form.step7.indicator">Cenário 7 de 7</span>
+                                <h3 data-i18n="form.step7.question">Para finalizar, o que te define?</h3>
+                                <div class="options-grid checkbox-grid">
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o1">Agressiva</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o2">Arrojada</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o3">Imponente</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o4">Exigente</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o5">Moderna</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o6">Dominadora</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o7">Intensa</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o8">Segura</span></label>
+                                    <label class="option-card"><input type="checkbox" name="c7"><span data-i18n="form.step7.o9">Sofisticada</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form-footer">
+                                <button type="button" class="btn-next" data-i18n="form.btn.next">PRÓXIMO →</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-identity">
+                <a href="/index.html" class="footer-brand">Catia Poggian</a>
+                <p class="footer-details">
+                    © 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Externos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/script.js"></script>
+
+    <!-- Seu Script Customizado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = document.querySelectorAll('.form-step');
+            const btnNext = document.querySelector('.btn-next');
+            const quizAside = document.getElementById('quiz-aside-container');
+            const openQuizBtn = document.getElementById('open-quiz');
+            let currentStep = 0;
+
+            // Helper: usa window.i18n se disponível, senão retorna fallback PT
+            function t(key, fallback) {
+                return (window.i18n && window.i18n.t(key)) || fallback;
+            }
+
+            if (openQuizBtn && quizAside) {
+                openQuizBtn.addEventListener('click', () => {
+                    quizAside.classList.add('active');
+                    gsap.to(openQuizBtn, { opacity: 0, pointerEvents: "none", duration: 0.5 });
+                    gsap.from(".form-window > *", {
+                        opacity: 0, y: 20, stagger: 0.1, duration: 0.8, delay: 0.3
+                    });
+                    if (window.innerWidth <= 1024) {
+                        setTimeout(() => {
+                            gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: quizAside, offsetY: 80 },
+                                ease: "power3.inOut"
+                            });
+                        }, 400);
+                    }
+                });
+            }
+
+            if (btnNext) {
+                btnNext.addEventListener('click', () => {
+                    const currentStepEl = steps[currentStep];
+                    if (!currentStepEl) return;
+                    const checkboxes = currentStepEl.querySelectorAll('input[type="checkbox"]:checked');
+                    
+                    if (checkboxes.length === 0) {
+                        gsap.to(currentStepEl, { x: 10, repeat: 3, yoyo: true, duration: 0.05 });
+                        return;
+                    }
+
+                    if (currentStep < steps.length - 1) {
+                        gsap.to(currentStepEl, {
+                            opacity: 0, y: -10, duration: 0.3,
+                            onComplete: () => {
+                                currentStepEl.classList.remove('active');
+                                currentStep++;
+                                const nextStepEl = steps[currentStep];
+                                nextStepEl.classList.add('active');
+                                if (currentStep === steps.length - 1) btnNext.textContent = t('form.btn.last', 'VER RESULTADO —');
+                                gsap.fromTo(nextStepEl,
+                                    { opacity: 0, y: 10 },
+                                    { opacity: 1, y: 0, duration: 0.3, clearProps: "all" }
+                                );
+                                if (window.innerWidth <= 1024) {
+                                    gsap.to(window, {
+                                        duration: 0.6,
+                                        scrollTo: { y: quizAside, offsetY: 80 },
+                                        ease: "power2.inOut"
+                                    });
+                                }
+                            }
+                        });
+                    } else {
+                        finalizarDiagnostico();
+                    }
+                });
+            }
+
+            function finalizarDiagnostico() {
+                let ranking = [], totalPontos = 0;
+                steps.forEach(step => {
+                    const styleName = step.getAttribute('data-style');
+                    const count = step.querySelectorAll('input[type="checkbox"]:checked').length;
+                    ranking.push({ style: styleName, points: count });
+                    totalPontos += count;
+                });
+                ranking.sort((a, b) => b.points - a.points);
+                ranking = ranking.map(item => ({
+                    ...item,
+                    percent: totalPontos > 0 ? Math.round((item.points / totalPontos) * 100) : 0
+                }));
+                
+                const dna = ranking[0];
+                const sec1 = ranking[1] && ranking[1].points > 0 ? ranking[1] : null;
+                const sec2 = ranking[2] && ranking[2].points > 0 ? ranking[2] : null;
+
+                gsap.to("#style-form", {
+                    opacity: 0, y: -20, duration: 0.5,
+                    onComplete: () => renderizarResultado(dna, sec1, sec2, ranking)
+                });
+            }
+
+            function renderizarResultado(dna, sec1, sec2, todos) {
+                const formWindow = document.querySelector('.form-window');
+                if (!formWindow) return;
+
+                // Traduz o nome do estilo se disponível
+                const styleName = (s) => t('form.style.' + s, s);
+                
+                const resultadoHTML = `
+                    <div id="capture-area">
+                        <span class="step-indicator">${t('form.result.done', 'DIAGNÓSTICO CONCLUÍDO')}</span>
+                        <div class="main-style-card">
+                            <p class="dna-label">${t('form.result.dna', 'Seu DNA Visual')}</p>
+                            <div class="dna-header-flex">
+                                <h4 class="dna-title">${styleName(dna.style)}</h4>
+                                <span class="dna-percentage">${dna.percent}%</span>
+                            </div>
+                        </div>
+                        <div class="secondary-styles-grid">
+                            ${sec1 ? `<div class="secondary-card"><p class="secondary-label">${t('form.result.sec1', 'Secundário I')}</p><p class="secondary-value">${styleName(sec1.style)}</p></div>` : ''}
+                            ${sec2 ? `<div class="secondary-card"><p class="secondary-label">${t('form.result.sec2', 'Secundário II')}</p><p class="secondary-value">${styleName(sec2.style)}</p></div>` : ''}
+                        </div>
+                        <div class="progress-list">
+                            ${todos.map(item => `
+                                <div class="progress-item">
+                                    <span class="style-name">${styleName(item.style)}</span>
+                                    <div class="progress-track">
+                                        <div class="progress-bar ${item.style === dna.style ? 'bar-active' : 'bar-inactive'}" style="width: ${item.percent}%"></div>
+                                    </div>
+                                    <span class="percent-value ${item.style === dna.style ? 'text-gold' : ''}">${item.percent}%</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="result-actions-container">
+                        <button onclick="window.location.reload()" class="btn-next btn-refazer-flex">${t('form.btn.redo', 'Refazer Diagnóstico —')}</button>
+                        <button onclick="window.baixarDossie()" class="btn-download-icon" title="Baixar meu DNA Visual">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </button>
+                    </div>`;
+                
+                formWindow.innerHTML = resultadoHTML;
+                gsap.from(".form-window > *", { opacity: 0, y: 20, stagger: 0.1, duration: 0.8, ease: "power4.out" });
+            }
+
+            window.baixarDossie = function () {
+                const area = document.getElementById('capture-area');
+                if (!area) return;
+                html2canvas(area, { backgroundColor: "#0a0a0a", scale: 2 }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'meu-dna-visual.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            };
+        });
+    </script>
+</body>
+</html>

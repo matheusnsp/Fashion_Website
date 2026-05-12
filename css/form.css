@@ -1,0 +1,1065 @@
+/* ================================
+   RESET & BASE
+   ================================ */
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+   body {
+       background: #080808;
+       color: var(--text-primary, #fff);
+       font-family: var(--font-sans, 'Inter', sans-serif);
+       overflow-x: hidden;
+   }
+   
+   /* ================================
+      VÍDEO DE FUNDO
+      ================================ */
+   .bg-wrapper {
+       position: fixed;
+       inset: 0;
+       z-index: 0;
+       overflow: hidden;
+   }
+   
+   .bg-wrapper .video {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       opacity: 0.35;
+   }
+   
+   .overlay-vignette {
+       position: absolute;
+       inset: 0;
+       background: radial-gradient(ellipse at center, transparent 30%, rgba(8,8,8,0.85) 100%);
+   }
+   
+   /* ================================
+      GATE — tela de loading/erro
+      ================================ */
+   #gate {
+       position: fixed;
+       inset: 0;
+       z-index: 100;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: 24px;
+       background: #080808;
+       transition: opacity 0.5s ease;
+   }
+   
+   #gate.fade-out {
+       opacity: 0;
+       pointer-events: none;
+   }
+   
+   .gate-logo {
+       font-family: var(--font-signature, 'Gistesy', cursive);
+       font-size: 3.5rem;
+       letter-spacing: 2px;
+       color: #ffffff;
+       text-align: center;
+   }
+   
+   .gate-spinner {
+       width: 32px;
+       height: 32px;
+       border: 1px solid rgba(197, 164, 126, 0.2);
+       border-top-color: var(--accent-gold, #C5A47E);
+       border-radius: 50%;
+       animation: spin 0.9s linear infinite;
+   }
+   
+   @keyframes spin { to { transform: rotate(360deg); } }
+   
+   .gate-msg {
+       text-align: center;
+       padding: 0 24px;
+       max-width: 480px;
+   }
+   
+   .gate-msg h2 {
+       font-family: var(--font-serif, 'Cormorant Garamond', serif);
+       font-size: 1.8rem;
+       color: var(--accent-gold, #C5A47E);
+       margin-bottom: 12px;
+   }
+   
+   .gate-msg p {
+       font-size: 1.3rem;
+       color: rgba(255,255,255,0.5);
+       line-height: 1.6;
+   }
+   
+   /* ================================
+      COLLECT SCREEN — coleta de dados
+      ================================ */
+   #collect-screen {
+       position: fixed;
+       inset: 0;
+       z-index: 90;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 20px;
+       opacity: 0;
+       visibility: hidden;
+       transition: opacity 0.6s ease, visibility 0.6s ease;
+   }
+   
+   #collect-screen.show {
+       opacity: 1;
+       visibility: visible;
+   }
+   
+   .collect-card {
+       background: rgba(255,255,255,0.03);
+       border: 0.5px solid var(--accent-gold, #C5A47E);
+       backdrop-filter: blur(20px);
+       padding: 50px 44px;
+       max-width: 520px;
+       width: 100%;
+       border-radius: 4px;
+   }
+   
+   .collect-brand {
+       font-family: var(--font-signature, 'Gistesy', cursive);
+       font-size: 3.5rem;
+       color: #ffffff;
+       text-align: center;
+       margin-bottom: 8px;
+   }
+   
+   .collect-sub {
+       font-size: 1.1rem;
+       text-align: center;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       color: rgba(255,255,255,0.35);
+       margin-bottom: 32px;
+   }
+   
+   .collect-title {
+       font-family: var(--font-serif, 'Cormorant Garamond', serif);
+       font-size: 2.4rem;
+       font-weight: 300;
+       color: #fff;
+       margin-bottom: 10px;
+       line-height: 1.2;
+   }
+   
+   .collect-desc {
+       font-size: 1.3rem;
+       color: rgba(255,255,255,0.45);
+       line-height: 1.6;
+       margin-bottom: 32px;
+   }
+   
+   .c-field {
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+       margin-bottom: 20px;
+   }
+   
+   .c-label {
+       font-size: 1.1rem;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       color: rgba(255,255,255,0.5);
+   }
+   
+   .c-input {
+       background: rgba(255,255,255,0.04);
+       border: 0.5px solid rgba(197, 164, 126, 0.3);
+       color: #fff;
+       padding: 14px 16px;
+       font-size: 1.4rem;
+       font-family: var(--font-sans, 'Inter', sans-serif);
+       outline: none;
+       transition: border-color 0.3s ease;
+       border-radius: 2px;
+       width: 100%;
+   }
+   
+   .c-input::placeholder { color: rgba(255,255,255,0.2); }
+   .c-input:focus { border-color: var(--accent-gold, #C5A47E); }
+   
+   .c-btn {
+       width: 100%;
+       margin-top: 8px;
+       padding: 18px;
+       background: transparent;
+       border: 1px solid var(--accent-gold, #C5A47E);
+       color: var(--accent-gold, #C5A47E);
+       font-size: 1.2rem;
+       letter-spacing: 3px;
+       font-weight: 600;
+       cursor: pointer;
+       text-transform: uppercase;
+       transition: all 0.4s ease;
+       border-radius: 2px;
+   }
+   
+   .c-btn:hover {
+       background: var(--accent-gold, #C5A47E);
+       color: #080808;
+   }
+   
+   .c-error {
+       font-size: 1.1rem;
+       color: #e07070;
+       margin-top: 12px;
+       text-align: center;
+       display: none;
+   }
+   
+   .c-error.show { display: block; }
+   
+   /* ================================
+      QUIZ WRAP
+      ================================ */
+   #quiz-full-wrap {
+       position: relative;
+       z-index: 10;
+       display: none;
+   }
+   
+   .client-greeting {
+       font-size: 1.3rem;
+       color: var(--accent-gold, #C5A47E);
+       letter-spacing: 2px;
+       margin-top: 8px;
+   }
+   
+   .quiz-progress-bar {
+       height: 2px;
+       background: rgba(197, 164, 126, 0.15);
+       margin-bottom: 16px;
+       border-radius: 1px;
+       overflow: hidden;
+   }
+   
+   .quiz-progress-fill {
+       height: 100%;
+       background: var(--accent-gold, #C5A47E);
+       transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   /* ================================
+      RESULT WRAP
+      ================================ */
+   #result-full-wrap {
+       position: fixed;
+       inset: 0;
+       z-index: 80;
+       display: none;
+       align-items: flex-start;
+       justify-content: center;
+       padding: 40px 5%;
+       overflow-y: auto;
+   }
+   
+   .result-card {
+       background: rgba(255,255,255,0.03);
+       border: 0.5px solid var(--accent-gold, #C5A47E);
+       backdrop-filter: blur(20px);
+       padding: 50px 56px;
+       max-width: 1100px;
+       width: 100%;
+       border-radius: 4px;
+       position: relative;
+       z-index: 1;
+       margin: auto 0;
+   }
+   
+   /* Indicador topo — fora do grid */
+   .result-step-indicator {
+       font-family: var(--font-sans);
+       display: block;
+       font-size: 1.1rem;
+       color: var(--accent-gold);
+       letter-spacing: 5px;
+       text-transform: uppercase;
+       text-align: center;
+       margin-bottom: 32px;
+   }
+   
+   /* Área capturável: 2 colunas desktop */
+   #capture-area {
+       color: var(--text-primary);
+       margin-bottom: 32px;
+   }
+   
+   .result-cols {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 32px;
+       align-items: start;
+   }
+   
+   /* Coluna esquerda: DNA + secundários */
+   .result-col-left {
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+   }
+   
+   /* Coluna direita: barras */
+   .result-col-right {
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       padding-top: 4px;
+   }
+   
+   .result-col-right-label {
+       font-family: var(--font-sans);
+       font-size: 0.9rem;
+       letter-spacing: 4px;
+       text-transform: uppercase;
+       color: rgba(255,255,255,0.3);
+       margin-bottom: 20px;
+   }
+   
+   /* DNA Principal */
+   .main-style-card {
+       border: 1px solid var(--accent-gold);
+       padding: 24px 20px;
+       background: rgba(255,255,255,0.03);
+   }
+   
+   .dna-label {
+       font-family: var(--font-sans);
+       font-size: 1rem;
+       letter-spacing: 4px;
+       color: var(--accent-gold);
+       text-transform: uppercase;
+       margin-bottom: 14px;
+   }
+   
+   .dna-header-flex {
+       display: flex;
+       justify-content: space-between;
+       align-items: baseline;
+       flex-wrap: wrap;
+       gap: 8px;
+       margin-bottom: 12px;
+   }
+   
+   .dna-title {
+       font-family: var(--font-serif);
+       font-size: clamp(2rem, 3vw, 3rem);
+       text-transform: uppercase;
+   }
+   
+   .dna-percentage {
+       font-size: 1.8rem;
+       color: var(--accent-gold);
+       font-weight: 300;
+   }
+   
+   
+   /* Secundários */
+   .secondary-styles-grid {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 12px;
+       margin-top: 12px;
+       margin-bottom: 24px;
+   }
+   
+   .secondary-card {
+       border: 0.5px solid rgba(197,164,126,0.4);
+       padding: 16px 14px;
+       background: rgba(255,255,255,0.02);
+   }
+   
+   .secondary-label {
+       font-family: var(--font-sans);
+       font-size: 0.9rem;
+       letter-spacing: 2px;
+       color: var(--accent-gold);
+       margin-bottom: 8px;
+       text-transform: uppercase;
+   }
+   
+   .secondary-value {
+       margin: 0;
+       font-family: var(--font-serif);
+       font-size: 1.6rem;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+   }
+   
+   /* Barras de progresso */
+   .progress-list {
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
+   }
+   
+   .progress-item {
+       display: flex;
+       align-items: center;
+       gap: 14px;
+   }
+   
+   .style-name {
+       font-family: var(--font-sans);
+       font-size: 0.85rem;
+       width: 90px;
+       min-width: 90px;
+       text-transform: uppercase;
+       opacity: 0.45;
+       letter-spacing: 1px;
+   }
+   
+   .progress-track {
+       flex-grow: 1;
+       height: 1px;
+       background: rgba(255,255,255,0.08);
+       position: relative;
+   }
+   
+   .progress-bar,
+   .progress-bar-fill {
+       height: 1px;
+       transition: width 1s ease-out;
+   }
+   
+   .bar-active  { background: var(--accent-gold); opacity: 1; }
+   .bar-inactive { background: white; opacity: 0.3; }
+   
+   .percent-value {
+       font-family: var(--font-sans);
+       font-size: 1rem;
+       width: 38px;
+       text-align: right;
+       opacity: 0.6;
+   }
+   
+   .text-gold { color: var(--accent-gold); opacity: 1; }
+   
+   /* Ações */
+   .result-actions-container {
+       display: flex;
+       gap: 10px;
+       margin-top: 24px;
+       align-items: stretch;
+   }
+   
+   .btn-download-full {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 10px;
+       flex: 1;
+       padding: 18px 20px;
+       background: transparent;
+       border: 1px solid var(--accent-gold, #C5A47E);
+       color: var(--accent-gold, #C5A47E);
+       cursor: pointer;
+       transition: all 0.4s ease;
+       letter-spacing: 3px;
+       font-weight: 600;
+       font-size: 1.1rem;
+       text-transform: uppercase;
+   }
+   
+   .btn-download-full:hover {
+       background: var(--accent-gold, #C5A47E);
+       color: #080808;
+   }
+   
+   .result-used-msg {
+       font-family: var(--font-sans);
+       font-size: 1.1rem;
+       color: rgba(255,255,255,0.3);
+       text-align: center;
+       margin-top: 16px;
+       letter-spacing: 1px;
+   }
+   
+   /* ================================
+      RESULT — TABLET (≤ 1024px)
+      ================================ */
+   @media (max-width: 1024px) {
+       .result-card {
+           padding: 40px 36px;
+           max-width: 680px;
+       }
+   
+       .result-cols {
+           grid-template-columns: 1fr;
+           gap: 24px;
+       }
+   
+       .result-col-right-label { display: none; }
+   }
+   
+   /* ================================
+      RESULT — MOBILE (≤ 768px)
+      ================================ */
+   @media (max-width: 768px) {
+       #result-full-wrap { padding: 20px 16px; }
+       .result-card { padding: 32px 24px; }
+       .dna-title { font-size: 2rem; }
+       .dna-percentage { font-size: 1.4rem; }
+   }
+   
+   /* ================================
+      RESULT — MOBILE PEQUENO (≤ 450px)
+      ================================ */
+   @media (max-width: 450px) {
+       .result-card { padding: 28px 18px; }
+       .secondary-styles-grid { grid-template-columns: 1fr; }
+       .dna-title { font-size: 1.8rem; }
+       .style-name { width: 72px; min-width: 72px; font-size: 0.75rem; }
+   }
+   
+   
+   /* ================================
+      QUIZ SECTION — BASE (DESKTOP)
+      ================================ */
+      .quiz-section {
+       padding: 80px 5% 20px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+   }
+   
+   .quiz-container {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       gap: 50px;
+       max-width: 1400px;
+       width: 100%;
+       margin: 0 auto;
+   }
+   
+   /* --- LADO ESQUERDO: TEXTO --- */
+   .quiz-content {
+       flex: 1;
+       max-width: 500px;
+   }
+   
+   .quiz-subtitle {
+       letter-spacing: 5px;
+       font-size: 1.5rem;
+       color: var(--accent-gold);
+       display: block;
+       margin-bottom: 20px;
+       text-transform: uppercase;
+       font-weight: bold;
+   }
+   
+   .quiz-title {
+       font-family: var(--font-topic);
+       font-size: clamp(2.5rem, 6vw, 6rem);
+       font-weight: 500;
+       line-height: 0.9;
+       margin: 1rem 0;
+   }
+   
+   .quiz-description {
+       font-family: var(--font-sans);
+       font-size: 1.8rem;
+       line-height: 1.8;
+       max-width: 450px;
+       margin-bottom: 40px;
+       font-weight: 300;
+       color: var(--text-muted);
+   }
+   
+   .btn-quiz {
+       display: inline-block;
+       padding: 20px 40px;
+       border: 1px solid var(--accent-gold);
+       color: var(--accent-gold);
+       text-decoration: none;
+       letter-spacing: 3px;
+       transition: all 0.4s ease;
+       text-transform: uppercase;
+       font-size: 1.3rem;
+       font-weight: bold;
+       border-radius: 10px;
+   }
+   
+   .btn-quiz:hover {
+       background-color: var(--accent-gold);
+       color: var(--primary-dark);
+   }
+   
+   /* --- LADO DIREITO: FORMULÁRIO --- */
+   .quiz-aside-form {
+       flex: 1;
+       max-width: 600px;
+       opacity: 0;
+       visibility: hidden;
+       transform: translateX(30px);
+       transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+   }
+   
+   /* Só aparece quando .active é adicionado via JS */
+   .quiz-aside-form.active {
+       opacity: 1;
+       visibility: visible;
+       transform: translateX(0);
+   }
+   
+   .form-window {
+       background: rgba(255, 255, 255, 0.03);
+       border: 0.5px solid var(--accent-gold);
+       padding: 40px;
+       backdrop-filter: blur(15px);
+       border-radius: 4px;
+       display: flex;
+       flex-direction: column;
+   }
+   
+   #style-form {
+       flex: 1;
+       display: flex;
+       flex-direction: column;
+   }
+   
+   /* --- STEPS --- */
+   .form-step {
+       display: none;
+       flex-direction: column;
+   }
+   
+   .form-step.active {
+       display: flex;
+       flex-direction: column;
+       flex: 1;
+       animation: fadeIn 0.4s ease-in-out;
+   }
+   
+   @keyframes fadeIn {
+       from { opacity: 0; transform: translateY(10px); }
+       to   { opacity: 1; transform: translateY(0); }
+   }
+   
+   .step-indicator {
+       font-family: var(--font-sans);
+       display: block;
+       font-size: 1.5rem;
+       color: var(--accent-gold);
+       margin-bottom: 10px;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       text-align: center;
+   }
+   
+   .form-window h3 {
+       font-family: var(--font-sans);
+       color: #fff;
+       font-size: 1.6rem;
+       margin-bottom: 10px;
+       line-height: 1.3;
+   }
+   
+   .step-instruction {
+       font-family: var(--font-sans);
+       font-size: 1.5rem;
+       color: #fff;
+       margin-bottom: 25px;
+   }
+   
+   /* --- GRID DE CHECKBOXES --- */
+   .options-grid {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 12px;
+       margin-bottom: 20px;
+       align-content: start;
+   }
+   
+   .option-card {
+       border: 1px solid rgba(197, 164, 126, 0.2);
+       padding: 14px;
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       color: var(--text-muted);
+       font-size: 1.5rem;
+       background: rgba(255, 255, 255, 0.02);
+       font-weight: bold;
+   }
+   
+   .option-card:hover {
+       background-color: var(--accent-gold);
+       color: var(--primary-dark);
+   }
+   
+   .option-card:has(input:checked) {
+       border-color: var(--accent-gold);
+       background: rgba(197, 164, 126, 0.1);
+   }
+   
+   .option-card input[type="checkbox"] {
+       accent-color: var(--accent-gold);
+   }
+   
+   /* --- BOTÃO PRÓXIMO --- */
+   .form-footer {
+       margin-top: auto;
+       padding-top: 10px;
+   }
+   
+   .btn-next {
+       background: transparent;
+       border: 1px solid var(--accent-gold);
+       color: var(--accent-gold);
+       padding: 18px 30px;
+       width: 100%;
+       cursor: pointer;
+       letter-spacing: 2px;
+       transition: 0.4s;
+       text-transform: uppercase;
+       font-weight: 600;
+   }
+
+   /* No resultado, o btn-next fica dentro de flex — não pode ter width:100% */
+   .result-actions-container .btn-next {
+       width: auto;
+   }
+   
+   .btn-next:hover {
+       background-color: var(--accent-gold);
+       color: var(--primary-dark);
+   }
+
+   /* Botão "Refazer" no resultado */
+   .btn-refazer-flex {
+       flex: 1;
+       font-size: 1.1rem;
+       font-family: var(--font-sans, 'Inter', sans-serif);
+       letter-spacing: 3px;
+       padding: 18px 20px;
+       width: auto;
+   }
+
+   /* Botão ícone download — mesmo estilo do Refazer */
+   .btn-download-icon {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 18px 20px;
+       background: transparent;
+       border: 1px solid var(--accent-gold, #C5A47E);
+       color: var(--accent-gold, #C5A47E);
+       cursor: pointer;
+       transition: background 0.4s ease, color 0.4s ease;
+       border-radius: 2px;
+       flex-shrink: 0;
+   }
+
+   .btn-download-icon:hover {
+       background: var(--accent-gold, #C5A47E);
+       color: #080808;
+   }
+   
+   
+   /* ================================
+      ≤ 1024px — LAYOUT EMPILHADO
+      Texto CENTRALIZADO
+      Quiz SEMPRE oculto até clicar
+      ================================ */
+   @media (max-width: 1024px) {
+   
+       .quiz-section {
+           height: auto;
+           min-height: 100svh;
+       }
+   
+       .quiz-container {
+           flex-direction: column;
+           align-items: center;
+           text-align: center;
+           gap: 40px;
+           min-height: unset;
+       }
+   
+       .quiz-content {
+           max-width: 100%;
+           align-self: center;
+           margin-top: 0;
+       }
+   
+       .quiz-description {
+           margin: 0 auto 40px;
+       }
+   
+       /* O formulário fica invisível e sem espaço até .active */
+       .quiz-aside-form {
+           max-width: 680px;
+           width: 100%;
+           /* Mantém opacity:0 / visibility:hidden / pointer-events:none do base */
+           /* transform muda para baixo para mobile */
+           transform: translateY(20px);
+   
+           /* Quando não ativo, não ocupa altura */
+           max-height: 0;
+           overflow: hidden;
+           transition: opacity 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+                       visibility 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+                       transform 0.8s cubic-bezier(0.2, 1, 0.3, 1),
+                       max-height 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+       }
+   
+       .quiz-aside-form.active {
+           transform: translateY(0);
+           max-height: 2000px; /* valor alto o suficiente para o conteúdo */
+           overflow: visible;
+       }
+   
+       .form-window {
+           padding: 40px 30px;
+       }
+   
+       /* Centraliza texto dentro do form também */
+       .form-window h3,
+       .step-instruction {
+           text-align: left; /* dentro do form mantém left para legibilidade */
+       }
+   
+       .quiz-title    { font-size: clamp(3rem, 8vw, 6rem); }
+       .quiz-subtitle { font-size: 1.6rem; }
+       .quiz-description { font-size: 2rem; }
+   }
+   
+   /* ================================
+      LANDSCAPE — celular/tablet ≤ 950px
+      ================================ */
+      @media only screen and (max-width: 950px) and (orientation: landscape) {
+   
+       .quiz-section {
+           height: auto;
+           min-height: 100svh;
+       }
+   
+       .quiz-container {
+           flex-direction: row;
+           align-items: flex-start;
+           text-align: center; /* mantém centralizado mesmo em landscape mobile */
+           gap: 30px;
+           min-height: unset;
+       }
+   
+       .quiz-content {
+           max-width: 45%;
+           margin-top: 20px;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
+   
+       .quiz-description { margin: 0 auto 30px; font-size: 1.2rem; }
+       .quiz-title       { font-size: clamp(2rem, 5vw, 3rem); }
+       .quiz-subtitle    { font-size: 1.1rem; margin-bottom: 20px; }
+   
+       .quiz-aside-form {
+           max-width: 52%;
+           transform: translateY(20px);
+       }
+   
+       .quiz-aside-form.active {
+           transform: translateY(0);
+       }
+   
+       .form-window {
+           padding: 25px 22px;
+           min-height: unset;
+       }
+   
+       .options-grid {
+           grid-template-columns: repeat(2, 1fr);
+           min-height: unset;
+           gap: 8px;
+           margin-bottom: 12px;
+       }
+   
+       .option-card      { font-size: 1.1rem; padding: 10px; }
+       .step-indicator   { font-size: 1.1rem; }
+       .form-window h3   { font-size: 1.3rem; }
+       .step-instruction { font-size: 1.2rem; margin-bottom: 15px; }
+       .btn-next         { padding: 14px; font-size: 1rem; }
+   }
+   
+   /* ================================
+      ≤ 768px — Tablet médio / celular grande
+      ================================ */
+   @media (max-width: 768px) {
+   
+       .quiz-aside-form {
+           max-width: 100%;
+       }
+   
+       .form-window { padding: 35px 25px; }
+   
+       .quiz-title       { font-size: clamp(2.8rem, 7vw, 4.5rem); }
+       .quiz-subtitle    { font-size: 1.4rem; }
+       .quiz-description { font-size: 1.8rem; }
+   
+       .step-indicator   { font-size: 1.3rem; }
+       .form-window h3   { font-size: 1.5rem; }
+       .step-instruction { font-size: 1.4rem; }
+       .option-card      { font-size: 1.4rem; padding: 12px; }
+   }
+   
+   
+   /* ================================
+      ≤ 450px — Celular
+      ================================ */
+   @media (max-width: 450px) {
+   
+       .quiz-section {
+           min-height: 100svh;
+           padding: 60px 16px 24px;
+           width: 100%;
+       }
+
+       .quiz-aside-form {
+           width: 100%;
+           max-width: 100%;
+       }
+
+       .form-window {
+           padding: 28px 16px;
+       }
+   
+       .quiz-description { font-size: 1.5rem; }
+       .quiz-title       { font-size: clamp(2.2rem, 8vw, 3rem); }
+       .quiz-subtitle    { font-size: 1.2rem; }
+   
+       .options-grid {
+           grid-template-columns: 1fr 1fr;
+           gap: 10px;
+       }
+   
+       .option-card      { font-size: 1.2rem; padding: 12px 10px; }
+       .step-indicator   { font-size: 1.2rem; }
+       .form-window h3   { font-size: 1.4rem; }
+       .step-instruction { font-size: 1.3rem; }
+       .btn-next         { font-size: 1.1rem; padding: 15px 20px; }
+   }
+   
+   
+   /* ================================
+      ≤ 360px — Celular muito pequeno
+      ================================ */
+   @media (max-width: 360px) {
+   
+       .quiz-title       { font-size: 2rem; }
+       .quiz-description { font-size: 1.2rem; }
+   
+       .form-window { padding: 22px 14px; }
+   
+       .options-grid {
+           grid-template-columns: 1fr;
+           gap: 8px;
+       }
+   
+       .option-card      { font-size: 1.1rem; }
+       .step-indicator   { font-size: 1rem; }
+       .form-window h3   { font-size: 1.2rem; }
+       .step-instruction { font-size: 1.1rem; }
+       .btn-next         { font-size: 1rem; padding: 13px; }
+   }
+   
+   
+   
+   
+   /* Container principal do diagnóstico */
+   
+   /* Tablet e Telas Médias */
+   @media (max-width: 1024px) {
+       .quiz-container {
+           flex-direction: column;
+           text-align: center;
+           gap: 30px;
+       }
+   
+       .quiz-content { max-width: 100%; }
+       .quiz-description { margin: 0 auto 30px; }
+   
+       .quiz-aside-form {
+           max-width: 100%;
+           max-height: 0;
+           overflow: hidden;
+           transform: translateY(20px);
+       }
+   
+       .quiz-aside-form.active {
+           max-height: 1500px;
+           transform: translateY(0);
+           margin-top: 20px;
+       }
+   }
+   
+   /* Landscape (Celular Deitado) */
+   @media only screen and (max-width: 950px) and (orientation: landscape) {
+       .quiz-section { padding: 40px 5%; }
+       .form-window { min-height: unset; padding: 20px; }
+       .options-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+       .quiz-title { font-size: 2.2rem; }
+   }
+   
+   /* Celulares (iPhone, Android Modernos) */
+   @media (max-width: 768px) {
+       .form-window { padding: 30px 20px; }
+       
+       .option-card { font-size: 1rem; padding: 12px; }
+       .quiz-description { font-size: 1.4rem; }
+   }
+
+   @media (min-width: 361px) and (max-width: 768px) {
+       .options-grid {
+           grid-template-columns: 1fr 1fr;
+           gap: 10px;
+       }
+   }
+   
+   /* Celulares Pequenos */
+   @media (max-width: 450px) {
+       .quiz-title { font-size: 2.5rem; }
+       .quiz-subtitle { font-size: 1rem; letter-spacing: 3px; }
+   
+       .dna-title { font-size: 1.5rem; }
+       .dna-percentage{font-size: 1.2rem}
+       .secondary-styles-grid { grid-template-columns: 1fr; }
+   
+       .step-indicator{
+           font-size: 1.5rem;
+       }
+
+       .btn-refazer-flex {
+           font-size: 0.85rem;
+           letter-spacing: 1.5px;
+           padding: 16px 14px;
+       }
+
+       .btn-download-icon {
+           padding: 16px 18px;
+       }
+   
+       .btn-quiz {
+           padding: 20px 20px;
+           font-size: 1rem;
+       }
+   }
+   
+   @media (max-width: 320px){
+   
+       .btn-quiz {
+           padding: 15px 15px;
+       }
+   }
