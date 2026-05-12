@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,11 +34,13 @@
         </button>
 
         <nav class="nav-menu" id="nav-menu">
-            <a href="/index.html" class="nav-link">Home</a>
-            <a href="services.html" class="nav-link">Serviços</a>
-            <!-- <a href="form.html" class="nav-link">Diagnóstico</a> -->
-            <a href="newsletter.html" class="nav-link">Newsletter</a>
+            <a href="/index.html" class="nav-link" data-i18n="nav.home">Home</a>
+            <a href="services.html" class="nav-link" data-i18n="nav.services">Serviços</a>
+            <a href="newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a>
+            <span class="nav-divider">|</span>
+            <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">EN</button>
         </nav>
+        <button class="lang-toggle lang-toggle--mobile" id="lang-toggle">EN</button>
     </header>
 
     <main id="main-container">
@@ -44,36 +48,21 @@
         <section class="newsletter-section" id="newsletter">
             <div class="newsletter-container">
                 <div class="newsletter-content">
-                    <span class="newsletter-subtitle">NEWSLETTER</span>
-                    <h2 class="newsletter-title">Receba insights estratégicos sobre 
+                    <span class="newsletter-subtitle" data-i18n="newsletter.subtitle">NEWSLETTER</span>
+                    <h2 class="newsletter-title" data-i18n="newsletter.title">Receba insights estratégicos sobre 
                         <span style="color: #C5934C">imagem</span>, <span style="color: #C5934C">posicionamento</span> 
                         e <span style="color: #C5934C">estilo</span>, diretamente no seu e-mail.</h2>
                 </div>
 
                 <form class="newsletter-form" id="newsletter-form">
                     <div class="input-group">
-                        <input type="email" id="email" placeholder="E-MAIL" required>
-                        <button type="submit" class="btn-newsletter">
+                        <input type="email" id="email" data-i18n-placeholder="newsletter.placeholder" placeholder="E-MAIL" required>
+                        <button type="submit" class="btn-newsletter" data-i18n="newsletter.btn">
                             INSCREVA-SE
                         </button>
                     </div>
                 </form>
             </div>
-
-            <!-- <div class="social-connect-container">
-                <span class="social-label">CONECTE-SE NAS REDES</span>
-                <div class="social-icons-wrapper">
-                    <a href="https://www.instagram.com/catiapoggian" target="_blank" class="social-link-item instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@catiapoggian" target="_blank" class="social-link-item youtube">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://wa.me/13059889985" target="_blank" class="social-link-item whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div> -->
         </section>
 
     </main>
@@ -83,7 +72,7 @@
             <div class="footer-identity">
                 <a href="/index.html" class="footer-brand">Catia Poggian</a>
                 <br>
-                <p class="footer-details">
+                <p class="footer-details" data-i18n="footer.location">
                     © 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI
                 </p>
             </div>

@@ -33,30 +33,29 @@
         </button>
 
         <nav class="nav-menu" id="nav-menu">
-            <a href="/index.html" class="nav-link">Home</a>
-            <a href="services.html" class="nav-link">Serviços</a>
-            <!-- <a href="form.html" class="nav-link">Diagnóstico</a> -->
-            <a href="newsletter.html" class="nav-link">Newsletter</a>
+            <a href="/index.html" class="nav-link" data-i18n="nav.home">Home</a>
+            <a href="services.html" class="nav-link" data-i18n="nav.services">Serviços</a>
+            <a href="newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a>
+            <span class="nav-divider">|</span>
+            <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">EN</button>
         </nav>
+        <button class="lang-toggle lang-toggle--mobile" id="lang-toggle">EN</button>
     </header>
 
     <main id="main-container">
 
         <section class="services-section" id="services">
             <div class="container">
-                <!-- <header class="section-header">
-                    <span class="service-title">Curadoria Exclusiva</span>
-                    <h3 class="service-subtitle">Serviços Personalizados</h3>
-                </header> -->
-
                 <div class="services-wrapper">
                     <div class="service-category">
+
+                        <!-- Styling Pontual -->
                         <div class="service-item">
                             <div class="service-info">
-                                <h3>Styling Pontual</h3>
-                                <p>Curadoria com peças da cliente para sessão de fotos. Produção de até 4 looks (sem acompanhamento no set).</p>
+                                <h3 data-i18n="services.sp.title">Styling Pontual</h3>
+                                <p data-i18n="services.sp.desc">Curadoria com peças da cliente para sessão de fotos. Produção de até 4 looks (sem acompanhamento no set).</p>
                                 <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual.">Solicitar Orçamento</a>
+                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual." data-i18n="services.sp.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
                             <div class="service-single-img">
@@ -64,33 +63,35 @@
                             </div>
                         </div>
 
+                        <!-- Styling Pontual + Assessoria no Set -->
                         <div class="service-item">
                             <div class="service-single-img">
                                 <img src="/images/spas.png" alt="Assessoria 1" class="img-sp1">
                             </div>
                             <div class="service-info">
-                                <h3>Styling Pontual <br>+ Assessoria no Set</h3>
-                                <p>Curadoria com peças da cliente para sessão de fotos.</p>
-                                <p>Montagem e produção de todos os looks e acompanhamento estratégico durante toda a sessão de fotos.</p>
+                                <h3 data-i18n="services.spas.title">Styling Pontual <br>+ Assessoria no Set</h3>
+                                <p data-i18n="services.spas.desc1">Curadoria com peças da cliente para sessão de fotos.</p>
+                                <p data-i18n="services.spas.desc2">Montagem e produção de todos os looks e acompanhamento estratégico durante toda a sessão de fotos.</p>
                                 <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual%20com%20Assessoria.">Solicitar Orçamento</a>
+                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual%20com%20Assessoria." data-i18n="services.spas.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Consultoria Presencial -->
                         <div class="service-item">
                             <div class="service-info">
-                                <h3>Consultoria Presencial</h3>
-                                <p>Um processo personalizado de transformação e alinhamento entre quem você é e o que sua imagem comunica.</p>
+                                <h3 data-i18n="services.presencial.title">Consultoria Presencial</h3>
+                                <p data-i18n="services.presencial.desc">Um processo personalizado de transformação e alinhamento entre quem você é e o que sua imagem comunica.</p>
                                 <ul class="consultoria-lista">
-                                    <li>Entrevista e Anamnese</li>
-                                    <li>Encontro presencial (até 5h)</li>
-                                    <li>Análise de Closet e Curadoria</li>
-                                    <li>Dossiê Personalizado</li>
-                                    <li>Suporte WhatsApp (2 meses)</li>
+                                    <li data-i18n="services.presencial.li1">Entrevista e Anamnese</li>
+                                    <li data-i18n="services.presencial.li2">Encontro presencial (até 5h)</li>
+                                    <li data-i18n="services.presencial.li3">Análise de Closet e Curadoria</li>
+                                    <li data-i18n="services.presencial.li4">Dossiê Personalizado</li>
+                                    <li data-i18n="services.presencial.li5">Suporte WhatsApp (2 meses)</li>
                                 </ul>
                                 <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Presencial.">Solicitar Orçamento</a>
+                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Presencial." data-i18n="services.presencial.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
                             <div class="service-single-img">
@@ -98,38 +99,41 @@
                             </div>
                         </div>
 
+                        <!-- Consultoria Online -->
                         <div class="service-item">
                             <div class="service-single-img">
                                 <img src="/images/online.png" alt="Consultoria Online">
                             </div>
                             <div class="service-info">
-                                <h3>Consultoria Online</h3>
-                                <p>A mesma profundidade da consultoria presencial, adaptada para a flexibilidade do ambiente digital.</p>
+                                <h3 data-i18n="services.online.title">Consultoria Online</h3>
+                                <p data-i18n="services.online.desc">A mesma profundidade da consultoria presencial, adaptada para a flexibilidade do ambiente digital.</p>
                                 <ul class="consultoria-lista">
-                                    <li>Entrevista e Anamnese</li>
-                                    <li>Encontro online (até 2h)</li>
-                                    <li>Estratégias de Styling Digital</li>
-                                    <li>Dossiê Personalizado</li>
-                                    <li>Suporte WhatsApp (2 meses)</li>
+                                    <li data-i18n="services.online.li1">Entrevista e Anamnese</li>
+                                    <li data-i18n="services.online.li2">Encontro online (até 2h)</li>
+                                    <li data-i18n="services.online.li3">Estratégias de Styling Digital</li>
+                                    <li data-i18n="services.online.li4">Dossiê Personalizado</li>
+                                    <li data-i18n="services.online.li5">Suporte WhatsApp (2 meses)</li>
                                 </ul>
                                 <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Online.">Solicitar Orçamento</a>
+                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Online." data-i18n="services.online.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Palestra -->
                         <div class="service-item">
                             <div class="service-info">
-                                <h3>Palestra</h3>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                                <h3 data-i18n="services.palestra.title">Workshop</h3>
+                                <p data-i18n="services.palestra.desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
                                 <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Palestra." target="_blank" rel="noopener">Entre em Contato</a>
+                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Palestra." target="_blank" rel="noopener" data-i18n="services.palestra.cta">Entre em Contato</a>
                                 </div>
                             </div>
                             <div class="service-single-img">
                                 <img src="/images/palestra.png" alt="Assessoria 1" class="img-sp1">
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -141,7 +145,7 @@
         <div class="footer-container">
             <div class="footer-identity">
                 <a href="/index.html" class="footer-brand">Catia Poggian</a>
-                <p class="footer-details">
+                <p class="footer-details" data-i18n="footer.location">
                     © 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI
                 </p>
             </div>
@@ -151,5 +155,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="../script.js"></script></body>
+    <script src="../script.js"></script>
+</body>
 </html>
