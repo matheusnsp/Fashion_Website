@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "services.online.li5":    "Suporte WhatsApp (2 meses)",
             "services.online.cta":    "Solicitar Orçamento",
 
-            "services.palestra.title": "Palestra",
+            "services.palestra.title": "Workshop",
             "services.palestra.desc":  "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
             "services.palestra.cta":   "Entre em Contato",
 

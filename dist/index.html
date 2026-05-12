@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="./css/form.css">
-  <link rel="stylesheet" crossorigin href="./assets/main-DpTpKp8T.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-DSWGSXVu.css">
 </head>
 <body>
 
@@ -30,11 +30,13 @@
         </button>
 
         <nav class="nav-menu" id="nav-menu">
-            <a href="/index.html" class="nav-link">Home</a>
-            <a href="./html/services.html" class="nav-link">Serviços</a>
-            <!-- <a href="./html/form.html" class="nav-link">Diagnóstico</a> -->
-            <a href="./html/newsletter.html" class="nav-link">Newsletter</a>
+            <a href="/index.html" class="nav-link" data-i18n="nav.home">Home</a>
+            <a href="./html/services.html" class="nav-link" data-i18n="nav.services">Serviços</a>
+            <a href="./html/newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a>
+            <span class="nav-divider">|</span>
+            <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">EN</button>
         </nav>
+        <button class="lang-toggle lang-toggle--mobile" id="lang-toggle">EN</button>
     </header>
 
     <main id="main-container">
@@ -44,19 +46,11 @@
                 <div class="home-text-side">
                     <div class="brand-header">
                         <h1 class="brand-title">Catia Poggian</h1>
-                        <!-- <div class="personal-description">
-                            <p class="role-title">Mentora e Consultora de Imagem</p>
-                        </div> -->
                     </div>
 
-                    
                     <div class="home-footer">
-                        <p class="home-tagline">A <strong><span style="color: #C5934C">Autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">Identidade</span></strong> e a sua <strong><span style="color: #C5934C">Imagem.</span></strong></p>
+                        <p class="home-tagline" data-i18n="home.tagline">A <strong><span style="color: #C5934C">Autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">Identidade</span></strong> e a sua <strong><span style="color: #C5934C">Imagem.</span></strong></p>
                     </div>
-
-                    <!-- <div class="orcamento">
-                        <a href="https://wa.me/1305988998">Entre em contato</a>
-                    </div> -->
                 </div>
 
                 <div class="home-image-side">
@@ -68,22 +62,21 @@
         <section class="about-section" id="about">
             <div class="about-container">
                 <div class="about-content">
-                    <strong><span class="about-subtitle">Expertise & <br> Background</span></strong>
-                    <!-- <h2 class="about-title">Catia Poggian</h2> -->
+                    <strong><span class="about-subtitle" data-i18n="about.subtitle">Expertise & <br> Background</span></strong>
                 </div>
 
                 <div class="about-text">
-                    <p><strong>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
+                    <p data-i18n="about.text"><strong>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
                     <br><strong>Fashion Designer pelo MoMa (New York), com atualizações na Passaporte Fashionista Academy e no Estúdio Immagine,
                     associada da AICI (Associação Internacional de Consultores de Imagem), palestrante e criadora do 
-                        <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span></strong>. </p>
+                        <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span></strong>.</p>
                 </div>
             </div>
         </section>
 
         <section class="connection-section" id="connection">
             <div class="social-connect-container">
-                <span class="social-label">CONECTE-SE NAS REDES</span>
+                <span class="social-label" data-i18n="social.label">CONECTE-SE NAS REDES</span>
                 <div class="social-icons-wrapper">
                     <a href="https://www.instagram.com/catiapoggian" target="_blank" class="social-link-item instagram">
                         <i class="fa-brands fa-instagram"></i>
@@ -104,7 +97,7 @@
         <div class="footer-container">
             <div class="footer-identity">
                 <a href="/index.html" class="footer-brand">Catia Poggian</a>
-                <p class="footer-details">
+                <p class="footer-details" data-i18n="footer.location">
                     © 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI
                 </p>
             </div>
