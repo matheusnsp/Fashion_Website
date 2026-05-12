@@ -4,59 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Catia Poggian | Estrategista de Marca</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,900;1,6..96,700&family=Inter:wght@100;300;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" crossorigin href="/Fashion_Website/assets/index-Dcb8mNyT.css">
+    
+    <link rel="stylesheet" href="./css/form.css">
+  <link rel="stylesheet" crossorigin href="./assets/main-DpTpKp8T.css">
 </head>
 <body>
 
     <div class="bg-wrapper">
-
         <video class="video" autoplay muted loop playsinline id="video-bg">
-            <source src="/Fashion_Website/assets/video-Ds8esl7n.mp4" type="video/mp4">
-        </video>                
+            <source src="./assets/video-Ds8esl7n.mp4" type="video/mp4">
+        </video>
         <div class="overlay-vignette"></div>
     </div>
 
     <header class="main-header">
-        <nav class="nav-menu">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">Expertise</a>
-            <a href ="#services" class="nav-link">Serviços</a>
-            <a href="#style-quiz" class="nav-link">Diagnóstico</a>
-            <a href="#newsletter" class="nav-link">Newsletter</a>
-            <span class="nav-link disabled">Provador Virtual <small>(Em breve)</small></span>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <a href="/index.html" class="nav-link">Home</a>
+            <a href="./html/services.html" class="nav-link">Serviços</a>
+            <!-- <a href="./html/form.html" class="nav-link">Diagnóstico</a> -->
+            <a href="./html/newsletter.html" class="nav-link">Newsletter</a>
         </nav>
     </header>
 
     <main id="main-container">
-        
+
         <section class="section home-section" id="home">
             <div class="home-content">
                 <div class="home-text-side">
                     <div class="brand-header">
                         <h1 class="brand-title">Catia Poggian</h1>
-                        
-                        <div class="personal-description">
+                        <!-- <div class="personal-description">
                             <p class="role-title">Mentora e Consultora de Imagem</p>
-                        </div>
-
-                        
+                        </div> -->
                     </div>
 
-        
-                    <div class="orcamento">
-                        <a href="https://wa.me/1305988998">Entre em contato</a>
-                    </div>
+                    
                     <div class="home-footer">
-                        <p class="home-tagline">A <strong><span style="color: #C5934C">autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">identidade</span></strong> e a sua <strong><span style="color: #C5934C">imagem.</span></strong></p>
+                        <p class="home-tagline">A <strong><span style="color: #C5934C">Autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">Identidade</span></strong> e a sua <strong><span style="color: #C5934C">Imagem.</span></strong></p>
                     </div>
+
+                    <!-- <div class="orcamento">
+                        <a href="https://wa.me/1305988998">Entre em contato</a>
+                    </div> -->
                 </div>
-        
+
                 <div class="home-image-side">
-                    <img src="/Fashion_Website/assets/img-BrR9kLdA.png" alt="Catia Poggian" class="profile-photo">
+                    <img src="./assets/img-BrR9kLdA.png" alt="Catia Poggian" class="profile-photo">
                 </div>
             </div>
         </section>
@@ -65,279 +69,19 @@
             <div class="about-container">
                 <div class="about-content">
                     <strong><span class="about-subtitle">Expertise & <br> Background</span></strong>
-                    <!-- <h2 class="about-title">CATIA <br> POGGIAN</h2> -->
-                     <h2 class="about-title">Catia Poggian</span></h2>
+                    <!-- <h2 class="about-title">Catia Poggian</h2> -->
                 </div>
-        
+
                 <div class="about-text">
-                    <strong><p>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
-                    <strong><br>Fashion Designer pelo MoMa (Nova Iorque), com especializações na Passaporte Fashionista Academy e no Estúdio Immagine,
+                    <p><strong>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
+                    <br><strong>Fashion Designer pelo MoMa (New York), com atualizações na Passaporte Fashionista Academy e no Estúdio Immagine,
                     associada da AICI (Associação Internacional de Consultores de Imagem), palestrante e criadora do 
                         <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span></strong>. </p>
                 </div>
-        </section>
-
-        <section class="services-section" id="services">
-            <div class="container">
-                <header class="section-header">
-                    <span class="service-title">Curadoria Exclusiva</span>
-                    <h2 class="service-subtitle">Serviços Personalizados</h2>
-                </header>
-        
-                <div class="services-wrapper">
-                    <div class="service-category">
-                        <div class="service-item">
-                            <div class="service-info">
-                                <h3>Styling Pontual</h3>
-                                <p>Curadoria com peças da cliente para sessão de fotos. Produção de até 4 looks (sem acompanhamento no set).</p>
-                                
-                                <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual.">Pedir Orçamento</a>
-                                </div>
-                            </div>
-                        
-                            <div class="service-single-img">
-                                <img src="/Fashion_Website/assets/sp-BjblkAg8.png" alt="Assessoria 1" class="img-sp1">
-                            </div>
-                        </div>
-        
-                        <div class="service-item">
-                                <div class="service-single-img">
-                                    <img src="/Fashion_Website/assets/spas-Sddc-yyO.png" alt="Assessoria 1" class="img-sp1">
-                                </div>
-
-
-                            <div class="service-info">
-                                <h3>Styling Pontual + Assessoria no Set</h3>
-                                <p>Curadoria com peças da cliente para sessão de fotos.</p>
-                                <p>Montagem e produção de todos os looks e acompanhamento estratégico durante toda a sessão de fotos.</p>
-                                
-                                <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual%20com%20Assessoria.">Pedir Orçamento</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="service-item">
-                            <div class="service-info">
-                                <h3>Consultoria Presencial</h3>
-                                <p>Um processo personalizado de transformação e alinhamento entre quem você é e o que sua imagem comunica.</p>
-                                <ul class="consultoria-lista">
-                                    <li>Entrevista e Anamnese</li>
-                                    <li>Encontro presencial (até 5h)</li>
-                                    <li>Análise de Closet e Curadoria</li>
-                                    <li>Dossiê Personalizado</li>
-                                    <li>Suporte WhatsApp (2 meses)</li>
-                                </ul>
-                                <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Presencial.">Pedir Orçamento</a>
-                                </div>
-                            </div>
-                        
-                            <div class="service-single-img">
-                                <img src="/Fashion_Website/assets/presencial-CNKEPX_I.png" alt="Consultoria Presencial">
-                            </div>
-                        </div>
-                        
-                        <div class="service-item">
-                            <div class="service-single-img">
-                                <img src="/Fashion_Website/assets/online-UmEBf6qm.png" alt="Consultoria Online">
-                            </div>
-
-
-                            <div class="service-info">
-                                <h3>Consultoria Online</h3>
-                                <p>A mesma profundidade da consultoria presencial, adaptada para a flexibilidade do ambiente digital.</p>
-                                <ul class="consultoria-lista">
-                                    <li>Entrevista e Anamnese</li>
-                                    <li>Encontro online (até 2h)</li>
-                                    <li>Estratégias de Styling Digital</li>
-                                    <li>Dossiê Personalizado</li>
-                                    <li>Suporte WhatsApp (2 meses)</li>
-                                </ul>
-                                <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Online.">Pedir Orçamento</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="service-item">
-                            <div class="service-info">
-                                <h3>Palestra</h3>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                                
-                                <div class="orcamento">
-                                    <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Palestra." target="_blank" rel="noopener">Pedir Orçamento</a>                                </div>
-                            </div>
-                        
-                            <div class="service-single-img">
-                                <img src="/Fashion_Website/assets/palestra-DNj7DRjD.png" alt="Assessoria 1" class="img-sp1">
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>
             </div>
         </section>
 
-        <section class="section quiz-section" id="style-quiz">
-            <div class="quiz-container">
-                
-                <div class="quiz-content">
-                    <span class="quiz-subtitle">AUTODESCOBERTA</span>
-                    <h2 class="quiz-title">Análise de <br> Identidade Visual</h2>
-                    <p class="quiz-description">
-                        Um diagnóstico exclusivo para identificar o seu estilo universal, e como você pode revelar a sua identidade com mais clareza e autenticidade.
-                    </p>
-                    <a href="javascript:void(0)" id="open-quiz" class="btn-quiz">INICIAR DIAGNÓSTICO →</a>
-                </div>
-        
-                <div id="quiz-aside-container" class="quiz-aside-form">
-                    <div class="form-window">
-                        <form id="style-form">
-                            
-                            <div class="form-step active" data-step="1" data-style="Esportivo">
-                                <span class="step-indicator">Cenário 1 de 7</span>
-                                <h3>Com quais destas características você se identifica?</h3>
-                                <p class="step-instruction">Selecione todas que descrevem sua personalidade:</p>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c1" value="agradavel"><span>Agradável</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="comunicativa"><span>Comunicativa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="casual"><span>Casual</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="ativa"><span>Ativa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="amigavel"><span>Amigável</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="esportiva"><span>Esportiva</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="otimista"><span>Otimista</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="positiva"><span>Positiva</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c1" value="despretensiosa"><span>Despretensiosa</span></label>
-                                </div>
-                            </div>
-                
-                            
-                            <div class="form-step" data-step="2" data-style="Clássico">
-                                <span class="step-indicator">Cenário 2 de 7</span>
-                                <h3>Marque o que reflete seu jeito de ser:</h3>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Metódica</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Conservadora</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Conscienciosa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Eficiente</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Leal</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Organizada</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Confiável</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Responsável</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c2"><span>Sensata</span></label>
-                                </div>
-                            </div>
-                        
-                            <div class="form-step" data-step="3" data-style="Elegante">
-                                <span class="step-indicator">Cenário 3 de 7</span>
-                                <h3>Quais destas palavras combinam com você?</h3>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Culta</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Nobre</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Perspicaz</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Distinta</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Equilibrada</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Refinada</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Discreta</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Elegante</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c3"><span>Imponente</span></label>
-                                </div>
-                            </div>
-                        
-                            <div class="form-step" data-step="4" data-style="Feminino">
-                                <span class="step-indicator">Cenário 4 de 7</span>
-                                <h3>Selecione as características que você possui:</h3>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Generosa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Ponderada</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Atenciosa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Romântica</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Sensível</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Gentil</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Incentivadora</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Compreensiva</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c4"><span>Afetuosa</span></label>
-                                </div>
-                            </div>
-                        
-                            <div class="form-step" data-step="5" data-style="Sensual">
-                                <span class="step-indicator">Cenário 5 de 7</span>
-                                <h3>Como você se descreve?</h3>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Vaidosa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Atraente</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Confiante</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Sedutora</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Provocante</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Masculina/Viril</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Estimulante</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c5"><span>Insinuante</span></label>
-                                </div>
-                            </div>
-                        
-                            <div class="form-step" data-step="6" data-style="Criativo">
-                                <span class="step-indicator">Cenário 6 de 7</span>
-                                <h3>Quais traços de personalidade são seus?</h3>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Desprendida</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Artística</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Construtiva</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Independente</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Original</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Espontânea</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Inovadora</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Informal</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c6"><span>Exclusiva</span></label>
-                                </div>
-                            </div>
-                        
-
-
-                            <div class="form-step" data-step="7" data-style="Dramático">
-                                <span class="step-indicator">Cenário 7 de 7</span>
-                                <h3>Para finalizar, o que te define?</h3>
-                                <div class="options-grid checkbox-grid">
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Agressiva</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Arrojada</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Imponente</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Exigente</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Moderna</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Dominadora</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Intensa</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Segura</span></label>
-                                    <label class="option-card"><input type="checkbox" name="c7"><span>Sofisticada</span></label>
-                                </div>
-                            </div>
-                        
-                            <div class="form-footer">
-                                <button type="button" class="btn-next">PRÓXIMO →</button>
-                            </div>
-                            
-                        </form>
-                    </div>
-                </div>
-        
-            </div>
-        </section>
-
-        <section class="newsletter-section" id="newsletter">
-            <div class="newsletter-container">
-                <div class="newsletter-content">
-                    <span class="newsletter-subtitle">NEWSLETTER</span>
-                    <h2 class="newsletter-title">Receba insights estratégicos sobre <span style="color: #C5934C">imagem</span>, <span style="color: #C5934C">posicionamento</span> e <span style="color: #C5934C">estilo</span>, diretamente no seu e-mail.</h2>
-                </div>
-                
-                <form class="newsletter-form" id="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" id="email" placeholder="SEU MELHOR E-MAIL" required>
-                        <button type="submit" class="btn-newsletter">
-                            INSCREVER
-                        </button>
-                    </div>
-                </form>
-            </div>
+        <section class="connection-section" id="connection">
             <div class="social-connect-container">
                 <span class="social-label">CONECTE-SE NAS REDES</span>
                 <div class="social-icons-wrapper">
@@ -350,33 +94,27 @@
                     <a href="https://wa.me/13059889985" target="_blank" class="social-link-item whatsapp">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
-                    <!-- <a href="https://www.facebook.com/catia.poggian" target="_blank" class="social-link-item facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a> -->
                 </div>
             </div>
         </section>
-
-        
 
     </main>
 
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-identity">
-                <a href="#home" class="footer-brand">Catia Poggian</a>
+                <a href="/index.html" class="footer-brand">Catia Poggian</a>
                 <p class="footer-details">
                     © 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI
                 </p>
             </div>
         </div>
     </footer>
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
