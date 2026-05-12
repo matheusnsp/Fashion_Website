@@ -46,7 +46,7 @@
   font-size: var(--fs-brand);
   font-weight: 300;
   line-height: 0.85;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .last-name {
@@ -69,10 +69,10 @@
 
 .home-tagline {
   font-family: var(--font-sans);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   letter-spacing: 3px;
-  text-transform: uppercase;
-  max-width: 75%;
+  /* text-transform: uppercase; */
+  max-width: 60%;
 }
 
 /* Container principal — desktop: linha com texto + foto */
@@ -153,7 +153,7 @@
 .social-label {
   display: block;
   font-family: var(--font-sans);
-  font-size: 3rem;
+  font-size: 1.7rem;
   letter-spacing: 4px;
   color: var(--accent-gold);
   margin-bottom: 30px;
