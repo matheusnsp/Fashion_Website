@@ -1,324 +1,282 @@
-/* ================================
-   SERVICES — LAYOUT BASE
-   ================================ */
-   .services-section {
-    padding: 2.5vh 8%;
-    /* margin-top: 10vh; */
-}
+/* =========================================
+   ACCORDION — BASE
+   ========================================= */
 
-/* .section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.service-title {
-    font-family: var(--font-sans);
-    font-size: 2.5rem !important;
-    color: var(--bg-biografia);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.service-subtitle {
-    font-family: var(--font-topic);
-    font-size: 3rem;
-    color: var(--accent-gold);
-} */
-
-/* ================================
-   GRID EDITORIAL
-   ================================ */
-.service-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 0;
-    border-bottom: 1px solid rgba(197, 164, 126, 0.2);
-    gap: 60px;
+   .accordion-list {
     width: 100%;
+    padding: 4vh 6%;
 }
 
-.service-info {
-    flex: 1 1 0;
-    min-width: 0;
+.acc-item {
+    border-bottom: 1px solid rgba(197, 164, 126, 0.25);
+    overflow: hidden;
+}
+
+.acc-item:first-child {
+    border-top: 1px solid rgba(197, 164, 126, 0.25);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.acc-header {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.4rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: opacity 0.2s ease;
 }
 
-/* Seleciona o último .service-item da lista para remover a linha divisória */
-.service-item:last-child {
-    border-bottom: none;
-}
-
-.service-info h3 {
-    text-align: center;
-    font-family: var(--font-topic);
-    font-size: 3.7rem;
+.acc-header:hover .acc-title {
     color: var(--accent-gold);
-    margin-bottom: 20px;
 }
 
-.service-info p {
+.acc-number {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 100;
+    color: var(--accent-gold);
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+    min-width: 2.4rem;
+}
+
+.acc-title {
+    flex: 1;
+    font-family: var(--font-topic);
+    font-size: 2.6rem;
+    line-height: 1.15;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.acc-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid rgba(197, 164, 126, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.acc-icon i {
+    font-size: 1rem;
+    color: var(--accent-gold);
+    transition: transform 0.4s ease;
+}
+
+.acc-item.is-open .acc-icon {
+    background: rgba(197, 164, 126, 0.12);
+    border-color: var(--accent-gold);
+}
+
+.acc-item.is-open .acc-icon i {
+    transform: rotate(90deg);
+}
+
+.acc-item.is-open .acc-title {
+    color: var(--accent-gold);
+}
+
+/* =========================================
+   BODY
+   ========================================= */
+
+.acc-body {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* =========================================
+   INNER
+   ========================================= */
+
+   .acc-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 6%;
+    gap: 4rem;
+    box-sizing: border-box;
+}
+
+/* REVERTE */
+
+.acc-inner.reverse {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+   .acc-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.acc-text p {
     font-family: var(--font-serif);
     font-size: 2rem;
-    line-height: 1.6;
-    text-align: left;
+    line-height: 1.7;
     color: var(--text-primary);
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
 }
 
-.service-info .orcamento {
+/* =========================================
+   BOTÃO
+   ========================================= */
+
+.orcamento {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 40px;
 }
 
 .orcamento a {
+    position: relative;
     display: inline-block;
-    width: fit-content;
-    padding: 20px 40px;
+    padding: 22px 48px;
     border-radius: 10px;
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     text-decoration: none;
     letter-spacing: 3px;
-    transition: all 0.4s ease;
     text-transform: uppercase;
     font-size: 1.3rem;
     font-weight: bold;
+    isolation: isolate;
+    transition: color 0.5s ease;
+}
+
+
+.orcamento a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-gold);
+    border-radius: 10px;
+    clip-path: inset(0 100% 0 0 round 10px);
+    transition: clip-path 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+}
+
+.orcamento a:hover::before {
+    clip-path: inset(0 0% 0 0 round 10px);
 }
 
 .orcamento a:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
+    color: #1a1a1a;
 }
 
-.consultoria-lista {
-    list-style: inside;
-}
+/* =========================================
+   IMAGEM
+   ========================================= */
 
-.consultoria-lista li {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-}
-
-/* Imagem única */
-.service-single-img {
-    flex: 1 1 0;
-    min-width: 0;
+   .acc-img {
+    flex: 1;
+    max-width: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.service-single-img img {
+/* IMAGEM NORMAL */
+
+.acc-inner:not(.reverse) .acc-img {
+    justify-content: flex-end;
+}
+
+/* IMAGEM INVERTIDA */
+
+.acc-inner.reverse .acc-img {
+    justify-content: flex-start;
+}
+
+.acc-img img {
     width: 100%;
-    border-radius: 8px;
-    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
     object-fit: cover;
     display: block;
-    filter: brightness(0.8);
 }
 
-/* ================================
-   PORTRAIT — tablet grande  ≤ 1440px
-   ================================ */
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
 
+@media (max-width: 1024px) {
 
-@media (max-width: 1024px){
-    .services-section {
-        padding: 5vh 8%;
-        /* margin-top: 10vh; */
-    }
-}
-@media only screen and (max-width: 1440px) and (orientation: portrait) {
-    .services-section {
-        padding: 80px 6%;
+    .acc-inner {
+        gap: 3rem;
+        padding: 3rem 4%;
     }
 
-    .service-title    { font-size: 3.5rem; }
-    .service-subtitle { font-size: 2.8rem; }
-
-    .service-item {
-        padding: 60px 0;
-        gap: 40px;
+    .acc-title {
+        font-size: 2.2rem;
     }
 
-    .service-info h3  { font-size: 3rem; }
-    .service-info p   { font-size: 2rem; }
-
-    .consultoria-lista li { font-size: 1.6rem; }
-
-    .orcamento a {
-        font-size: 1.2rem;
-        padding: 16px 32px;
-    }
-}
-@media only screen and (max-width: 1440px) and (orientation: landscape) {
-
-    .service-title    { font-size: 3.3rem; }
-    .service-subtitle { font-size: 2.8rem; }
-
-    .service-item {
-        padding: 60px 0;
-        gap: 40px;
-    }
-
-    .service-info h3  { font-size: 3rem; }
-    .service-info p   { font-size: 1.8rem; }
-
-    .consultoria-lista li { font-size: 1.6rem; }
-
-    .orcamento a {
-        font-size: 1.2rem;
-        padding: 16px 32px;
+    .acc-text p {
+        font-size: 1.6rem;
     }
 }
 
-/* ================================
-   PORTRAIT — tablet/celular  ≤ 950px
-   Vira coluna: texto em cima, foto embaixo
-   ================================ */
-@media (max-width: 950px) and (orientation: portrait) {
-    /* .services-section {
-        padding: 60px 5%;
-    } */
+@media (max-width: 768px) {
 
-    .section-header { margin-bottom: 40px; }
-
-    .service-title    { font-size: 2.5rem; }
-    .service-subtitle { font-size: 2.5rem; }
-
-    .service-item {
-        flex-direction: column;
-        padding: 50px 0;
-        gap: 30px;
+    .acc-inner {
+        gap: 2rem;
+        padding: 2rem 4%;
     }
 
-    .service-info {
-        order: 1;
-        width: 80%;
-        text-align: center;
+    .acc-title {
+        font-size: 1.7rem;
     }
 
-
-    .service-single-img {
-        order: 2;
-        width: 100%;
-    }
-
-    .service-single-img img {
-        width: 80%;
-        border-radius: 8px;
-    }
-
-    .service-info h3  { font-size: 3rem; text-align: center; }
-    .service-info p   { font-size: 1.8rem; }
-
-    .consultoria-lista {
-        text-align: left;
-        display: inline-block;
-    }
-
-    .consultoria-lista li { font-size: 1.8rem; }
-
-    .service-info .orcamento { margin-top: 28px; }
-
-    .orcamento a {
+    .acc-text p {
         font-size: 1.3rem;
-        padding: 14px 28px;
-    }
-}
-
-/* ================================
-LANDSCAPE — celular/tablet  ≤ 950px
-================================ */
-@media only screen and (max-width: 950px) and (orientation: landscape) {
-    .services-section {
-        padding: 40px 5%;
-        margin-top: 5vh;
     }
 
-    .service-single-img img {
-        width: 80%;
+    .acc-img img {
+        max-width: 100%;
     }
-
-    .service-title    { font-size: 2rem; }
-    .service-subtitle { font-size: 2rem; }
-
-    .service-item {
-        padding: 40px 0;
-        gap: 30px;
-    }
-
-    .service-info h3 { font-size: 2.5rem; }
-    .service-info p  { font-size: 1.5rem; }
-
-    .consultoria-lista li { font-size: 1.1rem; }
-
     .orcamento a {
-        font-size: 1rem;
-        padding: 12px 24px;
-        /* margin: -5vh; */
+        font-size: 0.9rem; 
     }
+
 }
 
-/* ================================
-   PORTRAIT — celular pequeno  ≤ 450px
-   ================================ */
-@media (max-width: 450px) and (orientation: portrait) {
-    .services-section {
-        padding: 40px 5%;
+/* =========================================
+   ≤ 450px — COLUNA ÚNICA (FOTO → TEXTO → BOTÃO)
+   ========================================= */
+
+@media (max-width: 450px) {
+    /* Forçamos a estrutura de coluna e resetamos o row-reverse do desktop */
+    .acc-inner,
+    .acc-inner.reverse {
+        flex-direction: column !important;
+        gap: 2rem;
+        padding: 2.5rem 0; /* Mantém a simetria com as bordas laterais */
+        text-align: center;
+        align-items: center;
+        width: 75%;
+        margin: 0 auto;
+        justify-content: center;
     }
 
-    .section-header { margin-bottom: 30px; }
+    .acc-img     { order: 1; justify-content: center; width: 100%; max-width: 100%; }
+    .acc-text    { order: 2; align-items: center;     width: 100%; max-width: 100%; }
+    .orcamento   { order: 3; justify-content: center; }
 
-    .service-title    { font-size: 1.8rem; }
-    .service-subtitle { font-size: 1.8rem; }
+    .acc-title   { font-size: 1.3rem; }
+    .acc-text p  { font-size: 1.1rem; }
 
-    .service-item {
-        padding: 40px 0;
-        gap: 24px;
-    }
-
-    .service-info { width: 80%; }
-
-    .service-info h3  { font-size: 2rem; }
-    .service-info p   { font-size: 1.2rem; }
-
-    .consultoria-lista li { font-size: 1.2rem; }
-
-    .service-info .orcamento { margin-top: 24px; }
-
-    .orcamento a {
-        font-size: 0.9rem;
-        padding: 14px 24px;
-        letter-spacing: 2px;
-    }
+    .orcamento a { font-size: 0.7rem; padding: 12px 28px; }
 }
 
-/* ================================
-   PORTRAIT — celular muito pequeno  ≤ 320px
-   ================================ */
-@media (max-width: 320px) and (orientation: portrait) {
-    .service-title    { font-size: 1.4rem; }
-    .service-subtitle { font-size: 1.6rem; }
-
-    .service-info h3 { font-size: 1.5rem; }
-
-    .service-info p,
-    .consultoria-lista li { font-size: 1rem; }
-
-    .orcamento a {
-        font-size: 0.8rem;
-        padding: 12px 20px;
-    }
-}
-
-
-
-/* IPADS — adicionar aqui */

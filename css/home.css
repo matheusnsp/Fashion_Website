@@ -1,204 +1,331 @@
-/* --- Layout Base --- */
-.section {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* ============================================================
+   HOME — Estilos principais
+   Ordem: Base → Layout → Tipografia → Componentes → Responsivo
+   ============================================================ */
 
-/* --- Seção Home Imersiva --- */
-.bg-wrapper {
-  position: fixed;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
-  z-index: -1;
-  background-color: #000;
-}
 
-.video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
-  filter: contrast(130%) saturate(180%) hue-rotate(-5deg);
-}
+/* ============================================================
+   1. BASE & LAYOUT
+   ============================================================ */
 
-.overlay-vignette {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 100%);
-  z-index: 2;
-}
-
-/* Tipografia */
-.brand-header .location {
-  font-size: 0.9rem;
-  letter-spacing: 5px;
-  font-weight: 100;
-}
-
-.brand-title {
-  font-family: var(--font-signature);
-  font-size: var(--fs-brand);
-  font-weight: 300;
-  line-height: 0.85;
-  margin-top: 1.5rem;
-}
-
-.last-name {
-  font-weight: 400;
-}
-
-.home-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.footer-brand,
-.footer-brand:visited,
-.footer-brand:hover,
-.footer-brand:active {
-  text-decoration: none;
-  color: inherit;
-}
-
-.home-tagline {
-  font-family: var(--font-sans);
-  font-size: 2.5rem;
-  letter-spacing: 3px;
-  /* text-transform: uppercase; */
-  max-width: 60%;
-}
-
-/* Container principal — desktop: linha com texto + foto */
-.home-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1600px;
-  z-index: 3;
-  position: relative;
-  margin-top: 10vh;
-}
-
-.home-text-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 80vh;
-}
-
-.personal-description {
-  margin-top: 2rem;
-  border-left: 1px solid var(--accent-gold);
-  padding-left: 20px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-.role-title {
-  font-size: 1.4rem;
-  letter-spacing: 3px;
-  font-weight: bold;
-}
-
-.home-image-side {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 100vh;
-  position: relative;
-}
-
-.profile-photo {
-  height: 100vh; 
-  width: auto;
-  object-fit: contain;
-  -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-}
-
-/* REDES SOCIAIS - CONECTE-SE */
-
-.connection-section {
-  margin-top: 8vh;
-}
-
-.connection-content {
-  width: 100%;
-}
-
-.social-connect-section {
-  background: transparent;
-  padding: 80px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.social-connect-container {
-  margin-bottom: 16vh;
-  height: 10vh;
-  text-align: center;
-}
-
-.social-label {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 1.7rem;
-  letter-spacing: 4px;
-  color: var(--accent-gold);
-  margin-bottom: 30px;
-  opacity: 0.8;
-}
-
-.social-icons-wrapper {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-}
-
-.social-link-item {
-  font-size: 3rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  text-decoration: none;
-}
-
-.social-link-item.instagram { color: #E1306C; }
-.social-link-item.youtube   { color: #FF0000; }
-.social-link-item.facebook  { color: #1877F2; }
-.social-link-item.whatsapp  { color: #25D366; }
-
-.social-link-item:hover {
-  transform: translateY(-5px);
-  filter: brightness(1.2);
-}
-
-/* ================================
- PORTRAIT — tablet grande  ≤ 1440px
- ================================ */
-@media only screen and (max-width: 1440px) and (orientation: portrait) {
+   .section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Fundo em vídeo fixo */
+  .bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000;
+  }
+  
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: contrast(130%) saturate(180%) hue-rotate(-5deg);
+  }
+  
+  .overlay-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 100%);
+    z-index: 2;
+  }
+  
+  
+  /* ============================================================
+     2. ESTRUTURA HOME (conteúdo + colunas)
+     ============================================================ */
+  
+  /* Container principal — desktop: linha com texto + foto */
   .home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1600px;
+    z-index: 3;
+    position: relative;
+    margin-top: 10vh;
+  }
+  
+  /* Coluna de texto */
+  .home-text-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  /* Coluna da foto */
+  .home-image-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .profile-photo {
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  }
+  
+  /* Rodapé da coluna de texto (tagline + botão) */
+  .home-footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  
+  .footer-brand,
+  .footer-brand:visited,
+  .footer-brand:hover,
+  .footer-brand:active {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  
+  /* ============================================================
+     3. TIPOGRAFIA
+     ============================================================ */
+  
+  .brand-header .location {
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    font-weight: 100;
+  }
+  
+  .brand-title {
+    font-family: var(--font-signature);
+    font-size: var(--fs-brand);
+    font-weight: 300;
+    line-height: 0.85;
+    margin-top: 1.5rem;
+  }
+  
+  .last-name {
+    font-weight: 400;
+  }
+  
+  .home-tagline {
+    font-family: var(--font-sans);
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    max-width: 75%;
+    text-align: center;
+    margin-top: 10%;
+  }
+  
+  .personal-description {
+    margin-top: 2rem;
+    border-left: 1px solid var(--accent-gold);
+    padding-left: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  
+  .role-title {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+  
+  
+  /* ============================================================
+     4. BOTÃO — CONHEÇA OS SERVIÇOS
+     ============================================================ */
+  
+  .btn-services-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
+  
+  .btn-services {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 48px;
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    border-radius: 10px;
+    color: var(--accent-gold);
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    isolation: isolate;
+    transition: color 0.5s ease;
+  }
+  
+  /* Preenchimento animado (esquerda → direita) */
+  .btn-services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-gold);
+    border-radius: 10px;
+    clip-path: inset(0 100% 0 0 round 10px);
+    transition: clip-path 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+  }
+  
+  .btn-services:hover::before {
+    clip-path: inset(0 0% 0 0 round 10px);
+  }
+  
+  .btn-services:hover {
+    color: var(--primary-dark);
+  }
+  
+  .btn-text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Seta do botão */
+  .btn-arrow {
+    position: relative;
+    z-index: 1;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    flex-shrink: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .btn-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-top: 1.5px solid currentColor;
+    transform: rotate(45deg);
+  }
+  
+  .btn-services:hover .btn-arrow {
+    width: 36px;
+  }
+  
+  
+  /* ============================================================
+     5. REDES SOCIAIS
+     ============================================================ */
+  
+  .connection-section {
+    margin-top: 8vh;
+  }
+  
+  .connection-content {
+    width: 100%;
+  }
+  
+  .social-connect-section {
+    background: transparent;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-connect-container {
+    margin-bottom: 16vh;
+    height: 10vh;
+    text-align: center;
+  }
+  
+  .social-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 1.7rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 30px;
+    opacity: 0.8;
+  }
+  
+  .social-icons-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .social-link-item {
+    font-size: 3rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    text-decoration: none;
+  }
+  
+  /* Cores por rede */
+  .social-link-item.instagram { color: #E1306C; }
+  .social-link-item.youtube   { color: #FF0000; }
+  .social-link-item.facebook  { color: #1877F2; }
+  .social-link-item.whatsapp  { color: #25D366; }
+  
+  .social-link-item:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+  }
+  
+  
+  /* ============================================================
+     6. RESPONSIVO — PORTRAIT
+     ============================================================ */
+  
+  /* Tablet grande — até 1440px portrait */
+  @media only screen and (max-width: 1440px) and (orientation: portrait) {
+    .home-content {
+      margin-top: 0;
       height: auto;
-      min-height: 100svh;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       width: 100%;
       max-width: 100%;
       padding: 0;
       gap: 0;
-  }
-
-  .home-image-side {
+    }
+  
+    .home-image-side {
       order: 1;
       flex: none;
       width: auto;
@@ -206,16 +333,16 @@
       justify-content: center;
       align-items: flex-end;
       overflow: hidden;
-  }
-
-  .profile-photo {
+    }
+  
+    .profile-photo {
       height: 100%;
       width: 100%;
       mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
       -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  }
-
-  .home-text-side {
+    }
+  
+    .home-text-side {
       order: 2;
       flex: none;
       width: 100%;
@@ -228,184 +355,251 @@
       gap: 18px;
       z-index: 4;
       text-align: center;
-  }
-
-  .home-text-side .orcamento a {
+    }
+  
+    .home-text-side .orcamento a {
       margin: 20px;
       padding: 15px;
       font-size: 2rem;
-  }
-
-  .brand-header {
+    }
+  
+    .brand-header {
       display: flex;
       flex-direction: column;
       align-items: center;
-  }
-
-  .brand-title {
+    }
+  
+    .brand-title {
       font-size: 7rem;
       line-height: 1;
       margin-top: 0;
       text-align: center;
-  }
-
-  .role-title   { font-size: 1.7rem; }
-
-  .home-tagline {
-      font-size: 3rem;
+    }
+  
+    .role-title   { font-size: 1.7rem; }
+  
+    .home-tagline {
+      font-size: 2rem;
       letter-spacing: 2px;
-      max-width: 75%;
+      max-width: 70%;
       text-align: center;
+    }
+  
+    .home-footer          { justify-content: center; }
+    .home-footer-bottom   { align-items: center; }
+  
+    .btn-services-wrap    { display: flex; justify-content: center; margin-top: 0; }
+    .btn-services         { font-size: 13px; padding: 18px 38px; letter-spacing: 3px; }
+  
+    .social-label         { font-size: 2.5rem; }
+    .social-link-item     { font-size: 2.8rem; }
+    .social-icons-wrapper { gap: 50px; }
   }
-
-  .home-footer { justify-content: center; }
-
-  .social-label      { font-size: 2.5rem; }
-  .social-link-item  { font-size: 2.8rem; }
-  .social-icons-wrapper { gap: 50px; }
-}
-
-/* ================================
- PORTRAIT — tablet médio  ≤ 950px
- ================================ */
-@media (max-width: 950px) and (orientation: portrait) {
-  .brand-title  { font-size: 5rem; }
-
-  .role-title {
+  
+  /* Tablet médio-grande — até 1100px */
+  @media only screen and (max-width: 1100px) {
+    .brand-title  { font-size: 5rem; }
+  
+    .home-tagline {
+      font-size: 2.5rem;
+      max-width: 85%;
+      letter-spacing: 1.5px;
+    }
+  
+    .btn-services {
+      font-size: 1.2rem;
+      padding: 12px 24px;
+      letter-spacing: 2.5px;
+      gap: 12px;
+    }
+  
+    .btn-arrow { width: 20px; }
+  }
+  
+  /* Tablet médio — até 950px */
+  @media (max-width: 950px) {
+    .brand-title  { font-size: 5rem; }
+  
+    .role-title {
       margin-left: 5px;
       font-size: 1.2rem;
       letter-spacing: 2px;
       font-weight: bold;
-  }
-
-  .home-tagline {
+    }
+  
+    .home-tagline {
       font-size: 2rem;
       max-width: 75%;
+    }
+  
+    .home-image-side          { height: 60vh; }
+    .home-text-side .orcamento a { font-size: 1.2rem; }
+  
+    .btn-services {
+      font-size: 12px;
+      padding: 18px 36px;
+      letter-spacing: 3px;
+    }
+  
+    .social-label     { font-size: 2rem; }
+    .social-link-item { font-size: 2.2rem; }
+    .social-icons-wrapper { gap: 35px; }
   }
-
-  .home-image-side { height: 60vh; }
-
-  .home-text-side .orcamento a { font-size: 1.2rem; }
-
-  .social-label     { font-size: 2rem; }
-  .social-link-item { font-size: 2.2rem; }
-  .social-icons-wrapper { gap: 35px; }
-}
-
-/* ================================
- PORTRAIT — celular grande  ≤ 768px
- ================================ */
-@media (max-width: 768px) and (orientation: portrait) {
-  .brand-title  { font-size: 4.5rem; }
-
-  .role-title {
+  
+  /* iPad / tablet portrait — 451px a 950px */
+  @media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
+    .btn-services {
+      font-size: 13px;
+      padding: 20px 40px;
+      letter-spacing: 4px;
+    }
+  
+    .social-label     { font-size: 2.3rem; }
+    .social-link-item { font-size: 2.5rem; }
+    .social-icons-wrapper { gap: 42px; }
+  }
+  
+  /* Celular grande — até 768px */
+  @media (max-width: 768px) {
+    .brand-title  { font-size: 4.5rem; }
+  
+    .role-title {
       margin-left: 0;
       font-size: 1rem;
       letter-spacing: 2px;
-  }
-
-  .home-tagline {
+    }
+  
+    .home-tagline {
+      margin: 3% 0;
       font-size: 1.5rem;
-      max-width: 80%;
+      max-width: 55%;
+    }
+  
+    .home-image-side { height: 55vh; }
+    .home-text-side .orcamento a { font-size: 1rem; }
+  
+    .btn-services {
+      font-size: 1rem;
+      padding: 16px 30px;
+      letter-spacing: 3px;
+      gap: 14px;
+    }
   }
-
-  .home-image-side { height: 55vh; }
-
-  .home-text-side .orcamento a { font-size: 1rem; }
-}
-
-/* ================================
- PORTRAIT — celular pequeno  ≤ 450px
- ================================ */
-@media (max-width: 450px) and (orientation: portrait) {
-  .brand-title  { font-size: 4rem; }
-
-  .role-title {
+  
+  /* Celular pequeno — até 450px */
+  @media (max-width: 450px) {
+    .brand-title  { font-size: 4rem; }
+  
+    .role-title {
       margin-left: -3vw;
       font-size: 0.8rem;
       letter-spacing: 2px;
       font-weight: bold;
+    }
+  
+    .home-tagline { font-size: 1.2rem; }
+  
+    .home-image-side            { height: 50vh; }
+    .home-text-side .orcamento a { font-size: 0.8rem; }
+  
+    .btn-services {
+      font-size: 10px;
+      padding: 16px 24px;
+      letter-spacing: 2.5px;
+      gap: 12px;
+    }
+  
+    .btn-arrow { width: 22px; }
+  
+    .social-label     { font-size: 1.5rem; letter-spacing: 3px; }
+    .social-link-item { font-size: 1.8rem; }
+    .social-icons-wrapper { gap: 30px; }
   }
-
-  .home-tagline { font-size: 1.2rem; }
-
-  .home-image-side { height: 50vh; }
-
-  .home-text-side .orcamento a { font-size: 0.8rem; }
-
-  .social-label     { font-size: 1.5rem; letter-spacing: 3px; }
-  .social-link-item { font-size: 1.8rem; }
-  .social-icons-wrapper { gap: 30px; }
-}
-
-/* ================================
- PORTRAIT — celular muito pequeno  ≤ 320px
- ================================ */
-@media (max-width: 320px) and (orientation: portrait) {
-  .brand-title  { font-size: 3.5rem; }
-
-  .role-title {
+  
+  /* Celular compacto — 375px */
+  @media (max-width: 375px) {
+    .home-tagline {
+      margin: 5% 0;
+      font-size: 1.5rem;
+      max-width: 80%;
+    }
+  
+    .btn-services { font-size: 0.9rem; }
+  }
+  
+  /* Celular muito pequeno — até 320px */
+  @media (max-width: 320px) {
+    .brand-title  { font-size: 3.5rem; }
+  
+    .role-title {
       margin-left: -4vw;
       font-size: 0.7rem;
       letter-spacing: 1px;
       font-weight: bold;
-  }
-
-  .home-tagline {
-      font-size: 0.9rem;
+    }
+  
+    .home-tagline {
+      font-size: 1.2rem;
       max-width: 75%;
+    }
+  
+    .home-image-side            { height: 55vh; }
+    .home-text-side .orcamento a { font-size: 0.7rem; }
+  
+    .btn-services {
+      font-size: 0.77rem;
+      padding: 14px 20px;
+      letter-spacing: 2px;
+      gap: 10px;
+    }
+  
+    .btn-arrow { width: 18px; }
+  
+    .social-label     { font-size: 1.2rem; }
+    .social-link-item { font-size: 1.5rem; }
+    .social-icons-wrapper { gap: 20px; }
   }
-
-  .home-image-side { height: 55vh; }
-
-  .home-text-side .orcamento a { font-size: 0.7rem; }
-
-
-  .social-label     { font-size: 1.2rem; }
-  .social-link-item { font-size: 1.5rem; }
-  .social-icons-wrapper { gap: 20px; }
-}
-
-/* ================================
- LANDSCAPE — celular/tablet  ≤ 950px
- ================================ */
-@media only screen and (max-width: 950px) and (orientation: landscape) {
-  .brand-title  { font-size: 3.5rem; }
-  .role-title   { font-size: 0.7rem; }
-
-  .home-tagline {
+  
+  
+  /* ============================================================
+     7. RESPONSIVO — LANDSCAPE
+     ============================================================ */
+  
+  /* Celular/tablet landscape — até 950px */
+  @media only screen and (max-width: 950px) and (orientation: landscape) {
+    .brand-title  { font-size: 3.5rem; }
+    .role-title   { font-size: 0.7rem; }
+  
+    .home-tagline {
       font-size: 1.1rem;
       letter-spacing: 2px;
       max-width: 75%;
-  }
-
-  .home-image-side {
+    }
+  
+    .home-image-side {
       flex: 1;
       justify-content: flex-end;
       align-items: flex-end;
       height: 100vh;
       position: relative;
-  }
-
-  .profile-photo {
+    }
+  
+    .profile-photo {
       object-fit: contain;
       mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
       -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    }
+  
+    .home-text-side .orcamento a { font-size: 0.8rem; }
+  
+    .btn-services {
+      font-size: 10px;
+      padding: 14px 28px;
+      letter-spacing: 3px;
+      gap: 12px;
+    }
+  
+    .social-label     { font-size: 1.5rem; }
+    .social-link-item { font-size: 1.6rem; }
+    .social-icons-wrapper { gap: 25px; }
   }
-
-  .home-text-side .orcamento a { font-size: 0.8rem; }
-
-  .social-label     { font-size: 1.5rem; }
-  .social-link-item { font-size: 1.6rem; }
-  .social-icons-wrapper { gap: 25px; }
-}
-
-/* ================================
-   PORTRAIT — iPad / tablet médio  451px – 950px
-   ================================ */
-   @media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
-
-    .social-label     { font-size: 2.3rem; }
-    .social-link-item { font-size: 2.5rem; }
-    .social-icons-wrapper { gap: 42px; }
-}

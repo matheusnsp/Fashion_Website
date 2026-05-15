@@ -1,6 +1,12 @@
-/* ================================
-   HEADER & NAVIGATION
-   ================================ */
+/* ============================================================
+   HEADER & NAVIGATION - VERSÃO FLAT (SEM SHADOW INTERNO)
+   ============================================================ */
+
+
+/* ============================================================
+   1. HEADER BASE
+   ============================================================ */
+
    .main-header {
     position: fixed;
     top: 15px;
@@ -12,6 +18,11 @@
     background: transparent;
 }
 
+
+/* ============================================================
+   2. NAV — DESKTOP (pill central)
+   ============================================================ */
+
 .nav-menu {
     pointer-events: all;
     display: flex;
@@ -20,11 +31,11 @@
     gap: 20px;
     padding: 10px 30px;
     border-radius: 999px;
-    background: rgba(18, 17, 16, 0.35);
+    background: rgba(18, 17, 16, 0.45);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--accent-gold);
+    border: 1px solid rgba(197, 147, 76, 0.45);
 }
 
 .nav-link {
@@ -44,7 +55,7 @@
     color: var(--accent-gold);
 }
 
-/* Linha embaixo no hover */
+/* Sublinhado animado no hover */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -73,17 +84,17 @@
     letter-spacing: 0;
 }
 
-/* Hambúrguer — oculto no desktop */
-.hamburger {
-    display: none;
-}
-
 .nav-divider {
     color: var(--accent-gold);
     opacity: 0.4;
     font-size: 1rem;
     user-select: none;
 }
+
+
+/* ============================================================
+   3. TOGGLE DE IDIOMA
+   ============================================================ */
 
 .lang-toggle {
     font-family: var(--font-sans);
@@ -97,6 +108,18 @@
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition-fluid);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-toggle .lang-toggle__icon {
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    opacity: 0.75;
+    transition: var(--transition-fluid);
 }
 
 .lang-toggle:hover {
@@ -104,76 +127,99 @@
     border-color: var(--accent-gold);
 }
 
-/* No desktop, o toggle mobile fica oculto */
-.lang-toggle--mobile {
-    display: none;
+.lang-toggle:hover .lang-toggle__icon {
+    opacity: 1;
 }
 
-/* No desktop, o toggle desktop fica visível dentro do nav */
-.lang-toggle--desktop {
-    display: inline-flex;
-}
+/* Desktop: toggle aparece dentro do nav */
+.lang-toggle--mobile  { display: none; }
+.lang-toggle--desktop { display: inline-flex; }
 
-/* ================================
-   PORTRAIT — tablet grande  ≤ 1440px
-   ================================ */
+
+/* ============================================================
+   4. HAMBÚRGUER — oculto no desktop
+   ============================================================ */
+
+.hamburger { display: none; }
+
+
+/* ============================================================
+   5. RESPONSIVO — PORTRAIT  ≤ 1440px
+   ============================================================ */
+
 @media only screen and (max-width: 1440px) and (orientation: portrait) {
 
+    /* Header vira barra com dois extremos */
     .main-header {
         justify-content: space-between;
-        padding-left: 20px;
-        padding-right: 20px;
+        align-items: center;
+        padding: 0 20px;
         pointer-events: none;
     }
 
-    /* Toggle desktop some, mobile aparece no lado direito do header */
-    .lang-toggle--desktop {
-        display: none;
-    }
+    /* Toggle desktop some, mobile aparece à direita */
+    .lang-toggle--desktop { display: none; }
 
     .lang-toggle--mobile {
         display: inline-flex;
         align-items: center;
         pointer-events: all;
         z-index: 1100;
-        background: rgba(18, 17, 16, 0.35);
+        background: rgba(18, 17, 16, 0.5);
         backdrop-filter: blur(16px) saturate(180%);
         -webkit-backdrop-filter: blur(16px) saturate(180%);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        padding: 6px 14px;
+        padding: 6px 16px;
+        font-size: 0.85rem;
     }
 
+    /* --- Botão hambúrguer --- */
     .hamburger {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 5px;
+        gap: 6px;
         width: 45px;
         height: 45px;
-        border-radius: 10px;
-        background: rgba(18, 17, 16, 0.35);
+        border-radius: 12px;
+        background: rgba(18, 17, 16, 0.5);
         backdrop-filter: blur(16px) saturate(180%);
         -webkit-backdrop-filter: blur(16px) saturate(180%);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        border: 1px solid var(--accent-gold);
+        border: 1px solid rgba(197, 147, 76, 0.5);
         cursor: pointer;
         pointer-events: all;
         z-index: 1100;
-        transition: background 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.3s ease;
     }
 
+    .hamburger::before { content: none; }
+
+    .hamburger:hover { border-color: rgba(197, 147, 76, 0.9); }
+
+    /* Linhas assimétricas */
     .hamburger-line {
         display: block;
-        width: 22px;
-        height: 2px;
-        background-color: var(--accent-gold);
+        height: 1.5px;
+        background: var(--accent-gold);
         border-radius: 2px;
-        transition: transform 0.35s ease, opacity 0.25s ease;
+        transition:
+            transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+            opacity   0.3s ease,
+            width     0.4s cubic-bezier(0.23, 1, 0.32, 1);
         transform-origin: center;
     }
 
+    .hamburger-line:nth-child(1) { width: 22px; }
+    .hamburger-line:nth-child(2) { width: 14px; align-self: flex-start; margin-left: 14px; }
+    .hamburger-line:nth-child(3) { width: 22px; }
+
+    /* Estado aberto — X elegante */
     .hamburger.is-active .hamburger-line:nth-child(1) {
+        width: 22px;
         transform: translateY(7px) rotate(45deg);
     }
     .hamburger.is-active .hamburger-line:nth-child(2) {
@@ -181,14 +227,14 @@
         transform: scaleX(0);
     }
     .hamburger.is-active .hamburger-line:nth-child(3) {
+        width: 22px;
         transform: translateY(-7px) rotate(-45deg);
     }
 
+    /* --- Divisor some no mobile --- */
+    .nav-divider { display: none; }
 
-    .nav-divider {
-        display: none;
-    }
-
+    /* --- Menu dropdown --- */
     .nav-menu {
         display: none;
         pointer-events: none;
@@ -199,48 +245,73 @@
         width: auto;
         min-width: 240px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 0;
-        padding: 10px 0 0 0;
+        padding: 0;
         border-radius: 16px;
-        background: rgba(18, 17, 16, 0.35);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        border: 2px solid var(--accent-gold);
+        background: rgba(18, 17, 16, 0.96);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(197, 147, 76, 0.35);
+        overflow: hidden;
         transform-origin: top left;
-        transform: scale(0.92);
+        transform: scale(0.9) translateY(-8px);
         opacity: 0;
-        transition: transform 0.25s ease, opacity 0.25s ease;
+        transition:
+            transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+            opacity   0.3s ease;
     }
+
+    .nav-menu::before { content: none; }
 
     .nav-menu.nav-open {
         display: flex;
         pointer-events: all;
-        transform: scale(1);
+        transform: scale(1) translateY(0);
         opacity: 1;
     }
 
+    /* Links no dropdown */
     .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
         width: 100%;
         font-size: 1.7rem;
         letter-spacing: 2px;
         padding: 14px 28px;
-        border-bottom: 1px solid rgba(197, 147, 76, 0.15);
+        border-bottom: 1px solid rgba(197, 147, 76, 0.1);
+        color: rgba(240, 232, 216, 0.75);
+        position: relative;
+        transition:
+            color        0.2s ease,
+            background   0.2s ease,
+            padding-left 0.2s ease;
     }
 
-    .nav-link:last-of-type {
-        border-bottom: none;
+    .nav-link:last-of-type { border-bottom: none; }
+
+    .nav-link::after { display: none; }
+    .nav-link::before { content: none; }
+
+    .nav-link:hover {
+        color: var(--accent-gold);
+        background: rgba(197, 147, 76, 0.08);
+        padding-left: 28px;
     }
 
-    .nav-link::after {
-        display: none;
+    .nav-link.disabled:hover {
+        color: rgba(240, 232, 216, 0.3);
+        background: none;
     }
 }
 
-/* ================================
-   PORTRAIT — tablet/celular  ≤ 950px
-   ================================ */
+
+/* ============================================================
+   6. PORTRAIT — tablet/celular  ≤ 950px
+   ============================================================ */
+
 @media (max-width: 950px) and (orientation: portrait) {
 
     .hamburger {
@@ -248,8 +319,17 @@
         height: 35px;
     }
 
-    .hamburger-line {
-        width: 20px;
+    .hamburger-line:nth-child(1) { width: 18px; }
+    .hamburger-line:nth-child(2) { width: 12px; margin-left: 10px; }
+    .hamburger-line:nth-child(3) { width: 18px; }
+
+    .hamburger.is-active .hamburger-line:nth-child(1) {
+        width: 18px;
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.is-active .hamburger-line:nth-child(3) {
+        width: 18px;
+        transform: translateY(-7px) rotate(-45deg);
     }
 
     .nav-menu {
@@ -263,18 +343,22 @@
     }
 }
 
-/* ================================
-   PORTRAIT — celular pequeno  ≤ 450px
-   ================================ */
+
+/* ============================================================
+   7. PORTRAIT — celular pequeno  ≤ 450px
+   ============================================================ */
+
 @media (max-width: 450px) and (orientation: portrait) {
     .nav-link {
         font-size: 0.9rem;
     }
 }
 
-/* ================================
-   PORTRAIT — celular muito pequeno  ≤ 320px
-   ================================ */
+
+/* ============================================================
+   8. PORTRAIT — celular muito pequeno  ≤ 320px
+   ============================================================ */
+
 @media (max-width: 320px) and (orientation: portrait) {
     .nav-link {
         font-size: 0.7rem;
@@ -286,35 +370,30 @@
         height: 30px;
     }
 
-    .hamburger-line {
-        width: 16px;
-    }
+    .hamburger-line:nth-child(1),
+    .hamburger-line:nth-child(3) { width: 16px; }
+    .hamburger-line:nth-child(2) { width: 10px; margin-left: 8px; }
 }
 
-/* ================================
-   LANDSCAPE — celular/tablet  ≤ 950px
-   ================================ */
+
+/* ============================================================
+   9. LANDSCAPE — celular/tablet  ≤ 950px
+   ============================================================ */
+
 @media only screen and (max-width: 950px) and (orientation: landscape) {
 
     .main-header {
         justify-content: space-between;
-        padding-left: 20px;
-        padding-right: 20px;
+        align-items: center;
+        padding: 0 20px;
         pointer-events: none;
     }
 
-    .lang-toggle--desktop {
-        display: none;
-    }
+    .lang-toggle--desktop { display: none; }
 
     .lang-toggle--mobile {
         display: inline-flex;
-        align-items: center;
-        pointer-events: all;
-        z-index: 1100;
-        background: rgba(18, 17, 16, 0.35);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background: rgba(18, 17, 16, 0.5);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
         padding: 4px 10px;
         font-size: 0.8rem;
@@ -322,35 +401,23 @@
 
     .hamburger {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
         width: 32px;
         height: 32px;
-        border-radius: 10px;
-        background: rgba(18, 17, 16, 0.35);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background: rgba(18, 17, 16, 0.5);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        border: 1px solid var(--accent-gold);
-        cursor: pointer;
-        pointer-events: all;
-        z-index: 1100;
-        transition: background 0.3s ease;
+        border: 1px solid rgba(197, 147, 76, 0.5);
+        transition: border-color 0.3s ease;
     }
 
-    .hamburger-line {
-        display: block;
-        width: 16px;
-        height: 2px;
-        background-color: var(--accent-gold);
-        border-radius: 2px;
-        transition: transform 0.35s ease, opacity 0.25s ease;
-        transform-origin: center;
-    }
+    .hamburger::before { content: none; }
+    .hamburger:hover { border-color: rgba(197, 147, 76, 0.9); }
+
+    .hamburger-line:nth-child(1) { width: 16px; }
+    .hamburger-line:nth-child(2) { width: 10px; align-self: flex-start; margin-left: 10px; }
+    .hamburger-line:nth-child(3) { width: 16px; }
 
     .hamburger.is-active .hamburger-line:nth-child(1) {
+        width: 16px;
         transform: translateY(6px) rotate(45deg);
     }
     .hamburger.is-active .hamburger-line:nth-child(2) {
@@ -358,60 +425,32 @@
         transform: scaleX(0);
     }
     .hamburger.is-active .hamburger-line:nth-child(3) {
+        width: 16px;
         transform: translateY(-6px) rotate(-45deg);
     }
 
-    .nav-divider {
-        display: none;
-    }
-    
     .nav-menu {
-        display: none;
-        pointer-events: none;
-        position: fixed;
         top: 60px;
-        left: 15px;
-        right: auto;
-        width: auto;
-        min-width: 180px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 8px 0 0 0;
-        border-radius: 16px;
-        background: rgba(18, 17, 16, 0.35);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        border: 2px solid var(--accent-gold);
-        transform-origin: top left;
-        transform: scale(0.92);
-        opacity: 0;
-        transition: transform 0.25s ease, opacity 0.25s ease;
+        background: rgba(18, 17, 16, 0.96);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(197, 147, 76, 0.35);
+        padding: 0;
+        overflow: hidden;
     }
 
-    .nav-menu.nav-open {
-        display: flex;
-        pointer-events: all;
-        transform: scale(1);
-        opacity: 1;
-    }
+    .nav-menu::before { content: none; }
 
     .nav-link {
         width: 100%;
         font-size: 0.7rem;
         letter-spacing: 2px;
         padding: 10px 20px;
-        border-bottom: 1px solid rgba(197, 147, 76, 0.15);
+        border-bottom: 1px solid rgba(197, 147, 76, 0.1);
     }
 
-    .nav-link:last-of-type {
-        border-bottom: none;
-    }
-
-    .nav-link::after {
-        display: none;
-    }
+    .nav-link:last-of-type { border-bottom: none; }
+    .nav-link::after  { display: none; }
+    .nav-link::before { content: none; }
 }
 
 /* IPADS — adicionar aqui */

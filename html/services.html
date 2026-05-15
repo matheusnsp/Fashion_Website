@@ -30,45 +30,55 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-
         <nav class="nav-menu" id="nav-menu">
             <a href="/index.html" class="nav-link" data-i18n="nav.home">Home</a>
             <a href="services.html" class="nav-link" data-i18n="nav.services">Serviços</a>
             <a href="newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a>
             <span class="nav-divider">|</span>
-            <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">EN</button>
+            <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">PT</button>
         </nav>
-        <button class="lang-toggle lang-toggle--mobile" id="lang-toggle">EN</button>
+        <button class="lang-toggle lang-toggle--mobile" id="lang-toggle">PT</button>
     </header>
 
     <main id="main-container">
-
         <section class="services-section" id="services">
-            <div class="container">
-                <div class="services-wrapper">
-                    <div class="service-category">
+            <div class="accordion-list">
 
-                        <!-- Styling Pontual -->
-                        <div class="service-item">
-                            <div class="service-info">
-                                <h3 data-i18n="services.sp.title">Styling Pontual</h3>
+                <!-- 01 -->
+                <div class="acc-item" data-index="0">
+                    <button class="acc-header">
+                        <span class="acc-number">01</span>
+                        <span class="acc-title" data-i18n="services.sp.title">Styling Pontual</span>
+                        <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <div class="acc-text">
                                 <p data-i18n="services.sp.desc">Curadoria com peças da cliente para sessão de fotos. Produção de até 4 looks (sem acompanhamento no set).</p>
                                 <div class="orcamento">
                                     <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20o%20Styling%20Pontual." data-i18n="services.sp.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
-                            <div class="service-single-img">
-                                <img src="/images/sp.png" alt="Assessoria 1" class="img-sp1">
+                            <div class="acc-img">
+                                <img src="/images/sp.png" alt="Styling Pontual">
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Styling Pontual + Assessoria no Set -->
-                        <div class="service-item">
-                            <div class="service-single-img">
-                                <img src="/images/spas.png" alt="Assessoria 1" class="img-sp1">
+                <!-- 02 -->
+                <div class="acc-item" data-index="1">
+                    <button class="acc-header">
+                        <span class="acc-number">02</span>
+                        <span class="acc-title" data-i18n="services.spas.title">Styling Pontual + Assessoria no Set</span>
+                        <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <div class="acc-img">
+                                <img src="/images/spas.png" alt="Styling Pontual + Assessoria no Set">
                             </div>
-                            <div class="service-info">
-                                <h3 data-i18n="services.spas.title">Styling Pontual <br>+ Assessoria no Set</h3>
+                            <div class="acc-text">
                                 <p data-i18n="services.spas.desc1">Curadoria com peças da cliente para sessão de fotos.</p>
                                 <p data-i18n="services.spas.desc2">Montagem e produção de todos os looks e acompanhamento estratégico durante toda a sessão de fotos.</p>
                                 <div class="orcamento">
@@ -76,68 +86,79 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Consultoria Presencial -->
-                        <div class="service-item">
-                            <div class="service-info">
-                                <h3 data-i18n="services.presencial.title">Consultoria Presencial</h3>
-                                <p data-i18n="services.presencial.desc">Um processo personalizado de transformação e alinhamento entre quem você é e o que sua imagem comunica.</p>
-                                <ul class="consultoria-lista">
-                                    <li data-i18n="services.presencial.li1">Entrevista e Anamnese</li>
-                                    <li data-i18n="services.presencial.li2">Encontro presencial (até 5h)</li>
-                                    <li data-i18n="services.presencial.li3">Análise de Closet e Curadoria</li>
-                                    <li data-i18n="services.presencial.li4">Dossiê Personalizado</li>
-                                    <li data-i18n="services.presencial.li5">Suporte WhatsApp (2 meses)</li>
-                                </ul>
+                <!-- 03 -->
+                <div class="acc-item" data-index="2">
+                    <button class="acc-header">
+                        <span class="acc-number">03</span>
+                        <span class="acc-title" data-i18n="services.presencial.title">Consultoria Presencial</span>
+                        <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <div class="acc-text">
+                                <p data-i18n="services.presencial.desc1">Um processo personalizado de transformação e alinhamento entre quem você é e o que sua imagem comunica.</p>
+                                <p data-i18n="services.presencial.desc2">Através do Método Digital Visual, traçamos uma jornada de descoberta dessa identidade e a sua maneira única de expressá-la!</p>
                                 <div class="orcamento">
                                     <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Presencial." data-i18n="services.presencial.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
-                            <div class="service-single-img">
+                            <div class="acc-img">
                                 <img src="/images/presencial.png" alt="Consultoria Presencial">
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Consultoria Online -->
-                        <div class="service-item">
-                            <div class="service-single-img">
+                <!-- 04 -->
+                <div class="acc-item" data-index="3">
+                    <button class="acc-header">
+                        <span class="acc-number">04</span>
+                        <span class="acc-title" data-i18n="services.online.title">Consultoria Online</span>
+                        <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <div class="acc-img">
                                 <img src="/images/online.png" alt="Consultoria Online">
                             </div>
-                            <div class="service-info">
-                                <h3 data-i18n="services.online.title">Consultoria Online</h3>
+                            <div class="acc-text">
                                 <p data-i18n="services.online.desc">A mesma profundidade da consultoria presencial, adaptada para a flexibilidade do ambiente digital.</p>
-                                <ul class="consultoria-lista">
-                                    <li data-i18n="services.online.li1">Entrevista e Anamnese</li>
-                                    <li data-i18n="services.online.li2">Encontro online (até 2h)</li>
-                                    <li data-i18n="services.online.li3">Estratégias de Styling Digital</li>
-                                    <li data-i18n="services.online.li4">Dossiê Personalizado</li>
-                                    <li data-i18n="services.online.li5">Suporte WhatsApp (2 meses)</li>
-                                </ul>
+                                <p data-i18n="services.online.desc2">Através do Método Digital Visual, traçamos uma jornada de descoberta dessa identidade e a sua maneira única de expressá-la!</p>
                                 <div class="orcamento">
                                     <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Consultoria%20Online." data-i18n="services.online.cta">Solicitar Orçamento</a>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Palestra -->
-                        <div class="service-item">
-                            <div class="service-info">
-                                <h3 data-i18n="services.palestra.title">Workshop</h3>
-                                <p data-i18n="services.palestra.desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                <!-- 05 -->
+                <div class="acc-item" data-index="4">
+                    <button class="acc-header">
+                        <span class="acc-number">05</span>
+                        <span class="acc-title" data-i18n="services.palestra.title">Palestras</span>
+                        <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-inner">
+                            <div class="acc-text">
+                                <p data-i18n="services.palestra.desc">Com mais de 2 décadas de experiência no universo empresarial e uma trajetória executiva consolidada, Catia transforma palestras em experiências de impacto, unindo imagem, posicionamento, comportamento e presença feminina de forma estratégica, elegante e profundamente humana. Sua vivência no business permite uma conexão real com os desafios e ambições das mulheres, gerando conexões e reflexões que trazem transformação prática.</p>
                                 <div class="orcamento">
                                     <a href="https://wa.me/13059889985?text=Olá!%20Gostaria%20de%20pedir%20um%20orçamento%20para%20a%20Palestra." target="_blank" rel="noopener" data-i18n="services.palestra.cta">Entre em Contato</a>
                                 </div>
                             </div>
-                            <div class="service-single-img">
-                                <img src="/images/palestra.png" alt="Workshop">
+                            <div class="acc-img">
+                                <img src="/images/palestra.png" alt="Palestras">
                             </div>
                         </div>
-
                     </div>
                 </div>
+
             </div>
         </section>
-
     </main>
 
     <footer class="site-footer">
@@ -155,5 +176,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.acc-item');
+
+            function closeItem(item) {
+                const body = item.querySelector('.acc-body');
+                const icon = item.querySelector('.acc-icon i');
+                item.classList.remove('is-open');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-plus');
+                gsap.to(body, { height: 0, duration: 0.5, ease: 'power3.inOut' });
+            }
+
+            function openItem(item) {
+                const body  = item.querySelector('.acc-body');
+                const inner = item.querySelector('.acc-inner');
+                const icon  = item.querySelector('.acc-icon i');
+                item.classList.add('is-open');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-xmark');
+                // Mede altura real
+                gsap.set(body, { height: 'auto', overflow: 'hidden' });
+                const fullH = body.offsetHeight;
+                gsap.fromTo(body,
+                    { height: 0 },
+                    { height: fullH, duration: 0.55, ease: 'power3.inOut',
+                      onComplete: () => gsap.set(body, { height: 'auto' }) }
+                );
+                gsap.fromTo(inner,
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', delay: 0.25 }
+                );
+            }
+
+            items.forEach(item => {
+                item.querySelector('.acc-header').addEventListener('click', () => {
+                    const isOpen = item.classList.contains('is-open');
+                    items.forEach(i => { if (i !== item) closeItem(i); });
+                    isOpen ? closeItem(item) : openItem(item);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

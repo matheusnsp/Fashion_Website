@@ -10,13 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-  <link rel="stylesheet" crossorigin href="./assets/main-DSWGSXVu.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/services.css">
+    <link rel="stylesheet" href="./css/newsletter.css">
 </head>
 <body>
 
     <div class="bg-wrapper">
         <video class="video" autoplay muted loop playsinline id="video-bg">
-            <source src="./assets/video-Ds8esl7n.mp4" type="video/mp4">
+            <source src="./video.mp4" type="video/mp4">
         </video>
         <div class="overlay-vignette"></div>
     </div>
@@ -31,7 +37,7 @@
         <nav class="nav-menu" id="nav-menu">
             <a href="/index.html" class="nav-link" data-i18n="nav.home">Home</a>
             <a href="./html/services.html" class="nav-link" data-i18n="nav.services">Serviços</a>
-            <a href="./html/newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a>
+            <!-- <a href="./html/newsletter.html" class="nav-link" data-i18n="nav.newsletter">Newsletter</a> -->
             <span class="nav-divider">|</span>
             <button class="lang-toggle lang-toggle--desktop" id="lang-toggle-desktop">EN</button>
         </nav>
@@ -48,12 +54,24 @@
                     </div>
 
                     <div class="home-footer">
-                        <p class="home-tagline" data-i18n="home.tagline">A <strong><span style="color: #C5934C">Autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">Identidade</span></strong> e a sua <strong><span style="color: #C5934C">Imagem.</span></strong></p>
+                        <div class="home-footer-bottom">
+                            <p class="home-tagline" data-i18n="home.tagline">A <strong><span style="color: #C5934C">Autoconfiança</span></strong> real nasce do alinhamento entre a sua <strong><span style="color: #C5934C">Identidade</span></strong> e a sua <strong><span style="color: #C5934C">Imagem.</span></strong></p>
+                        </div>
+
+                    </div>
+                    <!-- BOTÃO SERVIÇOS -->
+                    <div class="btn-services-wrap">
+                        <a href="#services" class="btn-services" data-i18n="home.services_btn">
+                            <span class="corner-tl"></span>
+                            <span class="corner-br"></span>
+                            <span class="btn-text">Conheça os nossos serviços</span>
+                            <span class="btn-arrow"></span>
+                        </a>
                     </div>
                 </div>
 
                 <div class="home-image-side">
-                    <img src="./assets/img-BrR9kLdA.png" alt="Catia Poggian" class="profile-photo">
+                    <img src="./img.png" alt="Catia Poggian" class="profile-photo">
                 </div>
             </div>
         </section>
@@ -70,6 +88,26 @@
                     associada da AICI (Associação Internacional de Consultores de Imagem), palestrante e criadora do 
                         <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span></strong>.</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section" id="newsletter">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <span class="newsletter-subtitle" data-i18n="newsletter.subtitle">NEWSLETTER</span>
+                    <h2 class="newsletter-title" data-i18n="newsletter.title">Receba insights estratégicos sobre 
+                        <span style="color: #C5934C">imagem</span>, <span style="color: #C5934C">posicionamento</span> 
+                        e <span style="color: #C5934C">estilo</span>, diretamente no seu e-mail.</h2>
+                </div>
+
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" id="email" data-i18n-placeholder="newsletter.placeholder" placeholder="E-MAIL" required>
+                        <button type="submit" class="btn-newsletter" data-i18n="newsletter.btn">
+                            INSCREVA-SE
+                        </button>
+                    </div>
+                </form>
             </div>
         </section>
 
