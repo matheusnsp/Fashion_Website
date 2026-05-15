@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "footer.location": `© 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI`,
 
         // SERVICES
+        "services.title": "Services",
+        
         "services.sp.title":  "Punctual Styling",
         "services.sp.desc":   "Curation using the client's own pieces for a photo shoot. Production of up to 4 looks (without on-set assistance).",
         "services.sp.cta":    "Request a Quote",

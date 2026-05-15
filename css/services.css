@@ -1,4 +1,33 @@
 /* =========================================
+   SERVICES HEADER
+   ========================================= */
+
+   .services-header {
+    padding: 6vh 6% 2vh;
+    text-align: center;
+}
+
+.services-title {
+    font-family: var(--font-topic);
+    font-size: 4rem;
+    color: var(--accent-gold);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .services-title { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+    .services-title { font-size: 2.8rem; }
+}
+
+@media (max-width: 450px) {
+    .services-header { padding: 4vh 6% 1vh; }
+    .services-title  { font-size: 2.6rem; }
+}
+
+/* =========================================
    ACCORDION — BASE
    ========================================= */
 
@@ -279,4 +308,3 @@
 
     .orcamento a { font-size: 0.7rem; padding: 12px 28px; }
 }
-
