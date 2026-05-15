@@ -37,12 +37,12 @@
 }
 
 .acc-item {
-    border-bottom: 1px solid rgba(197, 164, 126, 0.25);
+    border-bottom: 1px solid var(--accent-gold);
     overflow: hidden;
 }
 
 .acc-item:first-child {
-    border-top: 1px solid rgba(197, 164, 126, 0.25);
+    border-top: 1px solid var(--accent-gold);
 }
 
 /* =========================================
@@ -68,8 +68,8 @@
 
 .acc-number {
     font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: var(--accent-gold);
     letter-spacing: 0.15em;
     opacity: 0.7;
@@ -88,7 +88,7 @@
 .acc-icon {
     width: 2.8rem;
     height: 2.8rem;
-    border: 1px solid rgba(197, 164, 126, 0.4);
+    border: 2px solid var(--accent-gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -254,6 +254,12 @@
 
     .acc-text p {
         font-size: 1.6rem;
+        font-weight: bold;
+    }
+    
+    .orcamento a{
+        font-size: 1.1rem;
+        padding: 18px 40px;
     }
 }
 
@@ -261,7 +267,7 @@
 
     .acc-inner {
         gap: 2rem;
-        padding: 2rem 4%;
+        padding: 2rem 0;
     }
 
     .acc-title {
@@ -269,14 +275,16 @@
     }
 
     .acc-text p {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+        font-weight: bold;
     }
 
     .acc-img img {
         max-width: 100%;
     }
     .orcamento a {
-        font-size: 0.9rem; 
+        font-size: 0.9rem;
+        padding: 18px 40px;
     }
 
 }
@@ -294,7 +302,7 @@
         padding: 2.5rem 0; /* Mantém a simetria com as bordas laterais */
         text-align: center;
         align-items: center;
-        width: 75%;
+        width: 85%;
         margin: 0 auto;
         justify-content: center;
     }
@@ -303,8 +311,14 @@
     .acc-text    { order: 2; align-items: center;     width: 100%; max-width: 100%; }
     .orcamento   { order: 3; justify-content: center; }
 
-    .acc-title   { font-size: 1.3rem; }
-    .acc-text p  { font-size: 1.1rem; }
+    .acc-title   { font-size: 1.8rem;  }
+    .acc-text p  { font-size: 1.6rem; font-weight: bold; }
 
-    .orcamento a { font-size: 0.7rem; padding: 12px 28px; }
+    .orcamento a { font-size: 1rem; padding: 15px 28px; }
+}
+
+@media (max-width: 320px){
+    .services-title{
+        font-size: 2.4rem;
+    }
 }

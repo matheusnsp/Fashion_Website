@@ -170,7 +170,7 @@
         -webkit-backdrop-filter: blur(16px) saturate(180%);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
         padding: 6px 16px;
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     /* --- Botão hambúrguer --- */
@@ -355,7 +355,7 @@
 
 @media (max-width: 450px) and (orientation: portrait) {
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -381,82 +381,23 @@
 }
 
 
-/* ============================================================
-   9. LANDSCAPE — celular/tablet  ≤ 950px
-   ============================================================ */
-
-@media only screen and (max-width: 950px) and (orientation: landscape) {
-
-    .main-header {
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-        pointer-events: none;
-    }
-
-    .lang-toggle--desktop { display: none; }
-
-    .lang-toggle--mobile {
-        display: inline-flex;
-        background: rgba(18, 17, 16, 0.5);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        padding: 4px 10px;
-        font-size: 0.8rem;
-    }
-
-    .hamburger {
-        display: flex;
-        width: 32px;
-        height: 32px;
-        background: rgba(18, 17, 16, 0.5);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(197, 147, 76, 0.4);
-        transition: border-color var(--transition-fluid);
-    }
-
-    .hamburger::before { content: none; }
-    .hamburger:hover,
-    .hamburger.is-active { border-color: var(--accent-gold); }
-
-    .hamburger-line:nth-child(1) { width: 16px; }
-    .hamburger-line:nth-child(2) { width: 10px; align-self: flex-start; margin-left: 10px; }
-    .hamburger-line:nth-child(3) { width: 16px; }
-
-    .hamburger.is-active .hamburger-line:nth-child(1) {
-        width: 16px;
-        transform: translateY(6px) rotate(45deg);
-    }
-    .hamburger.is-active .hamburger-line:nth-child(2) {
-        opacity: 0;
-        transform: scaleX(0);
-    }
-    .hamburger.is-active .hamburger-line:nth-child(3) {
-        width: 16px;
-        transform: translateY(-6px) rotate(-45deg);
-    }
-
-    .nav-menu {
-        top: 60px;
-        background: rgba(18, 17, 16, 0.96);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(197, 147, 76, 0.35);
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .nav-menu::before { content: none; }
-
-    .nav-link {
-        width: 100%;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        padding: 10px 20px;
-        border-bottom: 1px solid rgba(197, 147, 76, 0.1);
-    }
-
-    .nav-link:last-of-type { border-bottom: none; }
-    .nav-link::after  { display: none; }
-    .nav-link::before { content: none; }
-}
-
 /* IPADS — adicionar aqui */
+
+/* Garante que hambúrguer nunca apareça em landscape */
+@media (orientation: landscape) {
+    .hamburger           { display: none !important; }
+    .lang-toggle--mobile { display: none !important; }
+    .lang-toggle--desktop { display: inline-flex !important; }
+    .nav-menu {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        background: rgba(18, 17, 16, 0.45) !important;
+        border: 1px solid rgba(197, 147, 76, 0.45) !important;
+        border-radius: 999px !important;
+        padding: 10px 30px !important;
+        pointer-events: all !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

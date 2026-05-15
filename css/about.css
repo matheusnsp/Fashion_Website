@@ -16,7 +16,7 @@
 }
 
 .about-container {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(20px);
     padding: 60px;
@@ -26,7 +26,7 @@
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
     box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2);
-    border: 5px solid var(--accent-gold);
+    border: 1px solid var(--accent-gold);
     border-left: none;
 
     /* Layout interno */
@@ -67,6 +67,7 @@
     font-family: "Athiti", sans-serif;
     color: #fff;
     font-size: 1.6rem;
+    font-weight: bold;
     line-height: 1.8;
     max-width: 100%;
     margin-bottom: 40px;
@@ -98,8 +99,8 @@
         gap: 40px;
 
         border-radius: 60px;
-        border: 3px solid var(--accent-gold);
-        border-left: 3px solid var(--accent-gold);
+        border: 1px solid var(--accent-gold);
+        border-left: 1px solid var(--accent-gold);
     }
 
     .about-content {
@@ -128,6 +129,8 @@
     }
 
     .about-text p {
+        font-weight: bold;
+
         font-size: 1.8rem;
         line-height: 1.8;
         margin-bottom: 30px;
@@ -151,6 +154,8 @@
     .about-title    { font-size: 3.5rem; }
 
     .about-text p {
+        font-weight: bold;
+
         font-size: 1.4rem;
         margin-bottom: 24px;
     }
@@ -195,6 +200,7 @@ LANDSCAPE — celular/tablet  ≤ 950px
     }
 
     .about-text p {
+        font-weight: bold;
         font-size: 1.2rem;
         line-height: 1.6;
         margin-bottom: 16px;
@@ -206,25 +212,26 @@ LANDSCAPE — celular/tablet  ≤ 950px
    ================================ */
 @media (max-width: 450px) and (orientation: portrait) {
     .about-section {
-        padding: 0 0 6vh 0;
+        padding: 2vh 0 6vh 0;
         margin:0;
 
     }
 
     .about-container {
         width: 88%;
-        padding: 100px 30px;
+        padding: 90px 30px;
         gap: 24px;
         border-radius: 40px;
 
-        border: 2px solid var(--accent-gold);
+        border: 1px solid var(--accent-gold);
     }
 
     .about-subtitle { font-size: 2.6rem; }
     .about-title    { font-size: 3rem; }
 
     .about-text p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: bold;
         line-height: 1.7;
         margin-bottom: 20px;
     }
@@ -245,7 +252,7 @@ LANDSCAPE — celular/tablet  ≤ 950px
     }
 
     .about-subtitle { font-size: 2rem; }
-    .about-title    { font-size: 2.5rem; }
+    .about-title    { font-size: 2.4rem; }
 
     .about-text p {
         font-size: 1rem;
@@ -268,8 +275,8 @@ LANDSCAPE — celular/tablet  ≤ 950px
         padding: 55px 45px;
         gap: 35px;
         border-radius: 55px;
-        border: 3px solid var(--accent-gold);
-        border-left: 3px solid var(--accent-gold);
+        border: 1px solid var(--accent-gold);
+        border-left: 1px solid var(--accent-gold);
     }
 
     .about-subtitle { font-size: 3.2rem; }

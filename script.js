@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // SERVICES
         "services.title": "Services",
-        
+
         "services.sp.title":  "Punctual Styling",
         "services.sp.desc":   "Curation using the client's own pieces for a photo shoot. Production of up to 4 looks (without on-set assistance).",
         "services.sp.cta":    "Request a Quote",
@@ -266,16 +266,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ─── SCROLL SUAVE + FECHAR MENU ───────────────────────────────
-    document.querySelectorAll('.nav-link:not(.disabled)').forEach(anchor => {
+    document.querySelectorAll('.nav-link:not(.disabled), .btn-services').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+
             const href = this.getAttribute('href');
-            if (navMenu)   navMenu.classList.remove("nav-open");
+
+            if (navMenu) navMenu.classList.remove("nav-open");
             if (hamburger) hamburger.classList.remove("is-active");
+
             if (href && href.startsWith('#')) {
                 const targetSection = document.querySelector(href);
+
                 if (targetSection) {
                     e.preventDefault();
-                    gsap.to(window, { duration: 1.5, scrollTo: targetSection, ease: "power4.inOut" });
+
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: targetSection,
+                        ease: "power4.inOut"
+                    });
                 }
             }
         });

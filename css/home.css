@@ -388,7 +388,7 @@
     .home-footer          { justify-content: center; }
     .home-footer-bottom   { align-items: center; }
   
-    .btn-services-wrap    { display: flex; justify-content: center; margin-top: 0; }
+    .btn-services-wrap    { display: flex; justify-content: center; }
     .btn-services         { font-size: 13px; padding: 18px 38px; letter-spacing: 3px; }
   
     .social-label         { font-size: 2.5rem; }
@@ -490,20 +490,12 @@
   @media (max-width: 450px) {
     .brand-title  { font-size: 4rem; }
   
-    .role-title {
-      margin-left: -3vw;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
   
-    .home-tagline { font-size: 1.2rem; }
+    .home-tagline { font-size: 1.5rem; }
   
-    .home-image-side            { height: 50vh; }
-    .home-text-side .orcamento a { font-size: 0.8rem; }
   
     .btn-services {
-      font-size: 10px;
+      font-size: 1rem;
       padding: 16px 24px;
       letter-spacing: 2.5px;
       gap: 12px;
