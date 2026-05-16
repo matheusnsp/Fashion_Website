@@ -170,9 +170,19 @@
 /* ================================
    PORTRAIT — celular muito pequeno  ≤ 320px
    ================================ */
-@media (max-width: 320px) and (orientation: portrait) {
-    .about-subtitle { font-size: 2rem; }
-    .about-text p   { font-size: 1.6rem; }
+@media (max-width: 320px) {
+    .about-subtitle { font-size: 2.4rem; }
+    .about-text p   { font-size: 1.2rem; }
+}
+
+@media (max-width: 320px) {
+    .about-subtitle { font-size: 2.4rem; }
+    .about-text p   { font-size: 1.3rem; }
+}
+
+@media (max-width: 450px) {
+    .about-subtitle { font-size: 2.4rem; }
+    .about-text p   { font-size: 1.4rem; }
 }
 
 /* ================================
@@ -180,7 +190,7 @@
    ================================ */
 @media only screen and (max-width: 950px) and (orientation: landscape) {
     .about-section {
-        padding: 6vh 6% 6vh 6%;
+        padding: 10vh 6% 6vh 6%;
         min-height: auto;
     }
 
@@ -190,9 +200,9 @@
     }
 
     .about-divider { display: block; }
-    .about-content { align-items: flex-start; }
+    .about-content { align-items: center; }
     .about-subtitle {
-        text-align: left;
+        text-align: center;
         font-size: clamp(1.8rem, 5vw, 2.8rem);
     }
 

@@ -413,7 +413,7 @@
   
     .home-tagline {
       margin: 3% 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       max-width: 55%;
     }
   
@@ -431,13 +431,15 @@
   /* Celular pequeno — até 450px */
   @media (max-width: 450px) {
     .brand-title  { font-size: 4rem; }
-  
-  
+
+    /* ✅ ALTERADO: padding-top para descer a foto */
+    .home-image-side { padding-top: 60px; }
+
     .home-tagline { font-size: 1.5rem; }
   
   
     .btn-services {
-      font-size: 1rem;
+      font-size: 0.8rem;
       padding: 16px 24px;
       letter-spacing: 2.5px;
       gap: 12px;
@@ -477,7 +479,8 @@
       max-width: 75%;
     }
   
-    .home-image-side            { height: 55vh; }
+    /* ✅ ALTERADO: padding-top para descer a foto */
+    .home-image-side            { height: 55vh; padding-top: 60px; }
     .home-text-side .orcamento a { font-size: 0.7rem; }
   
     .btn-services {
@@ -501,11 +504,10 @@
   
   /* Celular/tablet landscape — até 950px */
   @media only screen and (max-width: 950px) and (orientation: landscape) {
-    .brand-title  { font-size: 3.5rem; }
-    .role-title   { font-size: 0.7rem; }
+    .brand-title  { font-size: 4rem; }
   
     .home-tagline {
-      font-size: 1.1rem;
+      font-size: 1.8rem;
       letter-spacing: 2px;
       max-width: 75%;
     }
@@ -527,7 +529,7 @@
     .home-text-side .orcamento a { font-size: 0.8rem; }
   
     .btn-services {
-      font-size: 10px;
+      font-size: 1rem;
       padding: 14px 28px;
       letter-spacing: 3px;
       gap: 12px;

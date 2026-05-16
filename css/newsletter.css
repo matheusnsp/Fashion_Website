@@ -58,7 +58,7 @@
     color: var(--accent-gold);
     font-family: var(--font-sans);
     letter-spacing: 8px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     display: block;
     margin-bottom: 38px;
@@ -218,7 +218,7 @@
 .social-label {
     display: block;
     font-family: var(--font-sans);
-    font-size: 1rem !important;
+    font-size: 1.5rem !important;
     letter-spacing: 6px !important;
     color: var(--accent-gold) !important;
     margin-bottom: 32px !important;
@@ -250,132 +250,110 @@
 .social-link-item.youtube   { color: #FF0000; }
 .social-link-item.whatsapp  { color: #25D366; }
 
-/* Responsivo social integrado */
-@media (max-width: 950px) and (orientation: portrait) {
-    .social-connect-container { padding: 24px 0 60px; }
-    .social-label             { font-size: 0.8rem !important; }
-    .social-link-item         { font-size: 2rem !important; }
-    .social-icons-wrapper     { gap: 40px !important; }
-}
-
-@media (max-width: 450px) and (orientation: portrait) {
-    .social-connect-container { padding: 20px 0 48px; }
-    .social-label             { font-size: 1rem !important; letter-spacing: 4px !important; }
-    .social-link-item         { font-size: 1.7rem !important; }
-    .social-icons-wrapper     { gap: 30px !important; }
-}
-
-@media only screen and (max-width: 950px) and (orientation: landscape) {
-    .social-connect-container { padding: 20px 0 40px; }
-    .social-label             { font-size: 0.72rem !important; }
-    .social-link-item         { font-size: 1.6rem !important; }
-    .social-icons-wrapper     { gap: 30px !important; }
-}
 
 /* ================================
    PORTRAIT — tablet grande  ≤ 1440px
    ================================ */
-@media only screen and (max-width: 1440px) and (orientation: portrait) {
+   @media only screen and (max-width: 1440px) and (orientation: portrait) {
     .newsletter-title {
-        font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
     }
-}
-
-/* ================================
-   PORTRAIT — tablet/celular  ≤ 950px
-   ================================ */
-@media (max-width: 950px) and (orientation: portrait) {
+  }
+  
+  /* ================================
+     PORTRAIT — tablet/celular  ≤ 950px
+     ================================ */
+  @media (max-width: 950px) and (orientation: portrait) {
     .newsletter-section {
-        padding: 14% 6% 10% 6%;
+      padding: 14% 6% 10% 6%;
     }
-
     .newsletter-title {
-        font-size: clamp(1.8rem, 5.5vw, 2.8rem);
-        margin-bottom: 44px;
+      font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+      margin-bottom: 44px;
     }
-
     .btn-newsletter {
-        padding: 18px 24px;
-        font-size: 0.72rem;
-        letter-spacing: 3px;
+      padding: 18px 24px;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
     }
-}
-
-/* ================================
-   PORTRAIT — celular pequeno  ≤ 450px
-   ================================ */
-@media (max-width: 450px) and (orientation: portrait) {
+    .social-connect-container { padding: 24px 0 60px; }
+    .social-label             { font-size: 0.8rem !important; }
+    .social-link-item         { font-size: 2rem !important; }
+    .social-icons-wrapper     { gap: 40px !important; }
+  }
+  
+  /* ================================
+     PORTRAIT — celular pequeno  ≤ 450px
+     ================================ */
+  @media (max-width: 450px) and (orientation: portrait) {
     .newsletter-section {
-        padding: 20% 5% 14% 5%;
+      padding: 20% 5% 14% 5%;
     }
-
     .newsletter-subtitle {
-        font-size: 1rem;
-        letter-spacing: 6px;
-        margin-bottom: 28px;
+      font-size: 1rem;
+      letter-spacing: 6px;
+      margin-bottom: 28px;
     }
-
     .newsletter-title {
-        font-size: clamp(1.6rem, 7vw, 2.2rem);
-        margin-bottom: 36px;
-        line-height: 1.22;
+      font-size: clamp(1.6rem, 7vw, 2.2rem);
+      margin-bottom: 36px;
+      line-height: 1.22;
     }
-
     .newsletter-form input {
-        padding: 16px 16px;
-        font-size: 0.72rem;
-        letter-spacing: 2px;
+      padding: 16px 16px;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
     }
-
     .btn-newsletter {
-        padding: 16px 16px;
-        font-size: 0.9rem;
-        letter-spacing: 2.5px;
-        gap: 8px;
+      padding: 16px 16px;
+      font-size: 0.9rem;
+      letter-spacing: 2.5px;
+      gap: 8px;
     }
-
     .newsletter-note {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
     }
-
-}
-
-/* ================================
-   PORTRAIT — celular muito pequeno  ≤ 320px
-   ================================ */
-@media (max-width: 320px) and (orientation: portrait) {
+    .social-connect-container { padding: 20px 0 48px; }
+    .social-label             { font-size: 1rem !important; letter-spacing: 4px !important; }
+    .social-link-item         { font-size: 1.7rem !important; }
+    .social-icons-wrapper     { gap: 30px !important; }
+  }
+  
+  /* ================================
+     PORTRAIT — celular muito pequeno  ≤ 320px
+     ================================ */
+  @media (max-width: 320px) and (orientation: portrait) {
     .newsletter-title {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
     .btn-newsletter {
-        padding: 14px 12px;
-        font-size: 0.6rem;
-        letter-spacing: 2px;
+      padding: 14px 12px;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
     }
-}
-
-/* ================================
-   LANDSCAPE — celular/tablet  ≤ 950px
-   ================================ */
-@media only screen and (max-width: 950px) and (orientation: landscape) {
+  }
+  
+  /* ================================
+     LANDSCAPE — celular/tablet  ≤ 950px
+     ================================ */
+  @media only screen and (max-width: 950px) and (orientation: landscape) {
     .newsletter-section {
-        padding: 8% 8% 6% 8%;
+      padding: 8% 8% 6% 8%;
     }
-
     .newsletter-title {
-        font-size: clamp(1.4rem, 3.5vw, 2rem);
-        margin-bottom: 32px;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      margin-bottom: 32px;
     }
-
     .newsletter-form input {
-        font-size: 0.72rem;
-        padding: 14px 20px;
+      font-size: 0.72rem;
+      padding: 14px 20px;
     }
-
     .btn-newsletter {
-        font-size: 0.68rem;
-        padding: 14px 20px;
+      font-size: 0.68rem;
+      padding: 14px 20px;
     }
-}
+    .social-connect-container { padding: 20px 0 40px; }
+    .social-label             { font-size: 1.5rem; }
+    .social-icons-wrapper     { gap: 30px !important; }
+  }

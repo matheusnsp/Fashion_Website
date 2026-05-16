@@ -293,8 +293,12 @@
     }
 
     .acc-text p {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: bold;
+    }
+
+    .acc-number {
+        font-size: 1.7rem;
     }
     
     .orcamento a{
@@ -313,6 +317,10 @@
     .acc-title {
         font-size: 1.7rem;
     }
+
+    /* .acc-number {
+        font-size: 1.7rem;
+    } */
 
     .acc-text p {
         font-size: 1.6rem;
@@ -347,15 +355,22 @@
         justify-content: center;
     }
 
+    .services-header { padding: 4vh 6% 1vh; }
+    .services-title  { font-size: 2.4rem; }
+
     .acc-img     { order: 1; justify-content: center; width: 100%; max-width: 100%; }
     .acc-text    { order: 2; align-items: center;     width: 100%; max-width: 100%; }
     .orcamento   { order: 3; justify-content: center; }
 
     .acc-title   { font-size: 1.8rem;  }
+    .acc-number  { font-size: 1.4rem; }
+    .acc-header  { font-size: 1.4rem; }
     .acc-text p  { font-size: 1.6rem; font-weight: bold; }
 
     .orcamento a { font-size: 1rem; padding: 15px 28px; }
 }
+
+
 
 @media (max-width: 375px){
     .services-title{
@@ -365,9 +380,17 @@
         font-size: 1.5rem;
     }
 
-    .acc-number {
+    .acc-text p{
         font-size: 1.5rem;
+    }
+
+    .acc-number {
+        font-size: 1.3rem;
         min-width: 4rem;
+    }
+
+    .orcamento a{
+        font-size: .8rem;
     }
 }
 
@@ -379,8 +402,16 @@
         font-size: 1.2rem;
     }
 
+    .acc-text p{
+        font-size: 1.3rem;
+    }
+
     .acc-number {
         font-size: 1.2rem;
         min-width: 3rem;
+    }
+
+    .orcamento a{
+        font-size: .75rem;
     }
 }
