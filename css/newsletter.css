@@ -1,134 +1,283 @@
 /* ================================
    NEWSLETTER — LAYOUT BASE
    ================================ */
-   .newsletter-section {
+
+
+
+.newsletter-section {
     background: transparent;
-    padding: 11% 8% 0 8%;
+    padding: 10% 8% 4% 8%;
     position: relative;
     z-index: 5;
-}
-
-.newsletter-content {
-    width: 100%;
-}
-
-.newsletter-container {
-    background: rgba(255, 255, 255, 0.03);
-    border: 0.5px solid var(--accent-gold);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 2px;
-    padding: 80px 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 120px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 10%;
 }
 
+/* ── Divisor decorativo (linhas + diamante) ── */
+.newsletter-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 52px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.newsletter-divider::before,
+.newsletter-divider::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: rgba(197, 147, 76, 0.45);
+}
+
+.newsletter-divider-gem {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-gold);
+    transform: rotate(45deg);
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+/* ── Container central ── */
+.newsletter-container {
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+}
+
+/* ── Overline "NEWSLETTER" ── */
 .newsletter-subtitle {
     color: var(--accent-gold);
     font-family: var(--font-sans);
-    letter-spacing: 6px;
-    font-size: 1.5rem;
-    font-weight: bold;
+    letter-spacing: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 38px;
     opacity: 0.9;
+    text-transform: uppercase;
 }
 
+/* ── Título principal ── */
 .newsletter-title {
     font-family: var(--font-serif);
-    font-size: 2.3rem;
-    line-height: 1;
-    margin-bottom: 25px;
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    line-height: 1.18;
+    color: var(--text-primary);
+    margin-bottom: 52px;
+    font-weight: 400;
+    max-width: 820px;
 }
 
-.newsletter-description {
-    color: whitesmoke;
-    font-family: var(--font-sans);
-    font-size: 1.7rem;
-    max-width: 450px;
-    line-height: 1.7;
-    font-weight: 300;
+.newsletter-title em,
+.newsletter-title .gold {
+    color: var(--accent-gold);
+    font-style: italic;
 }
 
-/* ================================
-   FORMULÁRIO
-   ================================ */
+/* ── Formulário ── */
 .newsletter-form {
     width: 100%;
+    max-width: 780px;
 }
 
 .input-group {
     display: flex;
-    border-bottom: 1px solid rgba(215, 195, 160, 0.3);
-    transition: all 0.4s ease;
+    align-items: center;
+    border: 1px solid rgba(197, 147, 76, 0.35);
+    border-radius: 3px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color 0.4s ease;
 }
 
 .input-group:focus-within {
-    border-bottom: 1px solid var(--accent-gold);
+    border-color: rgba(197, 147, 76, 0.75);
 }
 
 .newsletter-form input {
     background: transparent;
     border: none;
     flex: 1;
-    padding: 10px 0;
+    padding: 20px 28px;
     font-family: var(--font-sans);
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
     color: var(--text-primary);
     outline: none;
+    text-transform: uppercase;
 }
 
 .newsletter-form input::placeholder {
-    color: rgba(215, 195, 160, 0.4);
+    color: rgba(197, 147, 76, 0.35);
+    letter-spacing: 3px;
 }
 
+/* Divisor vertical entre input e botão */
 .btn-newsletter {
-    background: transparent;
+    background: rgba(197, 147, 76, 0.1);
     border: none;
-    color: var(--accent-gold);
+    border-left: 1px solid rgba(197, 147, 76, 0.35);
+    color: var(--text-primary);
     font-family: var(--font-sans);
     font-size: 1.3rem;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px 32px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
     cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
-    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease, gap 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-newsletter:hover {
-    color: white;
-    transform: translateX(5px);
+    background: rgba(197, 147, 76, 0.18);
+    gap: 20px;
 }
 
+.btn-newsletter .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-newsletter:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* ── Nota "sem spam" ── */
+.newsletter-note {
+    margin-top: 22px;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    letter-spacing: 4px;
+    color: rgba(197, 147, 76, 0.38);
+    text-transform: uppercase;
+}
+
+/* ── Divisor inferior — ponte para o social ── */
+.newsletter-divider-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 72px;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 340px;
+}
+
+.newsletter-divider-bottom::before,
+.newsletter-divider-bottom::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: rgba(197, 147, 76, 0.35);
+}
+
+.newsletter-divider-bottom-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(197, 147, 76, 0.45);
+    flex-shrink: 0;
+}
+
+/* ================================
+   SOCIAL — integrado ao newsletter
+   ================================ */
+
+.connection-section {
+    margin-top: 0 !important;
+    padding: 0;
+}
+
+.social-connect-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 0 72px;
+    margin-bottom: 0 !important;
+    height: auto !important;
+}
+
+.social-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 1rem !important;
+    letter-spacing: 6px !important;
+    color: var(--accent-gold) !important;
+    margin-bottom: 32px !important;
+    opacity: 0.85;
+    text-transform: uppercase;
+}
+
+.social-icons-wrapper {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link-item {
+    font-size: 2.2rem !important;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    text-decoration: none;
+    filter: none !important;
+}
+
+.social-link-item:hover {
+    opacity: 1;
+    transform: translateY(-4px) !important;
+}
+
+.social-link-item.instagram { color: #E1306C; }
+.social-link-item.youtube   { color: #FF0000; }
+.social-link-item.whatsapp  { color: #25D366; }
+
+/* Responsivo social integrado */
+@media (max-width: 950px) and (orientation: portrait) {
+    .social-connect-container { padding: 24px 0 60px; }
+    .social-label             { font-size: 0.8rem !important; }
+    .social-link-item         { font-size: 2rem !important; }
+    .social-icons-wrapper     { gap: 40px !important; }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+    .social-connect-container { padding: 20px 0 48px; }
+    .social-label             { font-size: 1rem !important; letter-spacing: 4px !important; }
+    .social-link-item         { font-size: 1.7rem !important; }
+    .social-icons-wrapper     { gap: 30px !important; }
+}
+
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+    .social-connect-container { padding: 20px 0 40px; }
+    .social-label             { font-size: 0.72rem !important; }
+    .social-link-item         { font-size: 1.6rem !important; }
+    .social-icons-wrapper     { gap: 30px !important; }
+}
 
 /* ================================
    PORTRAIT — tablet grande  ≤ 1440px
    ================================ */
 @media only screen and (max-width: 1440px) and (orientation: portrait) {
-    .newsletter-container {
-        grid-template-columns: 1fr;
-        padding: 70px 50px;
-        gap: 60px;
-        text-align: center;
-    }
-
-    .newsletter-description {
-        margin: 0 auto;
-        font-size: 2rem;
-    }
-
-    .newsletter-title  { font-size: 3rem; }
-    .newsletter-subtitle { font-size: 1.8rem; }
-
-    .input-group {
-        max-width: 500px;
-        margin: 0 auto;
+    .newsletter-title {
+        font-size: clamp(2rem, 5vw, 3.2rem);
     }
 }
 
@@ -136,114 +285,97 @@
    PORTRAIT — tablet/celular  ≤ 950px
    ================================ */
 @media (max-width: 950px) and (orientation: portrait) {
-    .newsletter-container {
-        padding: 60px 40px;
-        gap: 50px;
+    .newsletter-section {
+        padding: 14% 6% 10% 6%;
     }
 
-    .newsletter-title       { font-size: 2.5rem; }
-    .newsletter-subtitle    { font-size: 1.5rem; }
-    .newsletter-description { font-size: 1.6rem; }
-
-    .input-group {
-        max-width: 420px;
+    .newsletter-title {
+        font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+        margin-bottom: 44px;
     }
 
-
+    .btn-newsletter {
+        padding: 18px 24px;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+    }
 }
 
 /* ================================
    PORTRAIT — celular pequeno  ≤ 450px
    ================================ */
 @media (max-width: 450px) and (orientation: portrait) {
-    .newsletter-section { padding: 20% 5%; }
-
-    .newsletter-container {
-        padding: 50px 30px;
-        gap: 36px;
+    .newsletter-section {
+        padding: 20% 5% 14% 5%;
     }
 
-    .newsletter-title       { font-size: 2rem; }
-    .newsletter-subtitle    { font-size: 1.2rem; letter-spacing: 4px; }
-    .newsletter-description { font-size: 1.2rem; }
-
-    .newsletter-form input  { font-size: 1rem; }
-    .btn-newsletter         { font-size: 1rem; margin-left: -5vw; }
-
-    .input-group {
-        max-width: 100%;
+    .newsletter-subtitle {
+        font-size: 1rem;
+        letter-spacing: 6px;
+        margin-bottom: 28px;
     }
 
-    
+    .newsletter-title {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        margin-bottom: 36px;
+        line-height: 1.22;
+    }
+
+    .newsletter-form input {
+        padding: 16px 16px;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+    }
+
+    .btn-newsletter {
+        padding: 16px 16px;
+        font-size: 0.9rem;
+        letter-spacing: 2.5px;
+        gap: 8px;
+    }
+
+    .newsletter-note {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+
 }
 
 /* ================================
    PORTRAIT — celular muito pequeno  ≤ 320px
    ================================ */
 @media (max-width: 320px) and (orientation: portrait) {
-
-    
-    .newsletter-container {
-        margin: 60px 0;
-        padding: 40px 20px;
-        gap: 28px;
+    .newsletter-title {
+        font-size: 1.5rem;
     }
 
-    .newsletter-title       { font-size: 1.7rem; }
-    .newsletter-subtitle    { font-size: 1rem; letter-spacing: 3px; }
-    .newsletter-description { font-size: 1rem; }
-
-    .newsletter-form input  { font-size: 0.9rem; }
-    .btn-newsletter         { font-size: 0.9rem; margin-left: -10vw; }
-
-}
-
-@media (max-width: 375px) and (orientation: portrait) {
-    .btn-newsletter         { font-size: 0.8rem;}
-
+    .btn-newsletter {
+        padding: 14px 12px;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
 }
 
 /* ================================
    LANDSCAPE — celular/tablet  ≤ 950px
    ================================ */
 @media only screen and (max-width: 950px) and (orientation: landscape) {
-    .newsletter-container {
-        grid-template-columns: 1fr 1fr;
-        padding: 40px 30px;
-        gap: 40px;
-        text-align: left;
+    .newsletter-section {
+        padding: 8% 8% 6% 8%;
     }
 
-    .newsletter-description { margin: 0; font-size: 1rem; }
-    .newsletter-title       { font-size: 1.6rem; }
-    .newsletter-subtitle    { font-size: 1rem; letter-spacing: 4px; }
-
-    .newsletter-form input  { font-size: 0.5rem; }
-    .btn-newsletter         { font-size: 0.8rem; }
-
-    .input-group { max-width: 100%; margin: 0; }
-
-
-}
-
-/* ================================
-   PORTRAIT — iPad / tablet médio  451px – 950px
-   ================================ */
-@media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
-    .newsletter-section { padding: 8% 6%; }
-
-    .newsletter-container {
-        padding: 65px 45px;
-        gap: 55px;
+    .newsletter-title {
+        font-size: clamp(1.4rem, 3.5vw, 2rem);
+        margin-bottom: 32px;
     }
 
-    .newsletter-title       { font-size: 2.8rem; }
-    .newsletter-subtitle    { font-size: 1.7rem; }
-    .newsletter-description { font-size: 1.8rem; }
-
-    .input-group {
-        max-width: 460px;
+    .newsletter-form input {
+        font-size: 0.72rem;
+        padding: 14px 20px;
     }
 
-
+    .btn-newsletter {
+        font-size: 0.68rem;
+        padding: 14px 20px;
+    }
 }

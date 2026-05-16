@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <span style="color:#C5934C">IMEO Method (Identity, Message and Occasion)</span></strong>.`,
 
         // SOCIAL / FOOTER
-        "social.label":    "CONNECT ON SOCIAL MEDIA",
         "footer.location": `© 2026 — RIO DE JANEIRO <span class="divider">/</span> MIAMI`,
 
         // SERVICES
@@ -197,9 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // NEWSLETTER
         "newsletter.subtitle":    "NEWSLETTER",
-        "newsletter.title":       `Receive strategic insights on <span style="color:#C5934C">image</span>, <span style="color:#C5934C">positioning</span> and <span style="color:#C5934C">style</span>, straight to your inbox.`,
+        "newsletter.title":       `Receive strategic insights on <span class="gold"><em>image</em></span>, <span class="gold"><em>positioning</em></span> and <span class="gold"><em>style</em></span>, straight to your inbox.`,
         "newsletter.placeholder": "E-MAIL",
-        "newsletter.btn":         "SUBSCRIBE",
+        "newsletter.btn":         `SUBSCRIBE <span class="arrow">&#x2192;</span>`,
+        "newsletter.note":       "NO SPAM · CANCEL ANYTIME",
+
+
+        // SOCIAL
+        "social.label": "CONNECT ON SOCIAL MEDIA",
     };
 
     // ─── APLICAR TRADUÇÕES ────────────────────────────────────────

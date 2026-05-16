@@ -89,20 +89,39 @@
             </div>
         </section>
 
-        <section class="about-section" id="about">
-            <div class="about-container">
-                <div class="about-content">
-                    <strong><span class="about-subtitle" data-i18n="about.subtitle">Expertise & <br> Background</span></strong>
-                </div>
+       <!-- =============================================
+     ABOUT — HTML ATUALIZADO
+     Substitua o bloco <section class="about-section"> existente.
+     ============================================= -->
 
-                <div class="about-text">
-                    <p data-i18n="about.text"><strong>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
-                    <br><strong>Fashion Designer pelo MoMa (New York), com atualizações na Passaporte Fashionista Academy e no Estúdio Immagine,
-                    associada da AICI (Associação Internacional de Consultores de Imagem), palestrante e criadora do 
-                        <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span></strong>.</p>
-                </div>
-            </div>
-        </section>
+<section class="about-section" id="about">
+    <div class="about-container">
+
+        <!-- Coluna esquerda: título -->
+        <div class="about-content">
+            <strong>
+                <span class="about-subtitle" data-i18n="about.subtitle">
+                    Expertise &amp;<br>Background
+                </span>
+            </strong>
+        </div>
+
+        <!-- Linha vertical separadora (some no mobile) -->
+        <div class="about-divider"></div>
+
+        <!-- Coluna direita: texto -->
+        <div class="about-text">
+            <p data-i18n="about.text">
+                <strong>Mentora e Consultora de Imagem atuando há mais de 25 anos em Estratégia de Negócios e Moda.</strong>
+
+                Fashion Designer pelo MoMa (New York), com atualizações na Passaporte Fashionista Academy e no Estúdio Immagine,
+                associada da AICI (Associação Internacional de Consultores de Imagem), palestrante e criadora do
+                <span style="color: #C5934C">Método IMEO (Identidade, Mensagem e Ocasião)</span>.
+            </p>
+        </div>
+
+    </div>
+</section>
 
         <section class="services-section" id="services">
             <div class="services-header">
@@ -113,7 +132,7 @@
                 <!-- 01 -->
                 <div class="acc-item" data-index="0">
                     <button class="acc-header">
-                        <span class="acc-number">01</span>
+                        <span class="acc-number">01.</span>
                         <span class="acc-title" data-i18n="services.sp.title">
                             Styling Pontual
                         </span>
@@ -150,7 +169,7 @@
                 <!-- 02 -->
                 <div class="acc-item" data-index="1">
                     <button class="acc-header">
-                        <span class="acc-number">02</span>
+                        <span class="acc-number">02.</span>
                         <span class="acc-title" data-i18n="services.spas.title">
                             Styling Pontual + Assessoria no Set
                         </span>
@@ -190,7 +209,7 @@
                 <!-- 03 -->
                 <div class="acc-item" data-index="2">
                     <button class="acc-header">
-                        <span class="acc-number">03</span>
+                        <span class="acc-number">03.</span>
                         <span class="acc-title" data-i18n="services.presencial.title">
                             Consultoria Presencial
                         </span>
@@ -230,7 +249,7 @@
                 <!-- 04 -->
                 <div class="acc-item" data-index="3">
                     <button class="acc-header">
-                        <span class="acc-number">04</span>
+                        <span class="acc-number">04.</span>
                         <span class="acc-title" data-i18n="services.online.title">
                             Consultoria Online
                         </span>
@@ -271,7 +290,7 @@
                 <!-- 05 -->
                 <div class="acc-item" data-index="4">
                     <button class="acc-header">
-                        <span class="acc-number">05</span>
+                        <span class="acc-number">05.</span>
                         <span class="acc-title" data-i18n="services.palestra.title">
                             Palestras
                         </span>
@@ -309,26 +328,59 @@
             </div>
         </section>
 
+        <!-- =============================================
+     NEWSLETTER + SOCIAL — HTML UNIFICADO
+     Substitua os dois blocos existentes por este.
+     ============================================= -->
+
         <section class="newsletter-section" id="newsletter">
+
+            <!-- Divisor superior -->
+            <div class="newsletter-divider">
+                <div class="newsletter-divider-gem"></div>
+            </div>
+
             <div class="newsletter-container">
-                <div class="newsletter-content">
-                    <span class="newsletter-subtitle" data-i18n="newsletter.subtitle">NEWSLETTER</span>
-                    <h2 class="newsletter-title" data-i18n="newsletter.title">Receba insights estratégicos sobre 
-                        <span style="color: #C5934C">imagem</span>, <span style="color: #C5934C">posicionamento</span> 
-                        e <span style="color: #C5934C">estilo</span>, diretamente no seu e-mail.</h2>
-                </div>
+
+                <span class="newsletter-subtitle" data-i18n="newsletter.subtitle">NEWSLETTER</span>
+
+                <h2 class="newsletter-title" data-i18n="newsletter.title">
+                    Receba insights estratégicos sobre
+                    <span class="gold"><em>imagem</em></span>,
+                    <span class="gold"><em>posicionamento</em></span>
+                    e <span class="gold"><em>estilo</em></span>,
+                    diretamente no seu e-mail.
+                </h2>
 
                 <form class="newsletter-form" id="newsletter-form">
                     <div class="input-group">
-                        <input type="email" id="email" data-i18n-placeholder="newsletter.placeholder" placeholder="E-MAIL" required>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="E-MAIL"
+                            data-i18n-placeholder="newsletter.placeholder"
+                            required
+                        />
                         <button type="submit" class="btn-newsletter" data-i18n="newsletter.btn">
-                            INSCREVA-SE
+                            INSCREVA-SE <span class="arrow">&#x2192;</span>
                         </button>
                     </div>
                 </form>
+
+                <p class="newsletter-note" data-i18n="newsletter.note">SEM SPAM · CANCELE QUANDO QUISER</p>
+
             </div>
+
+            <!-- Divisor ponte → social -->
+            <div class="newsletter-divider-bottom">
+                <div class="newsletter-divider-bottom-dot"></div>
+                <div class="newsletter-divider-bottom-dot"></div>
+                <div class="newsletter-divider-bottom-dot"></div>
+            </div>
+
         </section>
 
+        <!-- SOCIAL — flui diretamente do newsletter, sem gap -->
         <section class="connection-section" id="connection">
             <div class="social-connect-container">
                 <span class="social-label" data-i18n="social.label">CONECTE-SE NAS REDES</span>

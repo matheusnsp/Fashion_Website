@@ -1,139 +1,122 @@
 /* ================================
-   ABOUT — LAYOUT BASE
+   ABOUT — REDESIGN EDITORIAL
+   Sem container, sem caixa, sem borda.
+   Layout assimétrico sobre o vídeo.
    ================================ */
+
    .about-section {
-
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    z-index: 10;
-    position: relative;
-}
-
-.about-container {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 60px;
-    width: 95%;
-
-    /* Sticker */
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--accent-gold);
-    border-left: none;
-
-    /* Layout interno */
-    display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
-    gap: 90px;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+    padding: 10vh 8% 10vh 8%;
 }
 
+/* ── Grid assimétrico: título grande | linha | texto ── */
+.about-container {
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0 72px;
+    align-items: center;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* ── Coluna esquerda: título ── */
 .about-content {
+    display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    max-width: 50%;
-}
-
-.about-title {
-    font-family: var(--font-signature);
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: #fff;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    max-width: 100%;
 }
 
 .about-subtitle {
-    font-family: var(--font-topic);
-    font-size: 4rem;
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
     color: var(--accent-gold);
     text-align: center;
+    line-height: 1.05;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.5px;
 }
 
+/* Linha vertical separadora (coluna do meio do grid) */
+.about-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 200px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(197, 147, 76, 0.5) 20%,
+        rgba(197, 147, 76, 0.5) 80%,
+        transparent 100%
+    );
+    justify-self: center;
+}
+
+/* ── Coluna direita: texto ── */
 .about-text {
-    max-width: 60%;
-    letter-spacing: 0.02em;
+    max-width: 100%;
 }
 
 .about-text p {
-    font-family: "Athiti", sans-serif;
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: bold;
-    line-height: 1.8;
-    max-width: 100%;
-    margin-bottom: 40px;
+    font-family: var(--font-sans);
+    color: rgba(245, 240, 232, 0.82);
+    font-size: 1.7rem;
     font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    margin: 0;
 }
 
-.about-text p:last-child {
-    margin-bottom: 0;
+/* Destaque do Método IMEO */
+.about-text p span[style] {
+    color: var(--accent-gold) !important;
+    font-weight: 400;
 }
+
 
 /* ================================
    PORTRAIT — tablet grande  ≤ 1440px
    ================================ */
 @media only screen and (max-width: 1440px) and (orientation: portrait) {
     .about-section {
-        height: auto;
-        /* min-height: 100svh; */
-        justify-content: center;
-        align-items: center;
-        padding: 0 0 8vh 0;
+        padding: 8vh 6% 8vh 6%;
+        min-height: auto;
     }
 
     .about-container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 88%;
-        padding: 60px 50px;
-        gap: 40px;
-
-        border-radius: 60px;
-        border: 1px solid var(--accent-gold);
-        border-left: 1px solid var(--accent-gold);
+        grid-template-columns: 1fr;
+        gap: 40px 0;
     }
 
-    .about-content {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    .about-divider { display: none; }
+
+    .about-content { align-items: center; }
 
     .about-subtitle {
-        font-size: 3.5rem;
         text-align: center;
-        line-height: 1.1;
+        font-size: clamp(2.8rem, 8vw, 5rem);
     }
 
-    .about-title {
-        font-size: 5rem;
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    .about-text {
-        max-width: 100%;
-        text-align: center;
-    }
+    .about-text { text-align: center; }
 
     .about-text p {
-        font-weight: bold;
-
-        font-size: 1.8rem;
-        line-height: 1.8;
-        margin-bottom: 30px;
+        font-size: 1.8rem; /* services: acc-text p @ 1024px */
+        line-height: 1.7;
     }
 }
 
@@ -141,70 +124,29 @@
    PORTRAIT — tablet/celular  ≤ 950px
    ================================ */
 @media (max-width: 950px) and (orientation: portrait) {
-   
-
-    .about-container {
-        width: 90%;
-        padding: 50px 40px;
-        gap: 30px;
-        border-radius: 50px;
+    .about-section {
+        padding: 8vh 7% 8vh 7%;
     }
 
-    .about-subtitle { font-size: 2.8rem; }
-    .about-title    { font-size: 3.5rem; }
+    .about-subtitle {
+        font-size: clamp(2.4rem, 9vw, 3.8rem);
+    }
 
     .about-text p {
-        font-weight: bold;
-
-        font-size: 1.4rem;
-        margin-bottom: 24px;
+        font-size: 1.6rem; /* services: acc-text p @ 768px */
+        line-height: 1.7;
     }
 }
 
 /* ================================
-LANDSCAPE — celular/tablet  ≤ 950px
-================================ */
-@media only screen and (max-width: 950px) and (orientation: landscape) {
-    .about-section {
-        height: auto;
-        min-height: 100svh;
-        padding: 0;
-    }
+   PORTRAIT — iPad médio  451px – 950px
+   ================================ */
+@media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
+    .about-section { padding: 8vh 6% 8vh 6%; }
 
-    .about-container {
-        flex-direction: row-reverse;
-        align-items: center;
-        width: 95%;
-        padding: 30px 40px;
-        gap: 40px;
+    .about-subtitle { font-size: clamp(2.6rem, 8vw, 4rem); }
 
-        /* Mantém o sticker no landscape */
-        border-top-right-radius: 60px;
-        border-bottom-right-radius: 60px;
-        border-radius: unset;
-        border-top-right-radius: 60px;
-        border-bottom-right-radius: 60px;
-        border-left: none;
-    }
-
-    .about-content {
-        max-width: 45%;
-        align-items: flex-end;
-    }
-
-    .about-subtitle { font-size: 2rem; }
-    .about-title    { font-size: 2.5rem; }
-
-    .about-text {
-        max-width: 55%;
-    }
-
-    .about-text p {
-        font-weight: bold;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        margin-bottom: 16px;
-    }
+    .about-text p   { font-size: 1.6rem; }
 }
 
 /* ================================
@@ -212,28 +154,16 @@ LANDSCAPE — celular/tablet  ≤ 950px
    ================================ */
 @media (max-width: 450px) and (orientation: portrait) {
     .about-section {
-        padding: 2vh 0 6vh 0;
-        margin:0;
-
+        padding: 8vh 6% 8vh 6%;
     }
 
-    .about-container {
-        width: 88%;
-        padding: 90px 30px;
-        gap: 24px;
-        border-radius: 40px;
-
-        border: 1px solid var(--accent-gold);
+    .about-subtitle {
+        font-size: clamp(2.2rem, 10vw, 3rem);
     }
-
-    .about-subtitle { font-size: 2.6rem; }
-    .about-title    { font-size: 3rem; }
 
     .about-text p {
-        font-size: 1.3rem;
-        font-weight: bold;
+        font-size: 1.3rem; /* services: acc-text p @ 450px */
         line-height: 1.7;
-        margin-bottom: 20px;
     }
 }
 
@@ -241,50 +171,34 @@ LANDSCAPE — celular/tablet  ≤ 950px
    PORTRAIT — celular muito pequeno  ≤ 320px
    ================================ */
 @media (max-width: 320px) and (orientation: portrait) {
-    .about-section {
-        padding: 0;
-    }
-
-    .about-container {
-        padding: 40px 20px;
-        gap: 20px;
-        border-radius: 30px;
-    }
-
     .about-subtitle { font-size: 2rem; }
-    .about-title    { font-size: 2.4rem; }
-
-    .about-text p {
-        font-size: 1rem;
-        margin-bottom: 16px;
-    }
+    .about-text p   { font-size: 1.6rem; }
 }
 
-
-
 /* ================================
-   PORTRAIT — iPad / tablet médio  451px – 950px
+   LANDSCAPE — celular/tablet  ≤ 950px
    ================================ */
-@media (min-width: 451px) and (max-width: 950px) and (orientation: portrait) {
+@media only screen and (max-width: 950px) and (orientation: landscape) {
     .about-section {
-        padding: 0 0 8vh 0;
+        padding: 6vh 6% 6vh 6%;
+        min-height: auto;
     }
 
     .about-container {
-        width: 90%;
-        padding: 55px 45px;
-        gap: 35px;
-        border-radius: 55px;
-        border: 1px solid var(--accent-gold);
-        border-left: 1px solid var(--accent-gold);
+        grid-template-columns: 1fr 1px 1fr;
+        gap: 0 40px;
     }
 
-    .about-subtitle { font-size: 3.2rem; }
-    .about-title    { font-size: 4rem; }
+    .about-divider { display: block; }
+    .about-content { align-items: flex-start; }
+    .about-subtitle {
+        text-align: left;
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+    }
 
+    .about-text { text-align: left; }
     .about-text p {
-        font-size: 1.6rem;
-        line-height: 1.8;
-        margin-bottom: 28px;
+        font-size: 1.2rem; /* services: acc-text p landscape compacto */
+        line-height: 1.6;
     }
 }

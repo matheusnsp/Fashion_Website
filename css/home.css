@@ -248,64 +248,6 @@
   }
   
   
-  /* ============================================================
-     5. REDES SOCIAIS
-     ============================================================ */
-  
-  .connection-section {
-    margin-top: 8vh;
-  }
-  
-  .connection-content {
-    width: 100%;
-  }
-  
-  .social-connect-section {
-    background: transparent;
-    padding: 80px 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social-connect-container {
-    margin-bottom: 16vh;
-    height: 10vh;
-    text-align: center;
-  }
-  
-  .social-label {
-    display: block;
-    font-family: var(--font-sans);
-    font-size: 1.7rem;
-    letter-spacing: 4px;
-    color: var(--accent-gold);
-    margin-bottom: 30px;
-    opacity: 0.8;
-  }
-  
-  .social-icons-wrapper {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-  }
-  
-  .social-link-item {
-    font-size: 3rem;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    text-decoration: none;
-  }
-  
-  /* Cores por rede */
-  .social-link-item.instagram { color: #E1306C; }
-  .social-link-item.youtube   { color: #FF0000; }
-  .social-link-item.facebook  { color: #1877F2; }
-  .social-link-item.whatsapp  { color: #25D366; }
-  
-  .social-link-item:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
-  }
-  
   
   /* ============================================================
      6. RESPONSIVO — PORTRAIT

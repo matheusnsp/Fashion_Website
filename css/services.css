@@ -8,10 +8,14 @@
 }
 
 .services-title {
-    font-family: var(--font-topic);
-    font-size: 4rem;
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
     color: var(--accent-gold);
     text-align: center;
+    line-height: 1.05;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.5px;
 }
 
 @media (max-width: 1024px) {
@@ -24,25 +28,60 @@
 
 @media (max-width: 450px) {
     .services-header { padding: 4vh 6% 1vh; }
-    .services-title  { font-size: 2.6rem; }
+    .services-title  { font-size: 2.4rem; }
 }
+
+
 
 /* =========================================
    ACCORDION — BASE
    ========================================= */
 
-   .accordion-list {
+.accordion-list {
     width: 100%;
     padding: 4vh 6%;
 }
 
 .acc-item {
-    border-bottom: 1px solid var(--accent-gold);
     overflow: hidden;
+    position: relative;
 }
 
-.acc-item:first-child {
-    border-top: 1px solid var(--accent-gold);
+.acc-item::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--accent-gold) 8%,
+        var(--accent-gold) 92%,
+        transparent 100%
+    );
+    opacity: 0.35;
+    transition: opacity 0.4s ease;
+}
+
+.acc-item:first-child::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--accent-gold) 8%,
+        var(--accent-gold) 92%,
+        transparent 100%
+    );
+    opacity: 0.35;
+    transition: opacity 0.4s ease;
+}
+
+.acc-item:hover::after,
+.acc-item:hover::before,
+.acc-item.is-open::after,
+.acc-item.is-open::before {
+    opacity: 1;
 }
 
 /* =========================================
@@ -67,19 +106,20 @@
 }
 
 .acc-number {
-    font-family: var(--font-sans);
-    font-size: 1.5rem;
+    font-family: var(--font-topic);
+    font-size: 2.5rem;
     font-weight: bold;
     color: var(--accent-gold);
     letter-spacing: 0.15em;
     opacity: 0.7;
-    min-width: 2.4rem;
+    min-width: 5rem;
+    flex-shrink: 0;
 }
 
 .acc-title {
     flex: 1;
     font-family: var(--font-topic);
-    font-size: 2.6rem;
+    font-size: 3rem;
     line-height: 1.15;
     color: var(--text-primary);
     transition: color 0.3s ease;
@@ -88,7 +128,7 @@
 .acc-icon {
     width: 2.8rem;
     height: 2.8rem;
-    border: 2px solid var(--accent-gold);
+    /* border: 2px solid var(--accent-gold); */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -317,8 +357,30 @@
     .orcamento a { font-size: 1rem; padding: 15px 28px; }
 }
 
-@media (max-width: 320px){
+@media (max-width: 375px){
     .services-title{
         font-size: 2.4rem;
+    }
+    .acc-title{
+        font-size: 1.5rem;
+    }
+
+    .acc-number {
+        font-size: 1.5rem;
+        min-width: 4rem;
+    }
+}
+
+@media (max-width: 320px){
+    /* .services-title{
+        font-size: 2.4rem;
+    } */
+    .acc-title{
+        font-size: 1.2rem;
+    }
+
+    .acc-number {
+        font-size: 1.2rem;
+        min-width: 3rem;
     }
 }
