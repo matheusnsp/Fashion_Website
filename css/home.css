@@ -512,8 +512,11 @@
   @media only screen and (max-width: 950px) and (orientation: landscape) {
     .brand-title  { font-size: 4rem; }
   
+    .home-text-side {
+      gap:0;
+    }
     .home-tagline {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       letter-spacing: 2px;
       max-width: 85%;
     }
@@ -535,7 +538,7 @@
     .home-text-side .orcamento a { font-size: 0.8rem; }
   
     .btn-services {
-      font-size: 1rem;
+      /* font-size: 1rem; */
       padding: 14px 28px;
       letter-spacing: 3px;
       gap: 12px;
