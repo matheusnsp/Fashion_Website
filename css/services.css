@@ -318,10 +318,6 @@
         font-size: 1.7rem;
     }
 
-    /* .acc-number {
-        font-size: 1.7rem;
-    } */
-
     .acc-text p {
         font-size: 1.6rem;
         font-weight: bold;
@@ -338,16 +334,16 @@
 }
 
 /* =========================================
-   ≤ 450px — COLUNA ÚNICA (FOTO → TEXTO → BOTÃO)
+   ✅ PORTRAIT — QUALQUER TELA
+   Força coluna única: foto → texto → botão
    ========================================= */
 
-@media (max-width: 450px) {
-    /* Forçamos a estrutura de coluna e resetamos o row-reverse do desktop */
+@media (orientation: portrait) {
     .acc-inner,
     .acc-inner.reverse {
         flex-direction: column !important;
         gap: 2rem;
-        padding: 2.5rem 0; /* Mantém a simetria com as bordas laterais */
+        padding: 2.5rem 0;
         text-align: center;
         align-items: center;
         width: 85%;
@@ -355,14 +351,21 @@
         justify-content: center;
     }
 
+    .acc-img     { order: 1; justify-content: center; width: 100%; max-width: 100%; }
+    .acc-img img { margin: 0 auto; }
+    .acc-text    { order: 2; align-items: center;     width: 100%; max-width: 100%; text-align: center; }
+    .orcamento   { order: 3; justify-content: center; }
+}
+
+/* =========================================
+   ≤ 450px — ajustes de tamanho
+   ========================================= */
+
+@media (max-width: 450px) {
     .services-header { padding: 4vh 6% 1vh; }
     .services-title  { font-size: 2.4rem; }
 
-    .acc-img     { order: 1; justify-content: center; width: 100%; max-width: 100%; }
-    .acc-text    { order: 2; align-items: center;     width: 100%; max-width: 100%; }
-    .orcamento   { order: 3; justify-content: center; }
-
-    .acc-title   { font-size: 1.8rem;  }
+    .acc-title   { font-size: 1.8rem; }
     .acc-number  { font-size: 1.4rem; }
     .acc-header  { font-size: 1.4rem; }
     .acc-text p  { font-size: 1.6rem; font-weight: bold; }
@@ -370,48 +373,17 @@
     .orcamento a { font-size: 1rem; padding: 15px 28px; }
 }
 
-
-
-@media (max-width: 375px){
-    .services-title{
-        font-size: 2.4rem;
-    }
-    .acc-title{
-        font-size: 1.5rem;
-    }
-
-    .acc-text p{
-        font-size: 1.5rem;
-    }
-
-    .acc-number {
-        font-size: 1.3rem;
-        min-width: 4rem;
-    }
-
-    .orcamento a{
-        font-size: .8rem;
-    }
+@media (max-width: 375px) {
+    .services-title { font-size: 2.4rem; }
+    .acc-title      { font-size: 1.5rem; }
+    .acc-text p     { font-size: 1.5rem; }
+    .acc-number     { font-size: 1.3rem; min-width: 4rem; }
+    .orcamento a    { font-size: .8rem; }
 }
 
-@media (max-width: 320px){
-    /* .services-title{
-        font-size: 2.4rem;
-    } */
-    .acc-title{
-        font-size: 1.2rem;
-    }
-
-    .acc-text p{
-        font-size: 1.3rem;
-    }
-
-    .acc-number {
-        font-size: 1.2rem;
-        min-width: 3rem;
-    }
-
-    .orcamento a{
-        font-size: .75rem;
-    }
+@media (max-width: 320px) {
+    .acc-title  { font-size: 1.2rem; }
+    .acc-text p { font-size: 1.3rem; }
+    .acc-number { font-size: 1.2rem; min-width: 3rem; }
+    .orcamento a { font-size: .75rem; }
 }
