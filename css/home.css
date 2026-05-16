@@ -414,7 +414,7 @@
     .home-tagline {
       margin: 3% 0;
       font-size: 1.8rem;
-      max-width: 55%;
+      /* max-width: 55%; */
     }
   
     .home-image-side { height: 55vh; }
@@ -462,6 +462,12 @@
   
     .btn-services { font-size: 0.9rem; }
   }
+
+  @media (max-width: 390px){
+    .home-tagline {
+      width: 70%;
+    }
+  } 
   
   /* Celular muito pequeno — até 320px */
   @media (max-width: 320px) {
